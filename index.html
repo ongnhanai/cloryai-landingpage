@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloryAI Agents - AI-Driven CX Management Platform</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            500: '#0066ff',
+                            600: '#0052cc',
+                            900: '#0a1128',
+                            950: '#050814',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-brand-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-white font-sans">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-400 flex items-center justify-center font-bold text-xl text-white shadow-lg shadow-brand-500/20">
+                    C
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-white">Clory<span class="text-brand-500">AI</span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="#features" class="hover:text-white transition-colors">Tính năng</a>
+                <a href="#solutions" class="hover:text-white transition-colors">Giải pháp</a>
+                <a href="#about" class="hover:text-white transition-colors">Về CloryAI</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-brand-500 hover:bg-brand-600 text-white font-medium text-sm transition-all shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40">
+                    Khám phá ngay
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-grid-pattern">
+        <!-- Glow background effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-500/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-brand-500 mb-8 uppercase tracking-wider">
+                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                Kỷ nguyên lực lượng lao động số
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight max-w-5xl mx-auto mb-6">
+                CloryAI Agents <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-cyan-400 to-indigo-400">
+                    AI-Driven CX Management Platform
+                </span>
+            </h1>
+
+            <!-- Hero Intro Paragraph -->
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+                Hệ sinh thái Trợ lý AI thế hệ mới, hoạt động 24/7 với độ chính xác tuyệt đối. Tối ưu hóa sâu theo từng nghiệp vụ, đưa trải nghiệm khách hàng và hiệu suất vận hành của doanh nghiệp lên chuẩn mực mới.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold transition-all shadow-xl shadow-brand-500/30 flex items-center justify-center gap-2">
+                    Tìm hiểu chi tiết
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#features" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold transition-all flex items-center justify-center gap-2">
+                    Trải nghiệm giải pháp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Overview Section (Detailed Copy) -->
+    <section id="about" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-gradient-to-b from-slate-900 to-brand-950 p-8 md:p-12 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <i data-lucide="bot" class="w-48 h-48 text-brand-500"></i>
+                </div>
+                
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                    <i data-lucide="sparkles" class="w-7 h-7 text-brand-500"></i>
+                    Tổng quan về CloryAI Agents
+                </h2>
+
+                <div class="text-slate-300 space-y-5 leading-relaxed text-base md:text-lg">
+                    <p>
+                        <strong class="text-white">CloryAI Agents</strong> là hệ sinh thái Trợ lý AI thế hệ mới, được thiết kế chuyên biệt và tối ưu hóa sâu theo từng nghiệp vụ, vị trí và lĩnh vực kinh doanh. Hoạt động liên tục 24/7, hệ sinh thái này sở hữu tốc độ xử lý công việc vượt trội cùng độ chính xác tuyệt đối trong mọi tác vụ.
+                    </p>
+                    <p>
+                        Khác biệt với nhân sự truyền thống, CloryAI Agents đưa ra quyết định chuẩn xác, khách quan và không chịu ảnh hưởng bởi sức khỏe, cảm xúc hay yếu tố thiên vị. Nhờ khả năng tự động hóa các quy trình khép kín, giải pháp giúp doanh nghiệp cắt giảm tối đa chi phí vận hành và giải phóng nguồn lực nhân sự.
+                    </p>
+                    <p>
+                        Đối với cá nhân, đây là trợ lý đắc lực giúp nâng cao năng suất và tối ưu hóa hiệu quả công việc hàng ngày. Sự kết hợp linh hoạt giữa các Agent chuyên biệt tạo nên một bộ máy vận hành thông minh, liên tục học hỏi và phát triển từ chính dữ liệu doanh nghiệp.
+                    </p>
+                    <p class="text-brand-500 font-medium italic border-l-4 border-brand-500 pl-4 py-1">
+                        "CloryAI Agents không chỉ là công cụ công nghệ, mà là người đồng hành chiến lược giúp mọi tổ chức bứt phá giới hạn tăng trưởng. Đây chính là chuẩn mực mới cho lực lượng lao động số trong kỷ nguyên trí tuệ nhân tạo."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Highlights / Value Pillars Section -->
+    <section id="features" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ưu điểm vượt trội</h2>
+                <p class="text-slate-400">Những giá trị cốt lõi giúp CloryAI Agents trở thành giải pháp hàng đầu cho CX và quản trị doanh nghiệp.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-brand-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center mb-6">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Vận hành 24/7 không gián đoạn</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Xử lý yêu cầu công việc liên tục với tốc độ vượt trội. Đảm bảo trải nghiệm khách hàng luôn liền mạch mọi lúc, mọi nơi.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-brand-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Chính xác & Khách quan</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Đưa ra quyết định chuẩn xác dựa trên dữ liệu, loại bỏ hoàn toàn ảnh hưởng từ cảm xúc, sức khỏe hay các yếu tố thiên vị cá nhân.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-brand-500/50 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center mb-6">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Tự học & Phát triển</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Tự động hóa các quy trình khép kín, liên tục học hỏi từ chính dữ liệu nội bộ để tối ưu hóa bộ máy vận hành theo thời gian.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-brand-950 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center font-bold text-white">C</div>
+                <span class="text-lg font-bold text-white">CloryAI</span>
+            </div>
+            <p class="text-slate-500 text-sm">
+                © 2026 CloryAI Agents. All rights reserved. Standard for Digital Workforce.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
