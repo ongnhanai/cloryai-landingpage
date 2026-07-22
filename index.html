@@ -380,7 +380,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-36 pb-20 md:pt-48 md:pb-28 bg-grid-glow overflow-hidden">
+    <section class="relative pt-36 pb-16 md:pt-48 md:pb-20 bg-grid-glow overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center">
             
             <!-- What's New Badge -->
@@ -414,11 +414,57 @@
                 </a>
             </div>
 
-            <!-- Hero Floating Preview Image with Motion Scroll Effect -->
-            <div class="mt-8 relative max-w-5xl mx-auto scroll-reveal">
-                <div class="p-3 bg-clory-card/80 rounded-2xl border border-clory-border backdrop-blur-md shadow-2xl overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80" alt="Hero Dashboard Preview" class="w-full rounded-xl object-cover shadow-2xl border border-clory-border/40">
+            <!-- 4 TÍNH NĂNG ƯU VIỆT CỦA CLORYAI (Bổ sung mới thay thế hình ảnh preview cũ) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-left scroll-reveal">
+                
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow">
+                    <div class="w-10 h-10 rounded-xl bg-clory-accent/10 text-clory-accent flex items-center justify-center mb-4">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-2xl font-black text-white mb-1">&lt; 0,8s</div>
+                    <h4 class="text-sm font-bold text-slate-200 mb-2">Tốc độ phản hồi trung bình</h4>
+                    <p class="text-xs text-clory-textMuted leading-relaxed">
+                        Phản hồi siêu tốc tức thì &lt; 0,8s (con người tầm 2-5s và đôi khi cao hơn lúc ngoài giờ làm việc).
+                    </p>
                 </div>
+
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-2xl font-black text-emerald-400 mb-1">≥ 500%</div>
+                    <h4 class="text-sm font-bold text-slate-200 mb-2">Năng suất làm việc vượt trội</h4>
+                    <p class="text-xs text-clory-textMuted leading-relaxed">
+                        Chỉ số hiệu suất và năng suất làm việc tăng đột phá, tối thiểu từ 500% so với nhân sự truyền thống.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-2xl font-black text-amber-400 mb-1">24 x 7</div>
+                    <h4 class="text-sm font-bold text-slate-200 mb-2">Khả năng hoạt động liên tục</h4>
+                    <p class="text-xs text-clory-textMuted leading-relaxed">
+                        Sẵn sàng phục vụ và xử lý yêu cầu 24x7 không gián đoạn (so với khung giờ chuẩn của con người là 8x7).
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow">
+                    <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
+                        <i data-lucide="piggy-bank" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-2xl font-black text-sky-400 mb-1">≥ 65%</div>
+                    <h4 class="text-sm font-bold text-slate-200 mb-2">Giảm chi phí vận hành</h4>
+                    <p class="text-xs text-clory-textMuted leading-relaxed">
+                        Tối ưu hóa ngân sách vận hành cho bộ phận CSKH/Sales tối thiểu từ 65% hàng năm.
+                    </p>
+                </div>
+
             </div>
 
         </div>
@@ -433,7 +479,7 @@
                 <p class="text-clory-textMuted">Theo dõi và giám sát toàn bộ hoạt động của lực lượng AI Agent theo thời gian thực.</p>
             </div>
 
-            <!-- Mockup Dashboard Container with Light/Clean Theme Matching Prompt Image -->
+            <!-- Mockup Dashboard Container (Có hiệu ứng scroll-reveal trượt nhẹ lên khi scroll-down) -->
             <div class="scroll-reveal bg-slate-100 border border-slate-300 text-slate-800 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
                 
                 <!-- Window Topbar -->
@@ -1234,7 +1280,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
                 
-                <!-- Brand Info -->
+                <!-- Brand Info & Contact Information -->
                 <div class="lg:col-span-2 space-y-4">
                     <div class="flex items-center gap-3">
                         <div class="w-8 h-8 rounded-lg bg-clory-accent flex items-center justify-center font-black text-white">
@@ -1245,45 +1291,62 @@
                     <p class="text-xs text-clory-textMuted leading-relaxed max-w-sm">
                         Nền tảng quản trị trải nghiệm khách hàng hàng đầu phát triển dựa trên lực lượng lao động số AI Agents thế hệ mới.
                     </p>
+
+                    <!-- Thông tin liên hệ đã bổ sung -->
+                    <div class="pt-2 space-y-2 text-xs text-slate-300">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-3.5 h-3.5 text-clory-accent shrink-0"></i>
+                            <a href="mailto:hello@cloudpbx.vn" class="hover:text-clory-accent transition-colors">hello@cloudpbx.vn</a>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-3.5 h-3.5 text-clory-accent shrink-0"></i>
+                            <a href="tel:19006020" class="hover:text-clory-accent transition-colors font-medium">1900 6020</a>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-clory-accent shrink-0 mt-0.5"></i>
+                            <span>VP HCM: 22 Đường số 5, KDC Him Lam, P. Tân Hưng, TP.HCM</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- 1. Cột Giới thiệu -->
+                <!-- 1. Cột Giới thiệu (Đã loại bỏ các văn bản anchor như #about, #news) -->
                 <div>
                     <h4 class="text-xs font-extrabold uppercase tracking-wider text-white mb-4">Giới thiệu</h4>
                     <ul class="space-y-2.5 text-xs text-slate-400">
-                        <li><a href="#about" class="hover:text-clory-accent transition-colors">Giới thiệu (#about)</a></li>
-                        <li><a href="#news" class="hover:text-clory-accent transition-colors">Tin tức (#news)</a></li>
-                        <li><a href="#recruitment" class="hover:text-clory-accent transition-colors">Tuyển dụng (#recruitment)</a></li>
+                        <li><a href="#about" class="hover:text-clory-accent transition-colors">Giới thiệu</a></li>
+                        <li><a href="#news" class="hover:text-clory-accent transition-colors">Tin tức</a></li>
+                        <li><a href="#recruitment" class="hover:text-clory-accent transition-colors">Tuyển dụng</a></li>
                     </ul>
                 </div>
 
-                <!-- 2. Cột Dịch vụ nổi bật -->
+                <!-- 2. Cột Dịch vụ nổi bật (Đã loại bỏ các văn bản anchor) -->
                 <div>
                     <h4 class="text-xs font-extrabold uppercase tracking-wider text-white mb-4">Dịch vụ nổi bật</h4>
                     <ul class="space-y-2.5 text-xs text-slate-400">
-                        <li><a href="#cpbx" class="hover:text-clory-accent transition-colors">Dịch vụ Tổng đài ảo (#cpbx)</a></li>
-                        <li><a href="#cxcs" class="hover:text-clory-accent transition-colors">Dịch vụ Contact Center (#cxcs)</a></li>
-                        <li><a href="#cloryai" class="hover:text-clory-accent transition-colors">Dịch vụ CloryAI (#cloryai)</a></li>
-                        <li><a href="#cacs" class="hover:text-clory-accent transition-colors">Dịch vụ Gọi tự động (#cacs)</a></li>
-                        <li><a href="#csms" class="hover:text-clory-accent transition-colors">Dịch vụ tin nhắn (#csms)</a></li>
+                        <li><a href="#cpbx" class="hover:text-clory-accent transition-colors">Dịch vụ Tổng đài ảo</a></li>
+                        <li><a href="#cxcs" class="hover:text-clory-accent transition-colors">Dịch vụ Contact Center</a></li>
+                        <li><a href="#cloryai" class="hover:text-clory-accent transition-colors">Dịch vụ CloryAI</a></li>
+                        <li><a href="#cacs" class="hover:text-clory-accent transition-colors">Dịch vụ Gọi tự động</a></li>
+                        <li><a href="#csms" class="hover:text-clory-accent transition-colors">Dịch vụ tin nhắn</a></li>
                     </ul>
                 </div>
 
-                <!-- 3. Cột Chính sách -->
+                <!-- 3. Cột Chính sách (Đã loại bỏ các văn bản anchor) -->
                 <div>
                     <h4 class="text-xs font-extrabold uppercase tracking-wider text-white mb-4">Chính sách</h4>
                     <ul class="space-y-2.5 text-xs text-slate-400">
-                        <li><a href="#privacy" class="hover:text-clory-accent transition-colors">Quy định bảo mật (#privacy)</a></li>
-                        <li><a href="#serviceterms" class="hover:text-clory-accent transition-colors">Chính sách dịch vụ (#serviceterms)</a></li>
-                        <li><a href="#anticorruption" class="hover:text-clory-accent transition-colors">Chính sách chống tham nhũng (#anticorruption)</a></li>
+                        <li><a href="#privacy" class="hover:text-clory-accent transition-colors">Quy định bảo mật</a></li>
+                        <li><a href="#serviceterms" class="hover:text-clory-accent transition-colors">Chính sách dịch vụ</a></li>
+                        <li><a href="#anticorruption" class="hover:text-clory-accent transition-colors">Chính sách chống tham nhũng</a></li>
                     </ul>
                 </div>
 
             </div>
 
             <div class="pt-8 border-t border-clory-border/60 flex flex-col md:flex-row items-center justify-between gap-4">
+                <!-- Dòng Copyright đã cập nhật tên đơn vị cung cấp theo yêu cầu -->
                 <p class="text-slate-500 text-xs">
-                    © 2026 CloryAI Agents. Powered by AI-Driven CX Management Platform. All rights reserved.
+                    © 2026 CloryAI Agents. Powered by CLOUDPBX. All rights reserved.
                 </p>
             </div>
         </div>
