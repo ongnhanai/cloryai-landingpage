@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CloryAI Agents - AI-Driven CX Management Platform</title>
+    <title>CloudXCS Contact Center - CloryAI CX Management Platform</title>
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,7 +68,6 @@
         .card-border-glow:hover {
             box-shadow: 0 0 0 1px rgba(255, 77, 45, 0.4), 0 10px 30px -10px rgba(255, 77, 45, 0.2);
         }
-        /* Custom Dropdown Hover Trigger */
         .group:hover .dropdown-menu {
             opacity: 1;
             visibility: visible;
@@ -80,7 +79,6 @@
             transform: translateY(10px);
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        /* Parallax & Scroll Reveal Effects */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(40px) scale(0.97);
@@ -91,7 +89,6 @@
             transform: translateY(0) scale(1);
         }
 
-        /* Styling riêng cho trang khi IN / XUẤT PDF BÁO CÁO ROI */
         @media print {
             body * {
                 visibility: hidden;
@@ -114,17 +111,6 @@
             .print-only-header-footer {
                 display: block !important;
             }
-            .print-light-bg {
-                background-color: #f8fafc !important;
-                border-color: #e2e8f0 !important;
-                color: #0f172a !important;
-            }
-            .print-text-dark {
-                color: #0f172a !important;
-            }
-            .print-border {
-                border-color: #cbd5e1 !important;
-            }
         }
     </style>
 </head>
@@ -134,7 +120,7 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-clory-bg/95 backdrop-blur-md border-b border-clory-border">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3">
+            <a href="index.html" class="flex items-center gap-3">
                 <div class="w-9 h-9 rounded-lg bg-clory-accent flex items-center justify-center font-black text-xl text-white">
                     C
                 </div>
@@ -366,27 +352,6 @@
                                     <a href="#cx-management-suite" class="p-2 rounded-lg bg-clory-bg/60 border border-clory-border/40 hover:border-clory-accent text-slate-200 flex items-center gap-1.5"><i data-lucide="briefcase" class="w-3.5 h-3.5 text-clory-accent"></i> Services / Dịch vụ</a>
                                 </div>
                             </div>
-
-                            <div class="bg-clory-bg/60 p-3 rounded-xl border border-clory-border/50">
-                                <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400 mb-2">
-                                    <i data-lucide="gauge" class="w-3.5 h-3.5"></i>
-                                    <span>TÌM HIỂU CÁC CHỈ SỐ</span>
-                                </div>
-                                <div class="flex flex-wrap gap-1.5">
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">AI Agent</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">BOT</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">QA</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-amber-400 hover:text-white transition-colors">CSAT</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">NPS</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">CES</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">CLV</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">CX</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">FRT</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">FCR</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">AHT</a>
-                                    <a href="#metrics" class="text-[10px] px-2 py-0.5 rounded bg-clory-card text-slate-300 border border-clory-border hover:border-amber-400 hover:text-white transition-colors">AWT</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -412,38 +377,36 @@
         <div class="max-w-7xl mx-auto px-6 text-center">
             
             <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-clory-card border border-clory-border text-xs font-medium text-slate-300 mb-8 animate-fade-up">
-                <span class="px-2 py-0.5 rounded-full bg-clory-accent text-white font-bold text-[10px] uppercase">New Release</span>
-                <span>CloryAI Agents v1.0 - Lực lượng lao động số thế hệ mới</span>
+                <span class="px-2 py-0.5 rounded-full bg-clory-accent text-white font-bold text-[10px] uppercase">Contact Center Suite</span>
+                <span>CloudXCS Contact Center - Thế hệ trung tâm quản trị trải nghiệm đa kênh</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-clory-accent"></i>
             </div>
 
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight max-w-5xl mx-auto mb-6 text-white animate-fade-up [animation-delay:200ms]">
-                CloryAI Agents <br/>
+                CloudXCS Contact Center <br/>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-clory-accent via-orange-400 to-amber-200">
                     AI-Driven CX Management Platform
                 </span>
             </h1>
 
             <p class="text-base md:text-xl text-clory-textMuted max-w-3xl mx-auto font-normal leading-relaxed mb-10 animate-fade-up [animation-delay:400ms]">
-                CloryAI Agents - Lực lượng lao động số thế hệ mới – Chuẩn xác, Tức thì, Hoạt động 24/7
+                Nền tảng tổng đài thông minh & Contact Center đa kênh toàn diện kết hợp trợ lý ảo CloryAI.
             </p>
 
-            <!-- Nút "Khám phá ngay" + Icon LIVE nhấp nháy -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up [animation-delay:600ms]">
                 <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-semibold transition-all flex items-center justify-center gap-2 shadow-xl shadow-clory-accent/25">
                     Book a Demo
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
-                <a href="#dashboard-preview" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-clory-card border border-clory-border hover:bg-slate-800 text-slate-200 font-semibold transition-all flex items-center justify-center gap-2.5">
+                <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-clory-card border border-clory-border hover:bg-slate-800 text-slate-200 font-semibold transition-all flex items-center justify-center gap-2.5">
                     <span class="flex h-2.5 w-2.5 relative">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                     </span>
-                    <span>Khám phá ngay</span>
+                    <span>Bảng giá CloudXCS</span>
                 </a>
             </div>
 
-            <!-- 4 TÍNH NĂNG ƯU VIỆT CỦA CLORYAI -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-left scroll-reveal">
                 <div class="p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow">
                     <div class="w-10 h-10 rounded-xl bg-clory-accent/10 text-clory-accent flex items-center justify-center mb-4">
@@ -493,737 +456,330 @@
         </div>
     </section>
 
-    <!-- SECTION: Screenshot Dashboard Mẫu Của Ứng Dụng CloryAI Dashboard -->
-    <section id="dashboard-preview" class="py-24 bg-clory-bg border-b border-clory-border relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-amber-600/15 rounded-full blur-[140px] pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest text-clory-accent font-extrabold mb-3">Live Analytics & Control Center</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">AI-Driven Live Dashboard</h3>
-                <p class="text-clory-textMuted">Theo dõi và giám sát toàn bộ hoạt động của lực lượng AI Agent theo thời gian thực.</p>
-            </div>
-
-            <div class="scroll-reveal bg-slate-100 border border-slate-300 text-slate-800 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
-                
-                <!-- Window Topbar -->
-                <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
-                    <div class="flex items-center gap-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                        <span class="text-xs text-slate-500 font-mono ml-2">app.cloryai.com/dashboard/analytics</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold flex items-center gap-1 border border-emerald-300">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Live Sync Active
-                        </span>
-                    </div>
-                </div>
-
-                <!-- TOP METRICS (5 Cards Light Theme) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
-                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm relative">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-xs font-semibold text-slate-600">Total evaluated cases:</span>
-                            <div class="w-7 h-7 rounded-lg bg-blue-50 text-blue-500 flex items-center justify-center">
-                                <i data-lucide="headphones" class="w-4 h-4"></i>
-                            </div>
-                        </div>
-                        <div class="text-2xl font-bold text-slate-900">37</div>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm relative">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-xs font-semibold text-slate-600">Average score (30 Days)</span>
-                            <div class="w-7 h-7 rounded-lg bg-red-100 text-red-600 flex items-center justify-center">
-                                <i data-lucide="star" class="w-4 h-4 fill-red-500 text-red-500"></i>
-                            </div>
-                        </div>
-                        <div class="text-2xl font-bold text-red-600 mb-1.5">72.19</div>
-                        <span class="text-[10px] px-2 py-0.5 rounded bg-red-500 text-white font-bold inline-block">Target ≥ 80</span>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm relative">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-xs font-semibold text-slate-600">Critical rate</span>
-                            <div class="w-7 h-7 rounded-lg bg-red-100 text-red-500 flex items-center justify-center">
-                                <i data-lucide="alert-triangle" class="w-4 h-4"></i>
-                            </div>
-                        </div>
-                        <div class="text-2xl font-bold text-red-500">18.92%</div>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm relative">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-xs font-semibold text-slate-600">Positive sentiment</span>
-                            <div class="w-7 h-7 rounded-lg bg-amber-100 text-amber-500 flex items-center justify-center">
-                                <i data-lucide="smile" class="w-4 h-4"></i>
-                            </div>
-                        </div>
-                        <div class="text-2xl font-bold text-amber-500">37.84%</div>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm relative">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="text-xs font-semibold text-slate-600">Silence rate</span>
-                            <div class="w-7 h-7 rounded-lg bg-red-100 text-red-400 flex items-center justify-center">
-                                <i data-lucide="mic-off" class="w-4 h-4"></i>
-                            </div>
-                        </div>
-                        <div class="text-2xl font-bold text-red-400">22.54%</div>
-                    </div>
-                </div>
-
-                <!-- MIDDLE ROW: CHARTS -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
-                    <div class="lg:col-span-6 p-5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                        <div class="flex items-center justify-between mb-4">
-                            <h4 class="text-sm font-bold text-slate-800">Score trend</h4>
-                            <i data-lucide="info" class="w-3.5 h-3.5 text-slate-400"></i>
-                        </div>
-                        <div class="h-48 relative flex items-end justify-between px-4 pb-4 border-b border-l border-slate-200 text-[10px] text-slate-400">
-                            <svg class="absolute inset-0 w-full h-full p-2" viewBox="0 0 300 120" preserveAspectRatio="none">
-                                <path d="M 10 90 Q 80 80, 150 30 T 290 50" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="3" />
-                                <path d="M 10 110 Q 100 100, 180 10 T 290 80" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4 4" />
-                            </svg>
-                            <span class="z-10 bg-white/80 px-1 rounded">02/07</span>
-                            <span class="z-10 bg-white/80 px-1 rounded">03/07</span>
-                            <span class="z-10 bg-white/80 px-1 rounded">16/07</span>
-                            <span class="z-10 bg-white/80 px-1 rounded">21/07</span>
-                        </div>
-                        <div class="flex justify-center gap-6 mt-3 text-xs text-slate-600">
-                            <span class="flex items-center gap-1.5"><span class="w-3 h-3 bg-blue-500 rounded-sm"></span> QA Score</span>
-                            <span class="flex items-center gap-1.5"><span class="w-3 h-3 border border-slate-500 rounded-sm"></span> Calls</span>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-3 p-5 rounded-xl bg-white border border-slate-200 shadow-sm text-center">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 class="text-sm font-bold text-slate-800">Skills</h4>
-                            <i data-lucide="info" class="w-3.5 h-3.5 text-slate-400"></i>
-                        </div>
-                        <div class="relative h-44 flex items-center justify-center">
-                            <svg class="w-36 h-36" viewBox="0 0 100 100">
-                                <polygon points="50,10 90,50 50,90 10,50" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-                                <polygon points="50,25 75,50 50,75 25,50" fill="none" stroke="#cbd5e1" stroke-width="1"/>
-                                <polygon points="50,20 78,50 50,82 25,50" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="1.5"/>
-                            </svg>
-                            <span class="absolute top-0 text-[10px] text-slate-600">Chào hỏi KH</span>
-                            <span class="absolute right-0 text-[10px] text-slate-600">Khai thác</span>
-                            <span class="absolute bottom-0 text-[10px] text-slate-600">Tư vấn</span>
-                            <span class="absolute left-0 text-[10px] text-slate-600">Tạm biệt</span>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-3 p-5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 class="text-sm font-bold text-slate-800">Sentiment</h4>
-                            <i data-lucide="info" class="w-3.5 h-3.5 text-slate-400"></i>
-                        </div>
-                        <div class="flex justify-center my-2">
-                            <div class="w-24 h-24 rounded-full border-8 border-blue-500 border-t-red-500 border-r-green-500 border-b-amber-400 flex items-center justify-center"></div>
-                        </div>
-                        <div class="space-y-1 text-[11px] text-slate-600">
-                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 bg-red-500 rounded-sm"></span> Tức giận</span> <span>16.2%</span></div>
-                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 bg-slate-500 rounded-sm"></span> Thất vọng</span> <span>0.0%</span></div>
-                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 bg-blue-500 rounded-sm"></span> Bình thường</span> <span>46.0%</span></div>
-                            <div class="flex justify-between items-center"><span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 bg-green-500 rounded-sm"></span> Hài lòng</span> <span>37.8%</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BOTTOM ROW: DATA LISTS -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-                    
-                    <!-- Critical Cases Table Clickable -->
-                    <div onclick="openCriticalModal()" class="lg:col-span-3 p-4 rounded-xl bg-white border border-red-200 hover:border-red-500 transition-all shadow-sm cursor-pointer group hover:shadow-md">
-                        <div class="flex items-center justify-between mb-3">
-                            <h4 class="font-bold text-slate-800 flex items-center gap-1.5 group-hover:text-red-600">
-                                <i data-lucide="alert-circle" class="w-4 h-4 text-red-500"></i> Critical cases
-                            </h4>
-                            <span class="text-[10px] bg-red-100 text-red-600 font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                                Click xem chi tiết <i data-lucide="external-link" class="w-3 h-3"></i>
-                            </span>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left border-collapse">
-                                <thead>
-                                    <tr class="border-b border-slate-200 text-slate-400 text-[10px]">
-                                        <th class="pb-2">Call ID</th>
-                                        <th class="pb-2">Agent</th>
-                                        <th class="pb-2">Keyword</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-slate-100 text-[11px] text-slate-700">
-                                    <tr><td class="py-1.5 font-mono">#9402</td><td>Nhan</td><td><span class="text-red-500 font-semibold">Tức giận</span></td></tr>
-                                    <tr><td class="py-1.5 font-mono">#9388</td><td>Tuấn</td><td><span class="text-red-500 font-semibold">Chán quá</span></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- Topics (Interactive Case Topics) -->
-                    <div onclick="openTopicsModal()" class="lg:col-span-3 p-4 rounded-xl bg-white border border-sky-200 hover:border-sky-500 transition-all shadow-sm cursor-pointer group hover:shadow-md text-xs">
-                        <div class="flex items-center justify-between mb-3">
-                            <h4 class="font-bold text-slate-800 group-hover:text-sky-600 flex items-center gap-1.5">
-                                <i data-lucide="folder-tree" class="w-4 h-4 text-sky-500"></i> Case topics
-                            </h4>
-                            <span class="text-[10px] bg-sky-100 text-sky-600 font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                                Click xem chi tiết <i data-lucide="external-link" class="w-3 h-3"></i>
-                            </span>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center p-2 rounded bg-slate-50 border border-slate-100">
-                                <span class="font-medium text-slate-700">Hỗ trợ kỹ thuật</span>
-                                <span class="px-2 py-0.5 rounded bg-red-100 text-red-600 font-bold text-[10px]">32.14/100 (45%)</span>
-                            </div>
-                            <div class="flex justify-between items-center p-2 rounded bg-slate-50 border border-slate-100">
-                                <span class="font-medium text-slate-700">Khiếu nại cước</span>
-                                <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-600 font-bold text-[10px]">55.00/100 (30%)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Top Agent & Need Improvement Agents Clickable -->
-                    <div onclick="openImprovementModal()" class="lg:col-span-3 p-4 rounded-xl bg-white border border-amber-200 hover:border-amber-500 transition-all shadow-sm cursor-pointer group hover:shadow-md">
-                        <h4 class="font-bold text-slate-800 mb-3 group-hover:text-amber-600">Agent ranking</h4>
-                        <div class="flex gap-2 border-b border-slate-200 pb-2 mb-2 text-[11px]">
-                            <span class="text-slate-400 flex items-center gap-1"><i data-lucide="star" class="w-3 h-3"></i> Top agent</span>
-                            <span class="font-bold text-amber-600 flex items-center gap-1 border-b-2 border-amber-500 pb-0.5"><i data-lucide="trending-down" class="w-3 h-3"></i> Need improvement (Click)</span>
-                        </div>
-                        <div class="space-y-1.5 text-[11px]">
-                            <div class="flex justify-between text-slate-700"><span>1. Lê Văn C</span> <span class="font-bold text-red-500">45.0</span></div>
-                            <div class="flex justify-between text-slate-700"><span>2. Hoàng Thị D</span> <span class="font-bold text-amber-500">58.5</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Sensitive Keyword Warning Heatmap Cards -->
-                    <div class="lg:col-span-3 p-4 rounded-xl bg-white border border-slate-200 shadow-sm text-xs">
-                        <h4 class="font-bold text-slate-800 mb-3">Sensitive keyword warning</h4>
-                        <div class="grid grid-cols-2 gap-2">
-                            <div class="p-2 rounded bg-red-500 text-white text-[10px] font-bold text-center">Chán quá</div>
-                            <div class="p-2 rounded bg-orange-400 text-white text-[10px] font-bold text-center">Huỷ đơn hàng</div>
-                            <div class="p-2 rounded bg-amber-400 text-white text-[10px] font-bold text-center">Giao chậm quá</div>
-                            <div class="p-2 rounded bg-red-600 text-white text-[10px] font-bold text-center">Giá đắt</div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- POPUP MODAL CHI TIẾT CASE TOPICS -->
-    <div id="topics-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="bg-clory-card border border-sky-500/40 rounded-3xl max-w-4xl w-full p-6 text-slate-100 max-h-[85vh] overflow-y-auto shadow-2xl">
-            <div class="flex justify-between items-center border-b border-clory-border pb-4 mb-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold">
-                        <i data-lucide="pie-chart" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-white">Thống Kê Chi Tiết Case Topics</h3>
-                        <p class="text-xs text-clory-textMuted">Phân tích mật độ chủ đề cuộc gọi, số lượng case và tỷ lệ % phân bổ</p>
-                    </div>
-                </div>
-                <button onclick="closeTopicsModal()" class="p-2 rounded-lg bg-clory-bg text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
-            </div>
-            
-            <div class="space-y-4 text-xs">
-                <!-- Topic 1 -->
-                <div class="p-4 rounded-xl bg-clory-bg border border-clory-border space-y-2">
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-white text-sm flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span> Hỗ trợ kỹ thuật
-                        </span>
-                        <span class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-400 font-bold">45% tổng số case (18 cuộc gọi)</span>
-                    </div>
-                    <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                        <div class="bg-red-500 h-2.5 rounded-full" style="width: 45%"></div>
-                    </div>
-                    <div class="flex justify-between text-clory-textMuted text-[11px] pt-1">
-                        <span>Điểm QA Trung Bình: <strong class="text-red-400">32.14 / 100</strong></span>
-                        <span>Mức độ hài lòng CSAT: <strong class="text-amber-400">2.1 / 5.0</strong></span>
-                    </div>
-                </div>
-
-                <!-- Topic 2 -->
-                <div class="p-4 rounded-xl bg-clory-bg border border-clory-border space-y-2">
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-white text-sm flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span> Khiếu nại cước & Hóa đơn
-                        </span>
-                        <span class="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-400 font-bold">30% tổng số case (12 cuộc gọi)</span>
-                    </div>
-                    <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                        <div class="bg-amber-500 h-2.5 rounded-full" style="width: 30%"></div>
-                    </div>
-                    <div class="flex justify-between text-clory-textMuted text-[11px] pt-1">
-                        <span>Điểm QA Trung Bình: <strong class="text-amber-400">55.00 / 100</strong></span>
-                        <span>Mức độ hài lòng CSAT: <strong class="text-amber-400">3.2 / 5.0</strong></span>
-                    </div>
-                </div>
-
-                <!-- Topic 3 -->
-                <div class="p-4 rounded-xl bg-clory-bg border border-clory-border space-y-2">
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-white text-sm flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span> Tư vấn báo giá & Hợp đồng
-                        </span>
-                        <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 font-bold">15% tổng số case (6 cuộc gọi)</span>
-                    </div>
-                    <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                        <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 15%"></div>
-                    </div>
-                    <div class="flex justify-between text-clory-textMuted text-[11px] pt-1">
-                        <span>Điểm QA Trung Bình: <strong class="text-emerald-400">88.50 / 100</strong></span>
-                        <span>Mức độ hài lòng CSAT: <strong class="text-emerald-400">4.8 / 5.0</strong></span>
-                    </div>
-                </div>
-
-                <!-- Topic 4 -->
-                <div class="p-4 rounded-xl bg-clory-bg border border-clory-border space-y-2">
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-white text-sm flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-sky-500 inline-block"></span> Yêu cầu bổ sung tài liệu
-                        </span>
-                        <span class="px-2.5 py-1 rounded-full bg-sky-500/20 text-sky-400 font-bold">10% tổng số case (4 cuộc gọi)</span>
-                    </div>
-                    <div class="w-full bg-slate-800 rounded-full h-2.5 overflow-hidden">
-                        <div class="bg-sky-500 h-2.5 rounded-full" style="width: 10%"></div>
-                    </div>
-                    <div class="flex justify-between text-clory-textMuted text-[11px] pt-1">
-                        <span>Điểm QA Trung Bình: <strong class="text-sky-400">81.00 / 100</strong></span>
-                        <span>Mức độ hài lòng CSAT: <strong class="text-sky-400">4.5 / 5.0</strong></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL CHI TIẾT CRITICAL CASES -->
-    <div id="critical-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="bg-clory-card border border-red-500/40 rounded-3xl max-w-4xl w-full p-6 text-slate-100 max-h-[85vh] overflow-y-auto shadow-2xl">
-            <div class="flex justify-between items-center border-b border-clory-border pb-4 mb-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-red-500/20 text-red-500 flex items-center justify-center font-bold">
-                        <i data-lucide="alert-triangle" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-white">Chi Tiết Case Nghiêm Trọng (Critical Cases)</h3>
-                        <p class="text-xs text-clory-textMuted">Danh sách cuộc gọi chứa từ khoá cảnh báo nguy cơ hủy dịch vụ / khiếu nại</p>
-                    </div>
-                </div>
-                <button onclick="closeCriticalModal()" class="p-2 rounded-lg bg-clory-bg text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
-            </div>
-            
-            <div class="space-y-4">
-                <!-- Case Item 1 -->
-                <div class="p-4 rounded-xl bg-clory-bg border border-red-500/30 text-xs space-y-2">
-                    <div class="flex justify-between items-center">
-                        <span class="font-mono text-clory-accent font-bold">Call ID: #9402 (Agent: Nhan)</span>
-                        <span class="px-2 py-0.5 rounded bg-red-500 text-white text-[10px] font-bold uppercase">Mức độ: Rất Khẩn Cấp</span>
-                    </div>
-                    <div class="text-slate-300"><strong>Nội dung:</strong> "Dịch vụ bên em làm ăn quá chán, anh rất <span class="text-red-400 font-bold underline">Tức giận</span> vì gọi điện hỗ trợ không ai bắt máy!"</div>
-                    <div class="flex gap-4 text-[11px] text-clory-textMuted pt-2 border-t border-clory-border/50">
-                        <span>Điểm QA: <strong class="text-red-400">28/100</strong></span>
-                        <span>Từ khoá: <strong class="text-red-400">Tức giận, không bắt máy</strong></span>
-                        <span>Hành động: <strong class="text-amber-400">Chuyển CSKH Trưởng gọi lại ngay</strong></span>
-                    </div>
-                </div>
-
-                <!-- Case Item 2 -->
-                <div class="p-4 rounded-xl bg-clory-bg border border-red-500/30 text-xs space-y-2">
-                    <div class="flex justify-between items-center">
-                        <span class="font-mono text-clory-accent font-bold">Call ID: #9388 (Agent: Tuấn)</span>
-                        <span class="px-2 py-0.5 rounded bg-amber-500 text-white text-[10px] font-bold uppercase">Mức độ: Cao</span>
-                    </div>
-                    <div class="text-slate-300"><strong>Nội dung:</strong> "Thôi anh hối hoài <span class="text-red-400 font-bold underline">Chán quá</span>, nếu giao chậm quá thì anh hủy đơn nhé."</div>
-                    <div class="flex gap-4 text-[11px] text-clory-textMuted pt-2 border-t border-clory-border/50">
-                        <span>Điểm QA: <strong class="text-red-400">42/100</strong></span>
-                        <span>Từ khoá: <strong class="text-red-400">Chán quá, Huỷ đơn hàng</strong></span>
-                        <span>Hành động: <strong class="text-amber-400">Ưu tiên đẩy vận chuyển tức thì</strong></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL DANH SÁCH NEED IMPROVEMENT -->
-    <div id="improvement-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="bg-clory-card border border-amber-500/40 rounded-3xl max-w-4xl w-full p-6 text-slate-100 max-h-[85vh] overflow-y-auto shadow-2xl">
-            <div class="flex justify-between items-center border-b border-clory-border pb-4 mb-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-500 flex items-center justify-center font-bold">
-                        <i data-lucide="trending-down" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-white">Danh Sách Agent Cần Cải Thiện (Need Improvement)</h3>
-                        <p class="text-xs text-clory-textMuted">Danh sách nhân sự có điểm QA dưới ngưỡng chuẩn (&lt; 60 điểm)</p>
-                    </div>
-                </div>
-                <button onclick="closeImprovementModal()" class="p-2 rounded-lg bg-clory-bg text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
-            </div>
-            
-            <div class="overflow-x-auto">
-                <table class="w-full text-left text-xs border-collapse">
-                    <thead>
-                        <tr class="bg-clory-bg text-slate-300 border-b border-clory-border">
-                            <th class="p-3 font-bold">Họ & Tên Agent</th>
-                            <th class="p-3 font-bold text-center">Điểm QA TB</th>
-                            <th class="p-3 font-bold">Kỹ năng yếu nhất</th>
-                            <th class="p-3 font-bold">Lỗi phổ biến</th>
-                            <th class="p-3 font-bold text-right">Đề xuất Coaching</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-clory-border/60 text-slate-200">
-                        <tr>
-                            <td class="p-3 font-semibold text-white">Lê Văn C</td>
-                            <td class="p-3 text-center font-bold text-red-400">45.0/100</td>
-                            <td class="p-3 text-amber-400">Khai thác nhu cầu</td>
-                            <td class="p-3">Thường ngắt lời khách hàng</td>
-                            <td class="p-3 text-right"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-400 font-semibold text-[10px]">Đào tạo lại kịch bản chào</span></td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 font-semibold text-white">Hoàng Thị D</td>
-                            <td class="p-3 text-center font-bold text-amber-400">58.5/100</td>
-                            <td class="p-3 text-amber-400">Xử lý từ chối giá</td>
-                            <td class="p-3">Chưa nắm rõ tính năng sản phẩm</td>
-                            <td class="p-3 text-right"><span class="px-2 py-1 rounded bg-amber-500/20 text-amber-400 font-semibold text-[10px]">Coaching 1-on-1</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION: Bộ Giải Pháp Quản Trị Trải Nghiệm Khách Hàng (4 Cột) -->
-    <section id="cx-management-suite" class="py-24 bg-clory-bg">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest text-clory-accent font-extrabold mb-3">CX Flow Management Suite</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Bộ Giải Pháp Quản Trị Trải Nghiệm Khách Hàng</h3>
-                <p class="text-clory-textMuted">Tự động hóa chuẩn hóa mọi quy trình điểm chạm từ tiếp cận, chốt đơn đến duy trì lòng trung thành.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="scroll-reveal p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-6">
-                            <i data-lucide="trending-up" class="w-6 h-6"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-3">CloryAI Sales Flow</h4>
-                        <p class="text-xs text-clory-textMuted leading-relaxed mb-6">
-                            Giải pháp tự động hóa chuỗi quy trình bán hàng. Sàng lọc Lead, phân loại phễu tiềm năng, tư vấn trực tiếp và chủ động chốt đơn theo kịch bản thông minh 24/7.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs text-slate-300 pt-4 border-t border-clory-border/60">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Phân loại phễu mua hàng</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Tăng tỷ lệ chuyển đổi chốt đơn</li>
-                    </ul>
-                </div>
-
-                <div class="scroll-reveal p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-6">
-                            <i data-lucide="headphones" class="w-6 h-6"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-3">CloryAI Service Flow</h4>
-                        <p class="text-xs text-clory-textMuted leading-relaxed mb-6">
-                            Bộ giải pháp dịch vụ & hỗ trợ khách hàng tự động đa kênh. Tự động xử lý Ticket, trả lời mọi sự cố kỹ thuật và chăm sóc khách hàng ngay lập tức.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs text-slate-300 pt-4 border-t border-clory-border/60">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> Phản hồi tự động đa kênh 24/7</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i> Giảm 80% thời gian chờ ticket</li>
-                    </ul>
-                </div>
-
-                <div class="scroll-reveal p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center mb-6">
-                            <i data-lucide="pie-chart" class="w-6 h-6"></i>
-                        </div>
-                        <div class="flex items-center justify-between mb-3">
-                            <h4 class="text-xl font-bold text-white">CloryAI CX Insight Flow</h4>
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 font-bold border border-amber-500/30">Coming soon</span>
-                        </div>
-                        <p class="text-xs text-clory-textMuted leading-relaxed mb-6">
-                            Hệ thống đo lường trải nghiệm khách hàng toàn diện. Phân tích cảm xúc, tự động kiểm tra QA 100% cuộc gọi và xuất báo cáo kiến nghị cho ban quản trị.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs text-slate-300 pt-4 border-t border-clory-border/60">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-sky-500"></i> Chấm điểm QA & CSAT tự động</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-sky-500"></i> Phân tích Sentiment AI</li>
-                    </ul>
-                </div>
-
-                <div class="scroll-reveal p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center mb-6">
-                            <i data-lucide="zap" class="w-6 h-6"></i>
-                        </div>
-                        <div class="flex items-center justify-between mb-3">
-                            <h4 class="text-xl font-bold text-white">CloryAI Growth Flow</h4>
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 font-bold border border-purple-500/30">Coming soon</span>
-                        </div>
-                        <p class="text-xs text-clory-textMuted leading-relaxed mb-6">
-                            Giải pháp thúc đẩy tăng trưởng doanh thu từ khách hàng cũ. Bán chéo (Cross-sell), bán thêm (Up-sell) và nuôi dưỡng tập khách hàng trung thành tự động.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs text-slate-300 pt-4 border-t border-clory-border/60">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-500"></i> Tự động Upsell & Cross-sell</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-purple-500"></i> Gia tăng LTV khách hàng</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: Đội ngũ AI Agents Portfolio -->
-    <section id="agents-portfolio" class="py-24 bg-clory-card border-t border-clory-border">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest text-clory-accent font-extrabold mb-3">AI Agents Roster</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Danh Sách Trợ Lý AI Chuyên Biệt</h3>
-                <p class="text-clory-textMuted">Lực lượng lao động số tinh nhuệ cho mọi vị trí trong doanh nghiệp.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="p-6 rounded-2xl bg-clory-bg border border-clory-border">
-                    <h4 class="text-lg font-bold text-white mb-1 flex items-center gap-2"><i data-lucide="shopping-bag" class="w-4 h-4 text-amber-400"></i> AI Sales Agent</h4>
-                    <span class="text-[11px] text-amber-400 font-semibold mb-3 block">Đội ngũ tư vấn kinh doanh</span>
-                    <p class="text-xs text-slate-300">Tư vấn sản phẩm, xử lý từ chối và chủ động chốt đơn hàng theo kịch bản chuẩn.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-clory-bg border border-clory-border">
-                    <h4 class="text-lg font-bold text-white mb-1 flex items-center gap-2"><i data-lucide="bar-chart" class="w-4 h-4 text-amber-400"></i> AI Sales Insights Agent</h4>
-                    <span class="text-[11px] text-amber-400 font-semibold mb-3 block">Đội ngũ tư vấn kinh doanh</span>
-                    <p class="text-xs text-slate-300">Tổng hợp dữ liệu kinh doanh, phát hiện xu hướng mua sắm và dự báo doanh số.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-clory-bg border border-clory-border">
-                    <h4 class="text-lg font-bold text-white mb-1 flex items-center gap-2"><i data-lucide="headphones" class="w-4 h-4 text-emerald-400"></i> AI Service Agent</h4>
-                    <span class="text-[11px] text-emerald-400 font-semibold mb-3 block">Đội ngũ dịch vụ khách hàng</span>
-                    <p class="text-xs text-slate-300">Hỗ trợ khách hàng 24/7, tự động phản hồi thắc mắc và xử lý ticket khép kín.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-clory-bg border border-clory-border">
-                    <h4 class="text-lg font-bold text-white mb-1 flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-emerald-400"></i> AI Concierge Agent</h4>
-                    <span class="text-[11px] text-emerald-400 font-semibold mb-3 block">Đội ngũ dịch vụ khách hàng</span>
-                    <p class="text-xs text-slate-300">Trợ lý cao cấp hỗ trợ đặt dịch vụ, tiếp đón và cá nhân hóa trải nghiệm thượng lưu.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-clory-bg border border-clory-border">
-                    <h4 class="text-lg font-bold text-white mb-1 flex items-center gap-2"><i data-lucide="plane" class="w-4 h-4 text-emerald-400"></i> AI AeroHub Agent</h4>
-                    <span class="text-[11px] text-emerald-400 font-semibold mb-3 block">Đội ngũ dịch vụ khách hàng</span>
-                    <p class="text-xs text-slate-300">Giải pháp chuyên biệt cho ngành vận tải hàng không và dịch vụ hậu cần chuyến bay.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-clory-bg border border-clory-border">
-                    <h4 class="text-lg font-bold text-white mb-1 flex items-center gap-2"><i data-lucide="ticket" class="w-4 h-4 text-emerald-400"></i> Hệ thống Ticket (CXCM)</h4>
-                    <span class="text-[11px] text-emerald-400 font-semibold mb-3 block">Đội ngũ dịch vụ khách hàng</span>
-                    <p class="text-xs text-slate-300">Hệ thống quản trị và điều hướng yêu cầu khách hàng đa kênh tự động.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-clory-bg border border-clory-border">
-                    <h4 class="text-lg font-bold text-white mb-1 flex items-center gap-2"><i data-lucide="check-check" class="w-4 h-4 text-sky-400"></i> AI Quality Assurance (QA) Agent</h4>
-                    <span class="text-[11px] text-sky-400 font-semibold mb-3 block">Đội ngũ phân tích dữ liệu</span>
-                    <p class="text-xs text-slate-300">Chấm điểm chất lượng cuộc gọi, nghe lại thoại và phát hiện vi phạm quy trình tự động.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-clory-bg border border-clory-border">
-                    <h4 class="text-lg font-bold text-white mb-1 flex items-center gap-2"><i data-lucide="activity" class="w-4 h-4 text-sky-400"></i> AI CX Insights Agent</h4>
-                    <span class="text-[11px] text-sky-400 font-semibold mb-3 block">Đội ngũ phân tích dữ liệu</span>
-                    <p class="text-xs text-slate-300">Phân tích sâu trải nghiệm khách hàng tại từng điểm chạm trong hành trình mua hàng.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-clory-bg border border-clory-border">
-                    <h4 class="text-lg font-bold text-white mb-1 flex items-center gap-2"><i data-lucide="star" class="w-4 h-4 text-amber-400"></i> AI CSAT Agent</h4>
-                    <span class="text-[11px] text-amber-400 font-semibold mb-3 block">Đội ngũ tư vấn kinh doanh</span>
-                    <p class="text-xs text-slate-300">Tự động gửi khảo sát đo lường mức độ hài lòng khách hàng ngay sau giao dịch.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION SYSTEM INTEGRATIONS: LOGO CHUẨN XÁC TỪ CDN CHÍNH THỨC -->
-    <section class="py-16 bg-clory-bg border-y border-clory-border overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 text-center mb-8">
-            <h2 class="text-xs font-extrabold uppercase tracking-widest text-clory-accent mb-2">System Integrations</h2>
-            <h3 class="text-2xl font-bold text-white mb-2">Tích Hợp Liền Mạch Đa Nền Tảng</h3>
-            <p class="text-xs text-clory-textMuted max-w-2xl mx-auto">Kết nối trực tiếp với toàn bộ hệ thống CRM, Contact Center và phần mềm quản trị doanh nghiệp của bạn.</p>
-        </div>
-        
-        <div class="relative w-full overflow-hidden flex whitespace-nowrap">
-            <!-- Continuous Marquee với Vector SVG chuẩn xác -->
-            <div class="flex items-center gap-14 animate-marquee py-3 opacity-80 hover:opacity-100 transition-opacity">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" class="h-9 grayscale hover:grayscale-0 transition-all brightness-200 contrast-120">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/HubSpot_Logo.svg" alt="HubSpot" class="h-8 grayscale hover:grayscale-0 transition-all brightness-200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Zendesk_logo.svg" alt="Zendesk" class="h-8 grayscale hover:grayscale-0 transition-all brightness-200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Zoho_logo.svg" alt="Zoho" class="h-8 grayscale hover:grayscale-0 transition-all brightness-200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="h-9 grayscale hover:grayscale-0 transition-all brightness-200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft Dynamics" class="h-8 grayscale hover:grayscale-0 transition-all brightness-200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Freshworks_logo.svg" alt="Freshworks" class="h-8 grayscale hover:grayscale-0 transition-all brightness-200">
-            </div>
-            <!-- Duplicate for seamless loop -->
-            <div class="flex items-center gap-14 animate-marquee py-3 opacity-80 hover:opacity-100 transition-opacity" aria-hidden="true">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" class="h-9 grayscale hover:grayscale-0 transition-all brightness-200 contrast-120">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/HubSpot_Logo.svg" alt="HubSpot" class="h-8 grayscale hover:grayscale-0 transition-all brightness-200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Zendesk_logo.svg" alt="Zendesk" class="h-8 grayscale hover:grayscale-0 transition-all brightness-200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Zoho_logo.svg" alt="Zoho" class="h-8 grayscale hover:grayscale-0 transition-all brightness-200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="h-9 grayscale hover:grayscale-0 transition-all brightness-200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft Dynamics" class="h-8 grayscale hover:grayscale-0 transition-all brightness-200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Freshworks_logo.svg" alt="Freshworks" class="h-8 grayscale hover:grayscale-0 transition-all brightness-200">
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION BẢNG GIÁ FLEXIBLE PLANS (Bổ sung tính năng đầy đủ) -->
+    <!-- SECTION BẢNG GIÁ CLOUDXCS CONTACT CENTER -->
     <section id="pricing" class="py-24 bg-clory-bg border-t border-clory-border">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="text-xs uppercase tracking-widest text-clory-accent font-extrabold mb-3">Flexible Plans</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Các Gói Dịch Vụ CloryAI Agents</h3>
-                <p class="text-clory-textMuted">Liệt kê kết hợp đầy đủ danh mục tính năng chi tiết theo từng gói giải pháp phù hợp cho mọi quy mô doanh nghiệp.</p>
+                <!-- UPDATED HEADING EXACTLY AS REQUESTED -->
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Các Gói Dịch Vụ CloudXCS Contact Center</h3>
+                <p class="text-clory-textMuted text-sm">Lựa chọn gói giải pháp tối ưu theo nhu cầu PBX Only & Contact Center từ nhóm SOHO đến Tập đoàn Enterprise.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            <!-- CARDS GRID VIEW FOR 5 PLANS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-10">
                 
-                <!-- Gói 1: Trial -->
-                <div class="scroll-reveal p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow flex flex-col justify-between">
+                <!-- Gói CX1 (PBX Only) -->
+                <div class="p-5 rounded-2xl bg-clory-card border border-sky-500/30 card-border-glow flex flex-col justify-between relative">
                     <div>
-                        <h4 class="text-2xl font-extrabold text-white mb-1">Trial</h4>
-                        <p class="text-xs text-clory-textMuted mb-4">Dùng thử 30 ngày trải nghiệm</p>
-                        <div class="text-2xl font-black text-clory-accent mb-6">
-                            0đ <span class="text-xs font-normal text-clory-textMuted">/ 30 ngày</span>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-400 font-extrabold text-[10px] uppercase mb-3 border border-sky-500/30">
+                            PBX Only
+                        </span>
+                        <h4 class="text-xl font-black text-white">CX1</h4>
+                        <p class="text-[11px] text-clory-textMuted mb-3 font-semibold">(PBX Only)</p>
+                        <div class="text-xl font-extrabold text-sky-400 mb-1">
+                            From 29k <span class="text-xs font-normal text-clory-textMuted">/User/Tháng</span>
+                        </div>
+                        <div class="text-[11px] text-emerald-400 font-bold mb-4 flex items-center gap-1">
+                            <i data-lucide="gift" class="w-3.5 h-3.5"></i> Dùng thử: 0đ / 15 days
                         </div>
 
-                        <div class="space-y-3 text-xs border-t border-clory-border/60 pt-4">
-                            <p class="font-bold text-slate-200">Tính năng bao gồm:</p>
-                            <ul class="space-y-2.5 text-slate-300">
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Kênh hỗ trợ: <strong>Call (Đoàn thoại)</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Hỗ trợ khởi tạo: <strong>Có sẵn kịch bản mẫu</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Cấp độ Trợ lý AI: <strong>Cơ bản</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Tính năng quản trị: <strong>Dashboard tiêu chuẩn</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Thời hạn lưu trữ: <strong>30 ngày</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Hỗ trợ kỹ thuật: <strong>Ticket & Email</strong></span></li>
-                            </ul>
+                        <div class="space-y-2 text-[11px] border-t border-clory-border/60 pt-4 text-slate-300">
+                            <div class="flex justify-between"><span>Kênh liên lạc:</span> <strong class="text-white">Call</strong></div>
+                            <div class="flex justify-between"><span>Hệ thống Ticket:</span> <span class="text-slate-500">Không</span></div>
+                            <div class="flex justify-between"><span>Định tuyến, phân bổ:</span> <strong class="text-slate-300">Cơ bản</strong></div>
+                            <div class="flex justify-between"><span>Giám sát & Quản lý:</span> <span class="text-slate-500">Không</span></div>
+                            <div class="flex justify-between"><span>Ghi âm & lưu trữ:</span> <strong class="text-white">30 ngày</strong></div>
+                            <div class="flex justify-between"><span>Tích hợp ứng dụng bên thứ 3:</span> <span class="text-slate-500">Không</span></div>
+                            <div class="flex justify-between"><span>Phương thức tính phí:</span> <strong class="text-amber-400">Tokens</strong></div>
+                            <div class="flex justify-between"><span>Trợ lý CloryAI Agent:</span> <strong class="text-slate-300">Tuỳ chọn</strong></div>
+                            <div class="flex justify-between"><span>Trợ lý QL chất lượng:</span> <strong class="text-slate-300">Tiêu chuẩn</strong></div>
                         </div>
                     </div>
-                    <div class="pt-6">
-                        <a href="#contact" class="w-full block py-3 rounded-xl bg-clory-bg border border-clory-border hover:border-clory-accent text-white font-semibold text-center text-xs transition-all">
-                            Dùng thử 30 ngày
+                    <div class="pt-5">
+                        <a href="#contact" class="w-full block py-2.5 rounded-xl bg-clory-bg border border-clory-border hover:border-sky-400 text-white font-semibold text-center text-xs transition-all">
+                            Đăng ký CX1
                         </a>
                     </div>
                 </div>
 
-                <!-- Gói 2: CX1 -->
-                <div class="scroll-reveal p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow flex flex-col justify-between">
+                <!-- Gói CX2 (SOHO) -->
+                <div class="p-5 rounded-2xl bg-clory-card border border-amber-500/30 card-border-glow flex flex-col justify-between relative">
                     <div>
-                        <h4 class="text-2xl font-extrabold text-white mb-1">CX1</h4>
-                        <p class="text-xs text-clory-textMuted mb-4">Cho nhóm kinh doanh nhỏ</p>
-                        <div class="text-2xl font-black text-white mb-6">
-                            Liên hệ <span class="text-xs font-normal text-clory-textMuted">/tháng</span>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 font-extrabold text-[10px] uppercase mb-3 border border-amber-500/30">
+                            Contact Center
+                        </span>
+                        <h4 class="text-xl font-black text-white">CX2</h4>
+                        <p class="text-[11px] text-clory-textMuted mb-3 font-semibold">(SOHO)</p>
+                        <div class="text-xl font-extrabold text-amber-400 mb-1">
+                            From 259k <span class="text-xs font-normal text-clory-textMuted">/User/Tháng</span>
+                        </div>
+                        <div class="text-[11px] text-emerald-400 font-bold mb-4 flex items-center gap-1">
+                            <i data-lucide="gift" class="w-3.5 h-3.5"></i> Dùng thử: 0đ / 15 days
                         </div>
 
-                        <div class="space-y-3 text-xs border-t border-clory-border/60 pt-4">
-                            <p class="font-bold text-slate-200">Tính năng bao gồm:</p>
-                            <ul class="space-y-2.5 text-slate-300">
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Kênh hỗ trợ: <strong>Call & Webchat</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Cấp độ Trợ lý AI: <strong>Cơ bản</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Model Quota: <strong>Tokens linh hoạt</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Báo cáo Analytics: <strong>Chỉ số cơ bản</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Tự động chấm điểm QA: <strong>Có (Giới hạn)</strong></span></li>
-                            </ul>
+                        <div class="space-y-2 text-[11px] border-t border-clory-border/60 pt-4 text-slate-300">
+                            <div class="flex justify-between"><span>Kênh liên lạc:</span> <strong class="text-white">Call, Zalo</strong></div>
+                            <div class="flex justify-between"><span>Hệ thống Ticket:</span> <strong class="text-emerald-400">Có</strong></div>
+                            <div class="flex justify-between"><span>Định tuyến, phân bổ:</span> <strong class="text-slate-300">Cơ bản</strong></div>
+                            <div class="flex justify-between"><span>Giám sát & Quản lý:</span> <strong class="text-emerald-400">Có</strong></div>
+                            <div class="flex justify-between"><span>Ghi âm & lưu trữ:</span> <strong class="text-white">30 ngày (+)</strong></div>
+                            <div class="flex justify-between"><span>Tích hợp ứng dụng bên thứ 3:</span> <span class="text-slate-500">Không</span></div>
+                            <div class="flex justify-between"><span>Phương thức tính phí:</span> <strong class="text-amber-400">Tokens</strong></div>
+                            <div class="flex justify-between"><span>Trợ lý CloryAI Agent:</span> <strong class="text-slate-300">Tuỳ chọn</strong></div>
+                            <div class="flex justify-between"><span>Trợ lý QL chất lượng:</span> <strong class="text-slate-300">Tiêu chuẩn</strong></div>
                         </div>
                     </div>
-                    <div class="pt-6">
-                        <a href="#contact" class="w-full block py-3 rounded-xl bg-clory-bg border border-clory-border hover:border-clory-accent text-white font-semibold text-center text-xs transition-all">
-                            Đăng ký gói CX1
+                    <div class="pt-5">
+                        <a href="#contact" class="w-full block py-2.5 rounded-xl bg-clory-bg border border-clory-border hover:border-amber-400 text-white font-semibold text-center text-xs transition-all">
+                            Đăng ký CX2
                         </a>
                     </div>
                 </div>
 
-                <!-- Gói 3: CX2 -->
-                <div class="scroll-reveal p-6 rounded-2xl bg-clory-card border-2 border-clory-accent card-border-glow relative flex flex-col justify-between shadow-2xl">
-                    <div class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-clory-accent text-white text-[9px] font-extrabold uppercase tracking-wider">
-                        Phổ biến nhất
+                <!-- Gói CX3 (Small–Mid) -->
+                <div class="p-5 rounded-2xl bg-clory-card border-2 border-clory-accent card-border-glow relative flex flex-col justify-between shadow-2xl">
+                    <div class="absolute -top-3 right-3 px-2 py-0.5 rounded-full bg-clory-accent text-white text-[9px] font-black uppercase tracking-wider">
+                        Phổ biến
                     </div>
                     <div>
-                        <h4 class="text-2xl font-extrabold text-white mb-1">CX2</h4>
-                        <p class="text-xs text-clory-textMuted mb-4">Dành cho Doanh nghiệp vừa</p>
-                        <div class="text-2xl font-black text-amber-400 mb-6">
-                            Liên hệ <span class="text-xs font-normal text-clory-textMuted">/tháng</span>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-clory-accent/20 text-clory-accent font-extrabold text-[10px] uppercase mb-3 border border-clory-accent/30">
+                            Contact Center
+                        </span>
+                        <h4 class="text-xl font-black text-white">CX3</h4>
+                        <p class="text-[11px] text-clory-textMuted mb-3 font-semibold">(Small–Mid)</p>
+                        <div class="text-xl font-extrabold text-clory-accent mb-1">
+                            From 359k <span class="text-xs font-normal text-clory-textMuted">/User/Tháng</span>
+                        </div>
+                        <div class="text-[11px] text-slate-300 font-semibold mb-4 flex items-center gap-1">
+                            <i data-lucide="headphones" class="w-3.5 h-3.5 text-clory-accent"></i> Dùng thử: Liên hệ
                         </div>
 
-                        <div class="space-y-3 text-xs border-t border-clory-border/60 pt-4">
-                            <p class="font-bold text-amber-400">Tính năng bao gồm:</p>
-                            <ul class="space-y-2.5 text-slate-200">
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i> <span>Kênh hỗ trợ: <strong>Omnichannel (Call, Chat, Zalo)</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i> <span>Tích hợp Webhook / API: <strong>Tự động</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i> <span>Báo cáo Analytics: <strong>Tiêu chuẩn & Realtime</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i> <span>AI Agent: <strong>Sales Agent & Service Agent</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i> <span>Đánh giá cảm xúc Sentiment: <strong>Có</strong></span></li>
-                            </ul>
+                        <div class="space-y-2 text-[11px] border-t border-clory-border/60 pt-4 text-slate-200">
+                            <div class="flex justify-between"><span>Kênh liên lạc:</span> <strong class="text-white">Call, Zalo</strong></div>
+                            <div class="flex justify-between"><span>Hệ thống Ticket:</span> <strong class="text-emerald-400">Có</strong></div>
+                            <div class="flex justify-between"><span>Định tuyến, phân bổ:</span> <strong class="text-amber-400">Tiêu chuẩn</strong></div>
+                            <div class="flex justify-between"><span>Giám sát & Quản lý:</span> <strong class="text-amber-400">Tiêu chuẩn</strong></div>
+                            <div class="flex justify-between"><span>Ghi âm & lưu trữ:</span> <strong class="text-white">30 ngày (+)</strong></div>
+                            <div class="flex justify-between"><span>Tích hợp ứng dụng bên thứ 3:</span> <strong class="text-emerald-400">Có</strong></div>
+                            <div class="flex justify-between"><span>Phương thức tính phí:</span> <strong class="text-amber-400">Tokens</strong></div>
+                            <div class="flex justify-between"><span>Trợ lý CloryAI Agent:</span> <strong class="text-slate-200">Tuỳ chọn</strong></div>
+                            <div class="flex justify-between"><span>Trợ lý QL chất lượng:</span> <strong class="text-slate-200">Tiêu chuẩn</strong></div>
                         </div>
                     </div>
-                    <div class="pt-6">
-                        <a href="#contact" class="w-full block py-3 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-semibold text-center text-xs transition-all shadow-lg shadow-clory-accent/25">
-                            Lựa chọn gói CX2
+                    <div class="pt-5">
+                        <a href="#contact" class="w-full block py-2.5 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-semibold text-center text-xs transition-all shadow-lg shadow-clory-accent/25">
+                            Lựa chọn CX3
                         </a>
                     </div>
                 </div>
 
-                <!-- Gói 4: CX3 -->
-                <div class="scroll-reveal p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow flex flex-col justify-between">
+                <!-- Gói CX4 (Mid–Large) -->
+                <div class="p-5 rounded-2xl bg-clory-card border border-emerald-500/30 card-border-glow flex flex-col justify-between relative">
                     <div>
-                        <h4 class="text-2xl font-extrabold text-white mb-1">CX3</h4>
-                        <p class="text-xs text-clory-textMuted mb-4">Doanh nghiệp quy mô lớn</p>
-                        <div class="text-2xl font-black text-white mb-6">
-                            Liên hệ <span class="text-xs font-normal text-clory-textMuted">/tháng</span>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-extrabold text-[10px] uppercase mb-3 border border-emerald-500/30">
+                            Contact Center
+                        </span>
+                        <h4 class="text-xl font-black text-white">CX4</h4>
+                        <p class="text-[11px] text-clory-textMuted mb-3 font-semibold">(Mid–Large)</p>
+                        <div class="text-xl font-extrabold text-emerald-400 mb-1">
+                            From 659k <span class="text-xs font-normal text-clory-textMuted">/User/Tháng</span>
+                        </div>
+                        <div class="text-[11px] text-slate-300 font-semibold mb-4 flex items-center gap-1">
+                            <i data-lucide="headphones" class="w-3.5 h-3.5 text-emerald-400"></i> Dùng thử: Liên hệ
                         </div>
 
-                        <div class="space-y-3 text-xs border-t border-clory-border/60 pt-4">
-                            <p class="font-bold text-slate-200">Tính năng bao gồm:</p>
-                            <ul class="space-y-2.5 text-slate-300">
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Kênh hỗ trợ: <strong>Omni (+) Đa tổng đài</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Cấp độ Trợ lý AI: <strong>Nâng cao (Chuyên sâu)</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Tùy biến kịch bản riêng: <strong>100% Theo yêu cầu</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Chấm điểm 100% cuộc gọi: <strong>QA Agent & CSAT</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i> <span>Cam kết SLA hỗ trợ: <strong>24/7 Tức thì</strong></span></li>
-                            </ul>
+                        <div class="space-y-2 text-[11px] border-t border-clory-border/60 pt-4 text-slate-300">
+                            <div class="flex justify-between"><span>Kênh liên lạc:</span> <strong class="text-emerald-400">Omni (+)</strong></div>
+                            <div class="flex justify-between"><span>Hệ thống Ticket:</span> <strong class="text-emerald-400">Có</strong></div>
+                            <div class="flex justify-between"><span>Định tuyến, phân bổ:</span> <strong class="text-emerald-400">Nâng cao</strong></div>
+                            <div class="flex justify-between"><span>Giám sát & Quản lý:</span> <strong class="text-emerald-400">Nâng cao</strong></div>
+                            <div class="flex justify-between"><span>Ghi âm & lưu trữ:</span> <strong class="text-white">30 ngày (+)</strong></div>
+                            <div class="flex justify-between"><span>Tích hợp ứng dụng bên thứ 3:</span> <strong class="text-emerald-400">Có</strong></div>
+                            <div class="flex justify-between"><span>Phương thức tính phí:</span> <strong class="text-amber-400">Tokens</strong></div>
+                            <div class="flex justify-between"><span>Trợ lý CloryAI Agent:</span> <strong class="text-slate-300">Tuỳ chọn</strong></div>
+                            <div class="flex justify-between"><span>Trợ lý QL chất lượng:</span> <strong class="text-emerald-400">Nâng cao</strong></div>
                         </div>
                     </div>
-                    <div class="pt-6">
-                        <a href="#contact" class="w-full block py-3 rounded-xl bg-clory-bg border border-clory-border hover:border-clory-accent text-white font-semibold text-center text-xs transition-all">
-                            Đăng ký gói CX3
+                    <div class="pt-5">
+                        <a href="#contact" class="w-full block py-2.5 rounded-xl bg-clory-bg border border-clory-border hover:border-emerald-400 text-white font-semibold text-center text-xs transition-all">
+                            Đăng ký CX4
                         </a>
                     </div>
                 </div>
 
-                <!-- Gói 5: CX4 -->
-                <div class="scroll-reveal p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow flex flex-col justify-between">
+                <!-- Gói CX5 (Enterprise) -->
+                <div class="p-5 rounded-2xl bg-clory-card border border-purple-500/40 card-border-glow flex flex-col justify-between relative">
                     <div>
-                        <h4 class="text-2xl font-extrabold text-white mb-1">CX4</h4>
-                        <p class="text-xs text-clory-textMuted mb-4">Tập đoàn & Chuỗi hệ thống</p>
-                        <div class="text-2xl font-black text-purple-400 mb-6">
-                            Tùy chỉnh
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-400 font-extrabold text-[10px] uppercase mb-3 border border-purple-500/30">
+                            Contact Center
+                        </span>
+                        <h4 class="text-xl font-black text-white">CX5</h4>
+                        <p class="text-[11px] text-clory-textMuted mb-3 font-semibold">(Enterprise)</p>
+                        <div class="text-xl font-extrabold text-purple-400 mb-1">
+                            From 1,559k <span class="text-xs font-normal text-clory-textMuted">/User/Tháng</span>
+                        </div>
+                        <div class="text-[11px] text-slate-300 font-semibold mb-4 flex items-center gap-1">
+                            <i data-lucide="headphones" class="w-3.5 h-3.5 text-purple-400"></i> Dùng thử: Liên hệ
                         </div>
 
-                        <div class="space-y-3 text-xs border-t border-clory-border/60 pt-4">
-                            <p class="font-bold text-purple-300">Tính năng bao gồm:</p>
-                            <ul class="space-y-2.5 text-slate-300">
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i> <span>Model Quota: <strong>Built-in On-Premise/Cloud</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i> <span>Báo cáo Analytics Chuyên sâu: <strong>Custom Dashboard</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i> <span>Tích hợp MCP Server & CRM riêng</span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i> <span>Bảo mật cao cấp: <strong>ISO 27001 & Mã hóa dữ liệu</strong></span></li>
-                                <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i> <span>Đội ngũ Kỹ sư Dedicated: <strong>Hỗ trợ trực tiếp</strong></span></li>
-                            </ul>
+                        <div class="space-y-2 text-[11px] border-t border-clory-border/60 pt-4 text-slate-300">
+                            <div class="flex justify-between"><span>Kênh liên lạc:</span> <strong class="text-purple-400">Omni (+)</strong></div>
+                            <div class="flex justify-between"><span>Hệ thống Ticket:</span> <strong class="text-emerald-400">Có</strong></div>
+                            <div class="flex justify-between"><span>Định tuyến, phân bổ:</span> <strong class="text-purple-400">Thông minh</strong></div>
+                            <div class="flex justify-between"><span>Giám sát & Quản lý:</span> <strong class="text-purple-400">Nâng cao</strong></div>
+                            <div class="flex justify-between"><span>Ghi âm & lưu trữ:</span> <strong class="text-white">30 ngày (+)</strong></div>
+                            <div class="flex justify-between"><span>Tích hợp ứng dụng bên thứ 3:</span> <strong class="text-emerald-400">Có</strong></div>
+                            <div class="flex justify-between"><span>Phương thức tính phí:</span> <strong class="text-purple-300">Built-in</strong></div>
+                            <div class="flex justify-between"><span>Trợ lý CloryAI Agent:</span> <strong class="text-slate-300">Tuỳ chọn</strong></div>
+                            <div class="flex justify-between"><span>Trợ lý QL chất lượng:</span> <strong class="text-purple-400">Chuyên sâu</strong></div>
                         </div>
                     </div>
-                    <div class="pt-6">
-                        <a href="#contact" class="w-full block py-3 rounded-xl bg-clory-bg border border-clory-border hover:border-clory-accent text-white font-semibold text-center text-xs transition-all">
-                            Tư vấn gói CX4
+                    <div class="pt-5">
+                        <a href="#contact" class="w-full block py-2.5 rounded-xl bg-clory-bg border border-clory-border hover:border-purple-400 text-white font-semibold text-center text-xs transition-all">
+                            Tư vấn CX5
                         </a>
                     </div>
                 </div>
 
             </div>
+
+            <!-- TOGGLE BUTTON FOR DETAILED COMPARISON TABLE -->
+            <div class="text-center my-8">
+                <button id="toggle-comparison-btn" onclick="toggleComparisonTable()" class="px-8 py-3.5 rounded-full bg-clory-card border border-clory-border hover:border-clory-accent text-white font-bold text-sm transition-all shadow-xl hover:shadow-clory-accent/20 inline-flex items-center gap-2.5 group">
+                    <i data-lucide="table" class="w-4 h-4 text-clory-accent"></i>
+                    <span id="toggle-comparison-text">Xem chi tiết so sánh</span>
+                    <i data-lucide="chevron-down" id="toggle-comparison-icon" class="w-4 h-4 text-slate-400 transition-transform duration-300 group-hover:text-clory-accent"></i>
+                </button>
+            </div>
+
+            <!-- COLLAPSIBLE DETAILED FEATURE COMPARISON TABLE (UPDATED EXACTLY AS UPLOADED IMAGE) -->
+            <div id="detailed-comparison-wrapper" class="hidden transition-all duration-500 overflow-hidden">
+                <div class="scroll-reveal bg-clory-card border border-clory-border rounded-2xl overflow-hidden shadow-2xl p-6 mt-4">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-clory-border">
+                        <h4 class="text-base font-bold text-white flex items-center gap-2">
+                            <i data-lucide="table" class="w-5 h-5 text-clory-accent"></i> Bảng So Sánh Chi Tiết Tính Năng CloudXCS
+                        </h4>
+                        <div class="flex items-center gap-3">
+                            <span class="text-xs text-clory-textMuted">* Bảng đối chiếu chính xác theo ma trận tính năng hệ thống</span>
+                            <button onclick="toggleComparisonTable()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 flex items-center gap-1">
+                                <i data-lucide="chevron-up" class="w-3.5 h-3.5"></i> Thu gọn
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="border-b border-clory-border text-slate-300">
+                                    <th class="p-3 bg-clory-bg/80 text-clory-accent font-extrabold w-1/4 uppercase tracking-wider"></th>
+                                    <th class="p-3 bg-sky-950/40 text-sky-400 font-extrabold text-center uppercase border-l border-clory-border/40">PBX Only</th>
+                                    <th colspan="4" class="p-3 bg-amber-950/40 text-amber-400 font-extrabold text-center uppercase border-l border-clory-border/40">Contact Center</th>
+                                </tr>
+                                <tr class="border-b border-clory-border text-slate-300">
+                                    <th class="p-3 bg-clory-bg/80 text-clory-accent font-extrabold">DESCRIP. (VIE)</th>
+                                    <th class="p-3 bg-sky-950/30 text-sky-400 font-extrabold text-center border-l border-clory-border/40">CX1<br/><span class="text-[10px] font-normal text-slate-400">(PBX Only)</span></th>
+                                    <th class="p-3 bg-amber-950/30 text-amber-400 font-extrabold text-center border-l border-clory-border/40">CX2<br/><span class="text-[10px] font-normal text-slate-400">(SOHO)</span></th>
+                                    <th class="p-3 bg-orange-950/40 text-clory-accent font-extrabold text-center border-l border-clory-border/40">CX3<br/><span class="text-[10px] font-normal text-slate-400">(Small–Mid)</span></th>
+                                    <th class="p-3 bg-emerald-950/30 text-emerald-400 font-extrabold text-center border-l border-clory-border/40">CX4<br/><span class="text-[10px] font-normal text-slate-400">(Mid–Large)</span></th>
+                                    <th class="p-3 bg-purple-950/30 text-purple-400 font-extrabold text-center border-l border-clory-border/40">CX5<br/><span class="text-[10px] font-normal text-slate-400">(Enterprise)</span></th>
+                                </tr>
+                                <tr class="border-b border-clory-border font-extrabold bg-clory-bg/40">
+                                    <td class="p-3 text-clory-accent uppercase tracking-wider">Đơn giá tháng</td>
+                                    <td class="p-3 text-center text-sky-400 font-bold border-l border-clory-border/40">From 29k /User/Tháng</td>
+                                    <td class="p-3 text-center text-amber-400 font-bold border-l border-clory-border/40">From 259k /User/Tháng</td>
+                                    <td class="p-3 text-center text-clory-accent font-bold border-l border-clory-border/40">From 359k /User/Tháng</td>
+                                    <td class="p-3 text-center text-emerald-400 font-bold border-l border-clory-border/40">From 659k /User/Tháng</td>
+                                    <td class="p-3 text-center text-purple-400 font-bold border-l border-clory-border/40">From 1,559k /User/Tháng</td>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-clory-border/50 text-slate-200">
+                                <tr class="hover:bg-clory-bg/50">
+                                    <td class="p-3 font-semibold text-white">Kênh liên lạc</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">Call</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">Call, Zalo</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">Call, Zalo</td>
+                                    <td class="p-3 text-center font-bold text-emerald-400 border-l border-clory-border/40">Omni (+)</td>
+                                    <td class="p-3 text-center font-bold text-purple-400 border-l border-clory-border/40">Omni (+)</td>
+                                </tr>
+                                <tr class="hover:bg-clory-bg/50">
+                                    <td class="p-3 font-semibold text-white">Hệ thống Ticket</td>
+                                    <td class="p-3 text-center text-slate-500 border-l border-clory-border/40">Không</td>
+                                    <td class="p-3 text-center font-bold text-emerald-400 border-l border-clory-border/40">Có</td>
+                                    <td class="p-3 text-center font-bold text-emerald-400 border-l border-clory-border/40">Có</td>
+                                    <td class="p-3 text-center font-bold text-emerald-400 border-l border-clory-border/40">Có</td>
+                                    <td class="p-3 text-center font-bold text-emerald-400 border-l border-clory-border/40">Có</td>
+                                </tr>
+                                <tr class="hover:bg-clory-bg/50">
+                                    <td class="p-3 font-semibold text-white">Định tuyến, phân bổ</td>
+                                    <td class="p-3 text-center text-slate-300 border-l border-clory-border/40">Cơ bản</td>
+                                    <td class="p-3 text-center text-slate-300 border-l border-clory-border/40">Cơ bản</td>
+                                    <td class="p-3 text-center font-semibold text-amber-400 border-l border-clory-border/40">Tiêu chuẩn</td>
+                                    <td class="p-3 text-center font-semibold text-emerald-400 border-l border-clory-border/40">Nâng cao</td>
+                                    <td class="p-3 text-center font-bold text-purple-400 border-l border-clory-border/40">Thông minh</td>
+                                </tr>
+                                <tr class="hover:bg-clory-bg/50">
+                                    <td class="p-3 font-semibold text-white">Giám sát & Quản lý</td>
+                                    <td class="p-3 text-center text-slate-500 border-l border-clory-border/40">Không</td>
+                                    <td class="p-3 text-center font-bold text-emerald-400 border-l border-clory-border/40">Có</td>
+                                    <td class="p-3 text-center font-semibold text-amber-400 border-l border-clory-border/40">Tiêu chuẩn</td>
+                                    <td class="p-3 text-center font-semibold text-emerald-400 border-l border-clory-border/40">Nâng cao</td>
+                                    <td class="p-3 text-center font-semibold text-purple-400 border-l border-clory-border/40">Nâng cao</td>
+                                </tr>
+                                <tr class="hover:bg-clory-bg/50">
+                                    <td class="p-3 font-semibold text-white">Ghi âm & lưu trữ</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">30 ngày</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">30 ngày (+)</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">30 ngày (+)</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">30 ngày (+)</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">30 ngày (+)</td>
+                                </tr>
+                                <tr class="hover:bg-clory-bg/50">
+                                    <td class="p-3 font-semibold text-white">Tích hợp ứng dụng bên thứ 3</td>
+                                    <td class="p-3 text-center text-slate-500 border-l border-clory-border/40">Không</td>
+                                    <td class="p-3 text-center text-slate-500 border-l border-clory-border/40">Không</td>
+                                    <td class="p-3 text-center font-bold text-emerald-400 border-l border-clory-border/40">Có</td>
+                                    <td class="p-3 text-center font-bold text-emerald-400 border-l border-clory-border/40">Có</td>
+                                    <td class="p-3 text-center font-bold text-emerald-400 border-l border-clory-border/40">Có</td>
+                                </tr>
+                                <tr class="hover:bg-clory-bg/50">
+                                    <td class="p-3 font-semibold text-white">Phương thức tính phí & thanh toán</td>
+                                    <td class="p-3 text-center text-amber-400 font-medium border-l border-clory-border/40">Tokens</td>
+                                    <td class="p-3 text-center text-amber-400 font-medium border-l border-clory-border/40">Tokens</td>
+                                    <td class="p-3 text-center text-amber-400 font-medium border-l border-clory-border/40">Tokens</td>
+                                    <td class="p-3 text-center text-amber-400 font-medium border-l border-clory-border/40">Tokens</td>
+                                    <td class="p-3 text-center text-purple-400 font-bold border-l border-clory-border/40">Built-in</td>
+                                </tr>
+                                <tr class="hover:bg-clory-bg/50">
+                                    <td class="p-3 font-semibold text-white">Trợ lý CloryAI Agent</td>
+                                    <td class="p-3 text-center text-slate-300 border-l border-clory-border/40">Tuỳ chọn</td>
+                                    <td class="p-3 text-center text-slate-300 border-l border-clory-border/40">Tuỳ chọn</td>
+                                    <td class="p-3 text-center text-slate-300 border-l border-clory-border/40">Tuỳ chọn</td>
+                                    <td class="p-3 text-center text-slate-300 border-l border-clory-border/40">Tuỳ chọn</td>
+                                    <td class="p-3 text-center text-slate-300 border-l border-clory-border/40">Tuỳ chọn</td>
+                                </tr>
+                                <tr class="hover:bg-clory-bg/50">
+                                    <td class="p-3 font-semibold text-white">Trợ lý Quản lý chất lượng dịch vụ</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">Tiêu chuẩn</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">Tiêu chuẩn</td>
+                                    <td class="p-3 text-center border-l border-clory-border/40">Tiêu chuẩn</td>
+                                    <td class="p-3 text-center font-semibold text-emerald-400 border-l border-clory-border/40">Nâng cao</td>
+                                    <td class="p-3 text-center font-bold text-purple-400 border-l border-clory-border/40">Chuyên sâu</td>
+                                </tr>
+                                <tr class="hover:bg-clory-bg/50">
+                                    <td class="p-3 font-semibold text-white">Tài khoản dùng thử</td>
+                                    <td class="p-3 text-center text-emerald-400 font-bold border-l border-clory-border/40">0đ / 15 days</td>
+                                    <td class="p-3 text-center text-emerald-400 font-bold border-l border-clory-border/40">0đ / 15 days</td>
+                                    <td class="p-3 text-center text-slate-400 border-l border-clory-border/40">Liên hệ</td>
+                                    <td class="p-3 text-center text-slate-400 border-l border-clory-border/40">Liên hệ</td>
+                                    <td class="p-3 text-center text-slate-400 border-l border-clory-border/40">Liên hệ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1235,11 +791,11 @@
             </div>
             
             <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
-                CloryAI có thực sự hiệu quả cho hoạt động của bạn?
+                CloudXCS & CloryAI có thực sự hiệu quả cho bạn?
             </h2>
             
             <p class="text-clory-textMuted text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-                Công cụ ROI đo lường hiệu quả đầu tư và vận hành cùng CloryAI
+                Công cụ ROI đo lường hiệu quả đầu tư và vận hành Contact Center của bạn
             </p>
 
             <button onclick="openRoiModal()" class="px-9 py-4 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-bold text-base transition-all shadow-xl shadow-clory-accent/30 inline-flex items-center gap-3 group">
@@ -1250,46 +806,32 @@
         </div>
     </section>
 
-    <!-- POP-UP MODAL ROI CALCULATOR (Màu sắc đồng bộ chuẩn Dashboard) -->
+    <!-- POP-UP MODAL ROI CALCULATOR -->
     <div id="roi-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4 md:p-6 transition-all duration-300">
         <div id="roi-modal-content" class="bg-slate-100 border border-slate-300 rounded-3xl max-w-7xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative flex flex-col my-auto text-slate-800">
-            
+            <!-- Modal Header -->
             <div class="p-6 md:p-8 border-b border-slate-200 flex items-start justify-between bg-white/90 sticky top-0 z-20 backdrop-blur-md">
                 <div>
-                    <div class="hidden print-only-header-footer mb-4 border-b pb-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-slate-900">CloryAI Agents</span>
-                            <span class="text-xs text-slate-500">CLOUDPBX Enterprise CX Management Platform</span>
-                        </div>
-                    </div>
-
                     <h3 class="text-xl md:text-2xl font-extrabold text-slate-900 flex items-center gap-3">
                         <i data-lucide="calculator" class="w-6 h-6 text-clory-accent no-print"></i>
-                        Công cụ ROI đo lường hiệu quả đầu tư và vận hành cùng CloryAI
+                        Công cụ ROI đo lường hiệu quả đầu tư và vận hành cùng CloudXCS & CloryAI
                     </h3>
-                    
                     <p class="text-xs md:text-sm text-slate-600 mt-1">
-                        Hãy tìm hiểu xem cách CloryAI giúp bạn tối ưu hoá chi phí và nâng cao hiệu quả vận hành như thế nào
-                    </p>
-                    <p class="text-[11px] md:text-xs text-clory-accent font-semibold mt-0.5">
-                        (Vị trí đo lường: nhân viên Sales/CSKH với năng lực hỗ trợ 50 khách hàng / ngày, thời gian làm việc 8h x 26ngày)
+                        Hãy tìm hiểu xem cách CloudXCS & CloryAI giúp bạn tối ưu hoá chi phí và nâng cao hiệu quả vận hành như thế nào
                     </p>
                 </div>
-
                 <button onclick="closeRoiModal()" class="no-print p-2 rounded-xl bg-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-300 transition-colors">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
 
-            <!-- Body Modal ROI Engine -->
+            <!-- Modal Content Body -->
             <div class="p-6 md:p-8 grid grid-cols-1 lg:grid-cols-10 gap-8">
-                
+                <!-- Left Input Controls -->
                 <div class="lg:col-span-3 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-5">
                     <h4 class="text-sm font-extrabold uppercase tracking-wider text-clory-accent flex items-center gap-2">
-                        <i data-lucide="sliders" class="w-4 h-4"></i>
-                        Thông số đầu vào
+                        <i data-lucide="sliders" class="w-4 h-4"></i> Thông số đầu vào
                     </h4>
-
                     <div>
                         <div class="flex justify-between text-xs font-semibold mb-1 text-slate-700">
                             <span>1. Số nhân viên Sales/CSKH:</span>
@@ -1297,26 +839,21 @@
                         </div>
                         <input type="range" id="input-staff" min="1" max="200" value="5" oninput="calculateRoi()" class="w-full accent-clory-accent bg-slate-200 h-1.5 rounded-lg">
                     </div>
-
                     <div>
                         <label class="block text-xs font-semibold mb-1 text-slate-700">2. Lương TB mỗi nhân viên (VNĐ/tháng):</label>
                         <input type="text" id="input-salary" value="8.000.000" oninput="formatAndCalculateSalary(this)" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs font-mono focus:outline-none focus:border-clory-accent">
                     </div>
-
                     <div>
                         <div class="flex justify-between text-xs font-semibold mb-1 text-slate-700">
                             <span>3. Quản lý & Phúc lợi (% Lương):</span>
                             <span id="val-overhead" class="text-amber-600 font-bold">20%</span>
                         </div>
                         <input type="range" id="input-overhead" min="0" max="100" value="20" oninput="calculateRoi()" class="w-full accent-amber-500 bg-slate-200 h-1.5 rounded-lg">
-                        <span class="text-[10px] text-slate-500 block mt-0.5">* Đã bao gồm trích BHXH bắt buộc 21.5% Lương CB</span>
                     </div>
-
                     <div>
                         <label class="block text-xs font-semibold mb-1 text-slate-700">4. Tổng phiên (Gọi/Chat) / tháng:</label>
                         <input type="text" id="input-sessions" value="7.000" oninput="formatAndCalculateSessions(this)" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs font-mono focus:outline-none focus:border-clory-accent">
                     </div>
-
                     <div>
                         <div class="flex justify-between text-xs font-semibold mb-1 text-slate-700">
                             <span>5. Tỷ lệ CloryAI đảm nhận (%):</span>
@@ -1324,37 +861,31 @@
                         </div>
                         <input type="range" id="input-ai-rate" min="0" max="100" value="50" oninput="calculateRoi()" class="w-full accent-emerald-500 bg-slate-200 h-1.5 rounded-lg">
                     </div>
-
-                    <div class="pt-2 border-t border-slate-200">
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="text-slate-700 font-semibold">6. Lộ trình chuyển đổi:</span>
-                            <span class="px-2.5 py-1 rounded-lg bg-clory-accent/10 text-clory-accent border border-clory-accent/30 font-bold text-xs">3 Năm</span>
-                        </div>
-                    </div>
                 </div>
 
+                <!-- Right Results & Full Table -->
                 <div class="lg:col-span-7 space-y-6">
+                    <!-- Top Summary Metric Cards -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
                             <span class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1">Tỷ suất hoàn vốn (ROI)</span>
                             <div id="res-roi" class="text-3xl font-extrabold text-emerald-600">0%</div>
                         </div>
-
                         <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
-                            <span class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1">Số tiền tiết kiệm (VNĐ)</span>
+                            <span class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1">Số tiền tiết kiệm (3 Năm)</span>
                             <div id="res-savings" class="text-2xl font-extrabold text-clory-accent">0 VNĐ</div>
                         </div>
-
                         <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
-                            <span class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1">Năng suất CloryAI / Nhân viên</span>
+                            <span class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1">Năng suất CloryAI</span>
                             <div class="text-2xl font-extrabold text-amber-600">1000% <span class="text-xs font-normal text-slate-500">(10x)</span></div>
                         </div>
                     </div>
 
+                    <!-- FINANCIAL BREAKDOWN TABLE -->
                     <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
                         <table class="w-full text-left text-xs border-collapse">
                             <thead>
-                                <tr class="bg-slate-50 border-b border-slate-200 text-slate-700">
+                                <tr class="bg-slate-100 border-b border-slate-200 text-slate-800">
                                     <th class="p-3 font-bold">Chỉ số tài chính & Vận hành</th>
                                     <th class="p-3 font-bold text-right">Hiện tại</th>
                                     <th class="p-3 font-bold text-right text-emerald-700">Năm 1</th>
@@ -1373,23 +904,7 @@
                                     <td id="row-staff-tot" class="p-3 text-right font-mono font-bold bg-orange-50">--</td>
                                 </tr>
                                 <tr>
-                                    <td class="p-3 font-medium">2. Phiên hỗ trợ bởi nhân viên / tháng</td>
-                                    <td id="row-sess-staff-0" class="p-3 text-right font-mono">0</td>
-                                    <td id="row-sess-staff-1" class="p-3 text-right font-mono">0</td>
-                                    <td id="row-sess-staff-2" class="p-3 text-right font-mono">0</td>
-                                    <td id="row-sess-staff-3" class="p-3 text-right font-mono">0</td>
-                                    <td id="row-sess-staff-tot" class="p-3 text-right font-mono font-bold bg-orange-50">--</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-medium text-emerald-700">3. Phiên hỗ trợ bởi CloryAI / tháng</td>
-                                    <td id="row-sess-ai-0" class="p-3 text-right font-mono text-slate-400">0</td>
-                                    <td id="row-sess-ai-1" class="p-3 text-right font-mono text-emerald-700 font-bold">0</td>
-                                    <td id="row-sess-ai-2" class="p-3 text-right font-mono text-emerald-700 font-bold">0</td>
-                                    <td id="row-sess-ai-3" class="p-3 text-right font-mono text-emerald-700 font-bold">0</td>
-                                    <td id="row-sess-ai-tot" class="p-3 text-right font-mono font-bold bg-orange-50">--</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-medium">4. Chi phí Nhân viên (VNĐ / năm)</td>
+                                    <td class="p-3 font-medium">2. Chi phí Nhân viên (VNĐ / năm)</td>
                                     <td id="row-cost-staff-0" class="p-3 text-right font-mono">0</td>
                                     <td id="row-cost-staff-1" class="p-3 text-right font-mono">0</td>
                                     <td id="row-cost-staff-2" class="p-3 text-right font-mono">0</td>
@@ -1397,23 +912,23 @@
                                     <td id="row-cost-staff-tot" class="p-3 text-right font-mono font-bold bg-orange-50">0</td>
                                 </tr>
                                 <tr>
-                                    <td class="p-3 font-medium text-amber-700">5. Chi phí CloryAI (VNĐ / năm)</td>
+                                    <td class="p-3 font-medium">3. Chi phí Dịch vụ CloryAI (VNĐ / năm)</td>
                                     <td id="row-cost-ai-0" class="p-3 text-right font-mono text-slate-400">0</td>
-                                    <td id="row-cost-ai-1" class="p-3 text-right font-mono text-amber-700 font-bold">0</td>
-                                    <td id="row-cost-ai-2" class="p-3 text-right font-mono text-amber-700 font-bold">0</td>
-                                    <td id="row-cost-ai-3" class="p-3 text-right font-mono text-amber-700 font-bold">0</td>
-                                    <td id="row-cost-ai-tot" class="p-3 text-right font-mono font-bold text-amber-700 bg-orange-50">0</td>
+                                    <td id="row-cost-ai-1" class="p-3 text-right font-mono">0</td>
+                                    <td id="row-cost-ai-2" class="p-3 text-right font-mono">0</td>
+                                    <td id="row-cost-ai-3" class="p-3 text-right font-mono">0</td>
+                                    <td id="row-cost-ai-tot" class="p-3 text-right font-mono font-bold bg-orange-50">0</td>
                                 </tr>
-                                <tr class="bg-slate-100">
-                                    <td class="p-3 font-bold text-slate-900">6. TỔNG CHI PHÍ VẬN HÀNH (VNĐ)</td>
-                                    <td id="row-cost-tot-0" class="p-3 text-right font-mono font-bold">0</td>
-                                    <td id="row-cost-tot-1" class="p-3 text-right font-mono font-bold">0</td>
-                                    <td id="row-cost-tot-2" class="p-3 text-right font-mono font-bold">0</td>
-                                    <td id="row-cost-tot-3" class="p-3 text-right font-mono font-bold">0</td>
-                                    <td id="row-cost-tot-tot" class="p-3 text-right font-mono font-bold bg-orange-50">0</td>
+                                <tr class="bg-slate-50 font-semibold">
+                                    <td class="p-3">4. Tổng chi phí vận hành mới (VNĐ / năm)</td>
+                                    <td id="row-cost-total-0" class="p-3 text-right font-mono">0</td>
+                                    <td id="row-cost-total-1" class="p-3 text-right font-mono">0</td>
+                                    <td id="row-cost-total-2" class="p-3 text-right font-mono">0</td>
+                                    <td id="row-cost-total-3" class="p-3 text-right font-mono">0</td>
+                                    <td id="row-cost-total-tot" class="p-3 text-right font-mono font-bold bg-orange-50">0</td>
                                 </tr>
                                 <tr class="bg-orange-100 border-t-2 border-clory-accent">
-                                    <td class="p-3 font-extrabold text-clory-accent">7. TIẾT KIỆM NGÂN SÁCH (VNĐ & %)</td>
+                                    <td class="p-3 font-extrabold text-clory-accent">5. TIẾT KIỆM NGÂN SÁCH (VNĐ & %)</td>
                                     <td id="row-save-0" class="p-3 text-right font-mono text-slate-500">0 (0%)</td>
                                     <td id="row-save-1" class="p-3 text-right font-mono font-extrabold text-emerald-700">0</td>
                                     <td id="row-save-2" class="p-3 text-right font-mono font-extrabold text-emerald-700">0</td>
@@ -1423,225 +938,24 @@
                             </tbody>
                         </table>
                     </div>
-
-                    <div class="flex justify-end no-print">
-                        <button onclick="downloadRoiPdf()" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs transition-all flex items-center gap-2">
-                            <i data-lucide="download" class="w-4 h-4 text-clory-accent"></i>
-                            Tải báo cáo (PDF)
-                        </button>
-                    </div>
-
                 </div>
-
             </div>
-
-            <div class="hidden print-only-header-footer p-6 border-t border-slate-300 text-xs text-slate-600 space-y-1">
-                <div class="font-bold text-slate-900">THÔNG TIN LIÊN HỆ ĐƠN VỊ CUNG CẤP:</div>
-                <div>Email: hello@cloudpbx.vn | Hotline: 1900 6020</div>
-                <div>VP HCM: 22 Đường số 5, KDC Him Lam, P. Tân Hưng, TP.HCM</div>
-            </div>
-
-            <div class="p-4 bg-slate-200 border-t border-slate-300 text-center text-[11px] text-slate-600">
-                Kết quả chỉ là ước tính, hoàn toàn có thể thay đổi theo thực tế vận hành. Hãy liên hệ để chúng tôi được tư vấn chi tiết cho bạn.
-            </div>
-
         </div>
     </div>
 
-    <!-- SECTION: Khách hàng nói gì về CloryAI -->
-    <section class="py-24 bg-clory-card border-t border-clory-border">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest text-clory-accent font-extrabold mb-3">Testimonials</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Khách Hàng Nói Gì Về CloryAI</h3>
-                <p class="text-clory-textMuted">Lắng nghe chia sẻ thực tế từ các nhà quản lý đã bứt phá hiệu suất nhờ CloryAI Agents.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="scroll-reveal p-8 rounded-2xl bg-clory-bg border border-clory-border relative flex flex-col justify-between">
-                    <div class="mb-6">
-                        <div class="flex text-amber-400 gap-1 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                        </div>
-                        <p class="text-sm text-slate-300 italic leading-relaxed">
-                            "Từ khi đưa CloryAI Sales Agent vào quy trình trực chat fanpage, tỷ lệ phản hồi khách hàng trong vòng 5 giây đạt 100%. Doanh số bán hàng ban đêm tăng trưởng đến 35% mà không tốn thêm chi phí nhân sự."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-4 pt-4 border-t border-clory-border/60">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-clory-accent">
-                        <div>
-                            <h4 class="text-sm font-bold text-white">Chị Nguyễn Thanh Hà</h4>
-                            <p class="text-xs text-clory-textMuted">Giám đốc Bán lẻ - Chuỗi Fashion Retail</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="scroll-reveal p-8 rounded-2xl bg-clory-bg border border-clory-border relative flex flex-col justify-between">
-                    <div class="mb-6">
-                        <div class="flex text-amber-400 gap-1 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                        </div>
-                        <p class="text-sm text-slate-300 italic leading-relaxed">
-                            "AI Quality Assurance (QA) Agent đã hoàn toàn thay đổi cách chúng tôi quản lý tổng đài. Trước đây chỉ nghe lại kiểm tra được 5% cuộc gọi, nay AI tự động nghe & chấm điểm 100% cuộc gọi cực kỳ chính xác."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-4 pt-4 border-t border-clory-border/60">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-clory-accent">
-                        <div>
-                            <h4 class="text-sm font-bold text-white">Anh Trần Minh Tuấn</h4>
-                            <p class="text-xs text-clory-textMuted">Trưởng phòng CX - Tập đoàn Medicare</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="scroll-reveal p-8 rounded-2xl bg-clory-bg border border-clory-border relative flex flex-col justify-between">
-                    <div class="mb-6">
-                        <div class="flex text-amber-400 gap-1 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                        </div>
-                        <p class="text-sm text-slate-300 italic leading-relaxed">
-                            "Hệ thống CloryAI Service Flow xử lý tự động hơn 80% các yêu cầu đặt bàn và giải đáp thắc mắc dịch vụ của du khách. Đội ngũ nhân sự của chúng tôi có nhiều thời gian tập trung vào nâng cao chất lượng tại chỗ."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-4 pt-4 border-t border-clory-border/60">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80" alt="Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-clory-accent">
-                        <div>
-                            <h4 class="text-sm font-bold text-white">Chị Lê Hoàng Yến</h4>
-                            <p class="text-xs text-clory-textMuted">Vận hành - Hospitality Group</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: Tài nguyên (#resources) -->
-    <section id="resources" class="py-24 bg-clory-bg border-t border-clory-border">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest text-clory-accent font-extrabold mb-3">Resource Hub</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Tài Nguyên & Kiến Thức CX</h3>
-                <p class="text-clory-textMuted">Tổng hợp tài liệu chuyên sâu, sự kiện công nghệ và ebooks độc quyền từ CloryAI.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div id="docs" class="scroll-reveal bg-clory-card border border-clory-border rounded-2xl overflow-hidden card-border-glow flex flex-col justify-between">
-                    <div>
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80" alt="Tài liệu" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                            <span class="absolute top-3 left-3 bg-clory-accent text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">Tài liệu API & Guide</span>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-lg font-bold text-white mb-2">Trung Tâm Tài Liệu Kỹ Thuật (Docs)</h4>
-                            <p class="text-xs text-clory-textMuted leading-relaxed mb-4">
-                                Bảng hướng dẫn tích hợp SDK, kết nối API webhook và cấu hình kịch bản tự động hóa cho các dòng AI Agent.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <a href="#docs" class="text-xs text-clory-accent font-bold hover:underline flex items-center gap-1">Khám phá tài liệu <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
-                    </div>
-                </div>
-
-                <div id="events" class="scroll-reveal bg-clory-card border border-clory-border rounded-2xl overflow-hidden card-border-glow flex flex-col justify-between">
-                    <div>
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&auto=format&fit=crop&q=80" alt="Sự kiện" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                            <span class="absolute top-3 left-3 bg-sky-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">Sự kiện & Workshop</span>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-lg font-bold text-white mb-2">Hội Thảo AI CX Summit 2026</h4>
-                            <p class="text-xs text-clory-textMuted leading-relaxed mb-4">
-                                Chuỗi hội thảo trực tuyến và offline chia sẻ xu hướng ứng dụng lực lượng lao động số trong ngành bán lẻ & dịch vụ.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <a href="#events" class="text-xs text-sky-400 font-bold hover:underline flex items-center gap-1">Đăng ký tham gia <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
-                    </div>
-                </div>
-
-                <div id="ebook" class="scroll-reveal bg-clory-card border border-clory-border rounded-2xl overflow-hidden card-border-glow flex flex-col justify-between">
-                    <div>
-                        <div class="h-48 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&auto=format&fit=crop&q=80" alt="Ebook" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                            <span class="absolute top-3 left-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase">Ebook Độc Quyền</span>
-                        </div>
-                        <div class="p-6">
-                            <h4 class="text-lg font-bold text-white mb-2">Cẩm Nang Tự Động Hóa Trải Nghiệm Khách Hàng</h4>
-                            <p class="text-xs text-clory-textMuted leading-relaxed mb-4">
-                                Tải miễn phí Ebook hướng dẫn chi tiết xây dựng lộ trình chuyển đổi số phòng CSKH và Sales bằng AI.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <a href="#ebook" class="text-xs text-amber-400 font-bold hover:underline flex items-center gap-1">Tải về Ebook miễn phí <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION NEWS & UPDATES -->
-    <section id="news" class="py-20 bg-clory-card border-t border-clory-border">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <h2 class="text-xs uppercase tracking-widest text-clory-accent font-extrabold mb-3">News & Updates</h2>
-                    <h3 class="text-3xl font-bold text-white">Tin Tức Công Nghệ CloryAI</h3>
-                </div>
-                <a href="#news" class="mt-4 md:mt-0 text-sm text-clory-accent font-semibold hover:underline flex items-center gap-1">Xem tất cả tin tức <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- News Item 1 -->
-                <div class="scroll-reveal bg-clory-bg border border-clory-border rounded-2xl overflow-hidden card-border-glow flex flex-col sm:flex-row">
-                    <div class="sm:w-2/5 h-48 sm:h-auto overflow-hidden shrink-0">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&auto=format&fit=crop&q=80" alt="News 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="p-6 sm:w-3/5 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[11px] text-clory-accent font-bold mb-1">CÔNG NGHỆ VOICE AI</div>
-                            <div class="text-xs text-slate-400 mb-2">21 Tháng 7, 2026</div>
-                            <h4 class="text-base font-bold text-white mb-2 leading-snug">CloryAI nâng cấp tính năng AI Quality Assurance thế hệ mới</h4>
-                            <p class="text-xs text-clory-textMuted line-clamp-2">Tích hợp mô hình nhận diện giọng nói tiếng Việt đa vùng miền với độ chính xác trên 98%.</p>
-                        </div>
-                        <a href="#news" class="mt-4 text-xs font-semibold text-slate-300 hover:text-clory-accent inline-flex items-center gap-1">Đọc bài viết <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
-                    </div>
-                </div>
-
-                <!-- News Item 2 -->
-                <div class="scroll-reveal bg-clory-bg border border-clory-border rounded-2xl overflow-hidden card-border-glow flex flex-col sm:flex-row">
-                    <div class="sm:w-2/5 h-48 sm:h-auto overflow-hidden shrink-0">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=500&auto=format&fit=crop&q=80" alt="News 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="p-6 sm:w-3/5 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[11px] text-amber-400 font-bold mb-1">GIẢI THƯỞNG & VINH DANH</div>
-                            <div class="text-xs text-slate-400 mb-2">15 Tháng 7, 2026</div>
-                            <h4 class="text-base font-bold text-white mb-2 leading-snug">CloryAI Growth Flow đạt danh hiệu Nền tảng CX xuất sắc nhất</h4>
-                            <p class="text-xs text-clory-textMuted line-clamp-2">Ghi nhận sự đóng góp trong việc tối ưu hóa tỷ lệ giữ chân khách hàng cho hơn 200 doanh nghiệp.</p>
-                        </div>
-                        <a href="#news" class="mt-4 text-xs font-semibold text-slate-300 hover:text-clory-accent inline-flex items-center gap-1">Đọc bài viết <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: Liên hệ (#contact) / Form Đăng ký Demo -->
+    <!-- SECTION: Liên hệ / Form Đăng ký Consultation -->
     <section id="contact" class="py-20 border-t border-clory-border bg-gradient-to-b from-clory-bg to-clory-card">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-10">
                 <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
-                    Transform Your CX with CloryAI
+                    Transform Your Contact Center with CloudXCS
                 </h2>
                 <p class="text-clory-textMuted text-base max-w-2xl mx-auto">
-                    Bắt đầu xây dựng lực lượng lao động số thông minh cho doanh nghiệp của bạn. Đăng ký trải nghiệm Demo ngay hôm nay!
+                    Bắt đầu nâng cấp Contact Center và xây dựng lực lượng lao động số cho doanh nghiệp của bạn.
                 </p>
             </div>
 
-            <form class="scroll-reveal bg-clory-bg border border-clory-border p-8 rounded-2xl shadow-2xl space-y-4" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ lại sớm nhất.');">
+            <form class="scroll-reveal bg-clory-bg border border-clory-border p-8 rounded-2xl shadow-2xl space-y-4" onsubmit="event.preventDefault(); showMessageModal('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ tư vấn CloudXCS sớm nhất.');">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 mb-2">Họ và tên *</label>
@@ -1652,28 +966,18 @@
                         <input type="email" required placeholder="a.nguyen@company.com" class="w-full px-4 py-3 rounded-xl bg-clory-card border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent transition-colors">
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-2">Số điện thoại *</label>
-                        <input type="tel" required placeholder="0901234567" class="w-full px-4 py-3 rounded-xl bg-clory-card border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent transition-colors">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-2">Tên doanh nghiệp</label>
-                        <input type="text" placeholder="Công ty ABC" class="w-full px-4 py-3 rounded-xl bg-clory-card border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent transition-colors">
-                    </div>
-                </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-2">Nhu cầu triển khai</label>
-                    <textarea rows="3" placeholder="Chia sẻ nhu cầu sử dụng AI Agent của bạn..." class="w-full px-4 py-3 rounded-xl bg-clory-card border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent transition-colors"></textarea>
+                    <label class="block text-xs font-semibold text-slate-300 mb-2">Số điện thoại *</label>
+                    <input type="tel" required placeholder="0901234567" class="w-full px-4 py-3 rounded-xl bg-clory-card border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent transition-colors">
                 </div>
                 <button type="submit" class="w-full py-4 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-semibold text-sm transition-all shadow-lg shadow-clory-accent/25">
-                    Gửi Yêu Cầu Demo
+                    Gửi Yêu Cầu Tư Vấn CloudXCS
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- Navigation Footer (Bổ sung thêm Cột Giải pháp CloryAI Flow) -->
+    <!-- Navigation Footer -->
     <footer class="border-t border-clory-border bg-clory-bg pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
@@ -1682,29 +986,13 @@
                         <div class="w-8 h-8 rounded-lg bg-clory-accent flex items-center justify-center font-black text-white">
                             C
                         </div>
-                        <span class="text-xl font-bold text-white">Clory<span class="text-clory-accent">AI</span> Agents</span>
+                        <span class="text-xl font-bold text-white">CloudXCS<span class="text-clory-accent"> Contact Center</span></span>
                     </div>
                     <p class="text-xs text-clory-textMuted leading-relaxed max-w-sm">
-                        Nền tảng quản trị trải nghiệm khách hàng hàng đầu phát triển dựa trên lực lượng lao động số AI Agents thế hệ mới.
+                        Giải pháp Contact Center & Tổng đài đa kênh thế hệ mới kết hợp sức mạnh trí tuệ nhân tạo CloryAI.
                     </p>
-
-                    <div class="pt-2 space-y-2 text-xs text-slate-300">
-                        <div class="flex items-center gap-2">
-                            <i data-lucide="mail" class="w-3.5 h-3.5 text-clory-accent shrink-0"></i>
-                            <a href="mailto:hello@cloudpbx.vn" class="hover:text-clory-accent transition-colors">hello@cloudpbx.vn</a>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i data-lucide="phone" class="w-3.5 h-3.5 text-clory-accent shrink-0"></i>
-                            <a href="tel:19006020" class="hover:text-clory-accent transition-colors font-medium">1900 6020</a>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-clory-accent shrink-0 mt-0.5"></i>
-                            <span>VP HCM: 22 Đường số 5, KDC Him Lam, P. Tân Hưng, TP.HCM</span>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Bổ sung Cột Giải Pháp CloryAI Flow -->
                 <div>
                     <h4 class="text-xs font-extrabold uppercase tracking-wider text-clory-accent mb-4">Giải pháp Flow</h4>
                     <ul class="space-y-2.5 text-xs text-slate-400">
@@ -1720,18 +1008,14 @@
                     <ul class="space-y-2.5 text-xs text-slate-400">
                         <li><a href="#about" class="hover:text-clory-accent transition-colors">Giới thiệu</a></li>
                         <li><a href="#news" class="hover:text-clory-accent transition-colors">Tin tức</a></li>
-                        <li><a href="#recruitment" class="hover:text-clory-accent transition-colors">Tuyển dụng</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-white mb-4">Dịch vụ nổi bật</h4>
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-white mb-4">Dịch vụ</h4>
                     <ul class="space-y-2.5 text-xs text-slate-400">
                         <li><a href="#cpbx" class="hover:text-clory-accent transition-colors">Dịch vụ Tổng đài ảo</a></li>
                         <li><a href="#cxcs" class="hover:text-clory-accent transition-colors">Dịch vụ Contact Center</a></li>
-                        <li><a href="#cloryai" class="hover:text-clory-accent transition-colors">Dịch vụ CloryAI</a></li>
-                        <li><a href="#cacs" class="hover:text-clory-accent transition-colors">Dịch vụ Gọi tự động</a></li>
-                        <li><a href="#csms" class="hover:text-clory-accent transition-colors">Dịch vụ tin nhắn</a></li>
                     </ul>
                 </div>
 
@@ -1740,20 +1024,29 @@
                     <ul class="space-y-2.5 text-xs text-slate-400">
                         <li><a href="#privacy" class="hover:text-clory-accent transition-colors">Quy định bảo mật</a></li>
                         <li><a href="#serviceterms" class="hover:text-clory-accent transition-colors">Chính sách dịch vụ</a></li>
-                        <li><a href="#anticorruption" class="hover:text-clory-accent transition-colors">Chính sách chống tham nhũng</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="pt-8 border-t border-clory-border/60 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-slate-500 text-xs">
-                    © 2026 CloryAI Agents. Powered by CLOUDPBX. All rights reserved.
-                </p>
+            <div class="pt-8 border-t border-clory-border/60 text-center text-slate-500 text-xs">
+                © 2026 CloudXCS & CloryAI Agents. Powered by CLOUDPBX. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Scripts Engine & Modal Triggers -->
+    <!-- Notification Toast Modal -->
+    <div id="message-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-clory-card border border-clory-border rounded-2xl p-6 max-w-sm w-full text-center space-y-4 shadow-2xl">
+            <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+                <i data-lucide="check-circle" class="w-6 h-6"></i>
+            </div>
+            <p id="message-modal-text" class="text-sm font-semibold text-white"></p>
+            <button onclick="closeMessageModal()" class="w-full py-2.5 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-semibold text-xs transition-colors">
+                Đóng
+            </button>
+        </div>
+    </div>
+
     <script>
         lucide.createIcons();
 
@@ -1770,56 +1063,40 @@
             calculateRoi();
         });
 
-        /* Dashboard Pop-up Triggers */
-        function openCriticalModal() {
-            document.getElementById('critical-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeCriticalModal() {
-            document.getElementById('critical-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+        function toggleComparisonTable() {
+            const wrapper = document.getElementById('detailed-comparison-wrapper');
+            const text = document.getElementById('toggle-comparison-text');
+            const icon = document.getElementById('toggle-comparison-icon');
 
-        function openImprovementModal() {
-            document.getElementById('improvement-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeImprovementModal() {
-            document.getElementById('improvement-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        /* Topics Pop-up Controls */
-        function openTopicsModal() {
-            document.getElementById('topics-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeTopicsModal() {
-            document.getElementById('topics-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        /* ROI Modal Controls */
-        function openRoiModal() {
-            document.getElementById('roi-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            calculateRoi();
-        }
-        function closeRoiModal() {
-            document.getElementById('roi-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeRoiModal();
-                closeCriticalModal();
-                closeImprovementModal();
-                closeTopicsModal();
+            if (wrapper.classList.contains('hidden')) {
+                wrapper.classList.remove('hidden');
+                text.innerText = 'Thu gọn';
+                icon.classList.add('rotate-180');
+                wrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                wrapper.classList.add('hidden');
+                text.innerText = 'Xem chi tiết so sánh';
+                icon.classList.remove('rotate-180');
             }
-        });
+        }
 
-        /* Utility Helpers */
+        function showMessageModal(msg) {
+            document.getElementById('message-modal-text').innerText = msg;
+            document.getElementById('message-modal').classList.remove('hidden');
+        }
+
+        function closeMessageModal() {
+            document.getElementById('message-modal').classList.add('hidden');
+        }
+
+        function openRoiModal() { 
+            document.getElementById('roi-modal').classList.remove('hidden'); 
+            calculateRoi(); 
+        }
+        function closeRoiModal() { 
+            document.getElementById('roi-modal').classList.add('hidden'); 
+        }
+
         function parseFormattedNumber(val) {
             if (!val) return 0;
             return parseFloat(val.toString().replace(/\./g, '').replace(/,/g, '')) || 0;
@@ -1841,7 +1118,7 @@
             calculateRoi();
         }
 
-        /* LÕI TÍNH TOÁN CÔNG CỤ ROI ENGINE (2.500 VNĐ / PHIÊN) */
+        /* ACCURATE ROI CALCULATION SCRIPT */
         function calculateRoi() {
             const staffCount = parseInt(document.getElementById('input-staff').value) || 1;
             const baseSalary = parseFormattedNumber(document.getElementById('input-salary').value);
@@ -1853,85 +1130,63 @@
             document.getElementById('val-overhead').innerText = overheadPct + "%";
             document.getElementById('val-ai-rate').innerText = aiSharePct + "%";
 
-            const bhxhPct = 21.5;
-            const totalOverheadPct = (overheadPct + bhxhPct) / 100;
-            const fullStaffCostPerMonth = baseSalary * (1 + totalOverheadPct);
-            
-            const costPerAiSession = 2500;
-            const humanMaxMonthlyCapacity = 1300;
-
-            const currentStaffCostMonthly = staffCount * fullStaffCostPerMonth;
-            const currentStaffCostYearly = currentStaffCostMonthly * 12;
+            // Full staff cost including management overhead + insurance/benefits
+            const fullStaffCostPerMonth = baseSalary * (1 + (overheadPct + 21.5) / 100);
+            const currentStaffCostYearly = staffCount * fullStaffCostPerMonth * 12;
 
             const aiShareRatio = aiSharePct / 100;
             const aiMonthlySessions = totalMonthlySessions * aiShareRatio;
             const staffMonthlySessions = totalMonthlySessions - aiMonthlySessions;
 
-            let requiredStaff = Math.ceil(staffMonthlySessions / humanMaxMonthlyCapacity);
-            if (staffMonthlySessions === 0) requiredStaff = 0;
+            let requiredStaff = Math.ceil(staffMonthlySessions / 1300);
+            if (staffMonthlySessions <= 0) requiredStaff = 0;
 
             const yearlyStaffCost = requiredStaff * fullStaffCostPerMonth * 12;
-            const yearlyAiCost = aiMonthlySessions * costPerAiSession * 12;
-            const yearlyTotalCostWithAi = yearlyStaffCost + yearlyAiCost;
+            const yearlyAiCost = aiMonthlySessions * 2500 * 12;
 
+            // Row 0 (Current Baseline)
             document.getElementById('row-staff-0').innerText = staffCount;
-            document.getElementById('row-sess-staff-0').innerText = formatVndNumber(totalMonthlySessions);
-            document.getElementById('row-sess-ai-0').innerText = "0";
             document.getElementById('row-cost-staff-0').innerText = formatVndNumber(currentStaffCostYearly);
             document.getElementById('row-cost-ai-0').innerText = "0";
-            document.getElementById('row-cost-tot-0').innerText = formatVndNumber(currentStaffCostYearly);
+            document.getElementById('row-cost-total-0').innerText = formatVndNumber(currentStaffCostYearly);
             document.getElementById('row-save-0').innerText = "0 VNĐ (0%)";
 
             let total3YearSavings = 0;
+            let total3YearStaffCost = 0;
             let total3YearAiCost = 0;
             let total3YearNewCost = 0;
 
             for (let year = 1; year <= 3; year++) {
-                const yearMultiplier = Math.pow(1.03, year - 1);
+                const yearMultiplier = Math.pow(1.03, year - 1); // 3% annual inflation adjustment
                 const yearStaffCost = yearlyStaffCost * yearMultiplier;
                 const yearAiCost = yearlyAiCost;
                 const yearTotalCost = yearStaffCost + yearAiCost;
                 const yearBaselineCost = currentStaffCostYearly * yearMultiplier;
                 const yearSave = yearBaselineCost - yearTotalCost;
-                const yearSavePct = yearBaselineCost > 0 ? (yearSave / yearBaselineCost) * 100 : 0;
+                const savePct = Math.round((yearSave / yearBaselineCost) * 100);
 
                 document.getElementById(`row-staff-${year}`).innerText = requiredStaff;
-                document.getElementById(`row-sess-staff-${year}`).innerText = formatVndNumber(staffMonthlySessions);
-                document.getElementById(`row-sess-ai-${year}`).innerText = formatVndNumber(aiMonthlySessions);
                 document.getElementById(`row-cost-staff-${year}`).innerText = formatVndNumber(yearStaffCost);
                 document.getElementById(`row-cost-ai-${year}`).innerText = formatVndNumber(yearAiCost);
-                document.getElementById(`row-cost-tot-${year}`).innerText = formatVndNumber(yearTotalCost);
-                document.getElementById(`row-save-${year}`).innerText = formatVndNumber(yearSave) + " (" + Math.round(yearSavePct) + "%)";
+                document.getElementById(`row-cost-total-${year}`).innerText = formatVndNumber(yearTotalCost);
+                document.getElementById(`row-save-${year}`).innerText = `${formatVndNumber(yearSave)} (${savePct}%)`;
 
                 total3YearSavings += yearSave;
+                total3YearStaffCost += yearStaffCost;
                 total3YearAiCost += yearAiCost;
                 total3YearNewCost += yearTotalCost;
             }
 
-            const totalBaseline3Years = currentStaffCostYearly * 3.09;
-            const totalSavingsPct = totalBaseline3Years > 0 ? (total3YearSavings / totalBaseline3Years) * 100 : 0;
-
-            document.getElementById('row-staff-tot').innerText = requiredStaff;
-            document.getElementById('row-sess-staff-tot').innerText = formatVndNumber(staffMonthlySessions * 36);
-            document.getElementById('row-sess-ai-tot').innerText = formatVndNumber(aiMonthlySessions * 36);
-            document.getElementById('row-cost-staff-tot').innerText = formatVndNumber(yearlyStaffCost * 3.09);
+            // Totals column
+            document.getElementById('row-cost-staff-tot').innerText = formatVndNumber(total3YearStaffCost);
             document.getElementById('row-cost-ai-tot').innerText = formatVndNumber(total3YearAiCost);
-            document.getElementById('row-cost-tot-tot').innerText = formatVndNumber(total3YearNewCost);
-            document.getElementById('row-save-tot').innerText = formatVndNumber(total3YearSavings) + " (" + Math.round(totalSavingsPct) + "%)";
+            document.getElementById('row-cost-total-tot').innerText = formatVndNumber(total3YearNewCost);
+            document.getElementById('row-save-tot').innerText = formatVndNumber(total3YearSavings) + " VNĐ";
 
-            let roiPct = 0;
-            if (total3YearAiCost > 0) {
-                roiPct = (total3YearSavings / total3YearAiCost) * 100;
-            } else if (total3YearSavings > 0) {
-                roiPct = 1000;
-            }
-
-            document.getElementById('res-roi').innerText = Math.round(roiPct) + "%";
+            // Metric Summary Cards
+            const roiPct = total3YearAiCost > 0 ? Math.round((total3YearSavings / total3YearAiCost) * 100) : 0;
+            document.getElementById('res-roi').innerText = roiPct + "%";
             document.getElementById('res-savings').innerText = formatVndNumber(total3YearSavings) + " VNĐ";
-        }
-
-        function downloadRoiPdf() {
-            window.print();
         }
     </script>
 </body>
