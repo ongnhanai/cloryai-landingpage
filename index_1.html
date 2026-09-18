@@ -359,6 +359,11 @@
                         <button onclick="setLanguage('vi')" id="lang-vi-btn" class="px-2.5 py-1 rounded-lg bg-clory-accent text-white transition-all">VI</button>
                         <button onclick="setLanguage('en')" id="lang-en-btn" class="px-2.5 py-1 rounded-lg text-slate-600 hover:text-slate-900 transition-all">EN</button>
                     </div>
+                    <!-- Currency Toggle Button -->
+                    <div class="flex items-center bg-slate-200 p-1 rounded-xl text-xs font-bold no-print">
+                        <button onclick="setCurrency('VND')" id="curr-vnd-btn" class="px-2.5 py-1 rounded-lg bg-clory-accent text-white transition-all">VND</button>
+                        <button onclick="setCurrency('USD')" id="curr-usd-btn" class="px-2.5 py-1 rounded-lg text-slate-600 hover:text-slate-900 transition-all">USD</button>
+                    </div>
                     <button onclick="closeRoiModal()" class="no-print p-2 rounded-xl bg-slate-200 text-slate-600 hover:text-slate-900 transition-colors">
                         <i data-lucide="x" class="w-6 h-6"></i>
                     </button>
@@ -379,7 +384,7 @@
                         <input type="range" id="input-staff" min="1" max="200" value="5" oninput="calculateRoi()" class="w-full accent-clory-accent bg-slate-200 h-1.5 rounded-lg">
                     </div>
                     <div>
-                        <label class="block font-semibold mb-1 text-slate-700" data-i18n="labelSalary">2. Lương TB mỗi nhân viên (VNĐ/tháng):</label>
+                        <label class="block font-semibold mb-1 text-slate-700" data-i18n="labelSalary">2. Lương TB mỗi nhân viên:</label>
                         <input type="text" id="input-salary" value="8.000.000" oninput="formatAndCalculateSalary(this)" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 font-mono">
                     </div>
                     <div>
@@ -415,8 +420,8 @@
                             <div id="res-roi" class="text-3xl font-extrabold text-emerald-600">0%</div>
                         </div>
                         <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
-                            <span class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1" data-i18n="resSavingsTitle">Số tiền tiết kiệm (VNĐ)</span>
-                            <div id="res-savings" class="text-2xl font-extrabold text-clory-accent">0 VNĐ</div>
+                            <span class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1" data-i18n="resSavingsTitle">Số tiền tiết kiệm</span>
+                            <div id="res-savings" class="text-2xl font-extrabold text-clory-accent">0</div>
                         </div>
                         <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
                             <span class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1" data-i18n="resProductivityTitle">Năng suất CloryAI</span>
@@ -487,7 +492,7 @@
                                 </tr>
                                 <tr class="bg-orange-100 border-t-2 border-clory-accent">
                                     <td class="p-3 font-extrabold text-clory-accent" data-i18n="row7Title">7. TIẾT KIỆM NGÂN SÁCH (VNĐ & %)</td>
-                                    <td id="row-save-0" class="p-3 text-right font-mono text-slate-500">0 VNĐ (0%)</td>
+                                    <td id="row-save-0" class="p-3 text-right font-mono text-slate-500">0 (0%)</td>
                                     <td id="row-save-1" class="p-3 text-right font-mono font-extrabold text-emerald-700">0</td>
                                     <td id="row-save-2" class="p-3 text-right font-mono font-extrabold text-emerald-700">0</td>
                                     <td id="row-save-3" class="p-3 text-right font-mono font-extrabold text-emerald-700">0</td>
@@ -556,6 +561,8 @@
         lucide.createIcons();
 
         let currentLang = 'vi';
+        let currentCurr = 'VND';
+        const usdRate = 25400; // Exchange rate USD to VND
 
         const translations = {
             vi: {
@@ -567,7 +574,7 @@
                 modalNote: "(Vị trí đo lường: nhân viên Sales/CSKH với năng lực hỗ trợ 50 khách hàng / ngày, thời gian làm việc 8h x 26ngày)",
                 inputTitle: "Thông số đầu vào",
                 labelStaff: "1. Số nhân viên Sales/CSKH:",
-                labelSalary: "2. Lương TB mỗi nhân viên (VNĐ/tháng):",
+                labelSalary: "2. Lương TB mỗi nhân viên:",
                 labelOverhead: "3. Quản lý & Phúc lợi (% Lương):",
                 labelInsurance: "*Đã bao gồm trích BHXH bắt buộc 21.5% Lương CB",
                 labelSessions: "4. Tổng phiên (Gọi/Chat) / tháng:",
@@ -575,7 +582,7 @@
                 labelRoadmap: "6. Lộ trình chuyển đổi:",
                 roadmapValue: "3 Năm",
                 resRoiTitle: "Tỷ suất hoàn vốn (ROI)",
-                resSavingsTitle: "Số tiền tiết kiệm (VNĐ)",
+                resSavingsTitle: "Số tiền tiết kiệm",
                 resProductivityTitle: "Năng suất CloryAI",
                 tblHeaderMetric: "Chỉ số tài chính & Vận hành",
                 tblHeaderCurrent: "Hiện tại",
@@ -586,10 +593,10 @@
                 row1Title: "1. Số lượng nhân viên còn lại (người)",
                 row2Title: "2. Phiên hỗ trợ bởi nhân viên / tháng",
                 row3Title: "3. Phiên hỗ trợ bởi CloryAI / tháng",
-                row4Title: "4. Chi phí Nhân viên (VNĐ / năm)",
-                row5Title: "5. Chi phí CloryAI (VNĐ / năm)",
-                row6Title: "6. TỔNG CHI PHÍ VẬN HÀNH (VNĐ)",
-                row7Title: "7. TIẾT KIỆM NGÂN SÁCH (VNĐ & %)",
+                row4Title: "4. Chi phí Nhân viên",
+                row5Title: "5. Chi phí CloryAI",
+                row6Title: "6. TỔNG CHI PHÍ VẬN HÀNH",
+                row7Title: "7. TIẾT KIỆM NGÂN SÁCH",
                 downloadPdfBtn: "Tải báo cáo (PDF)",
                 modalFooterNote: "Kết quả chỉ là ước tính, hoàn toàn có thể thay đổi theo thực tế vận hành. Hãy liên hệ để chúng tôi tư vấn chi tiết cho bạn."
             },
@@ -602,7 +609,7 @@
                 modalNote: "(Benchmark: Sales/CS staff handling 50 customer inquiries/day, working 8h x 26 days/month)",
                 inputTitle: "Input Parameters",
                 labelStaff: "1. Number of Sales/CS Staff:",
-                labelSalary: "2. Average Staff Salary (VND/month):",
+                labelSalary: "2. Average Staff Salary:",
                 labelOverhead: "3. Management & Benefits (% Salary):",
                 labelInsurance: "*Includes mandatory 21.5% social insurance",
                 labelSessions: "4. Total Monthly Sessions (Calls/Chats):",
@@ -610,7 +617,7 @@
                 labelRoadmap: "6. Transformation Roadmap:",
                 roadmapValue: "3 Years",
                 resRoiTitle: "Return on Investment (ROI)",
-                resSavingsTitle: "Total Cost Savings (VND)",
+                resSavingsTitle: "Total Cost Savings",
                 resProductivityTitle: "CloryAI Productivity",
                 tblHeaderMetric: "Financial & Operational Metrics",
                 tblHeaderCurrent: "Current",
@@ -621,10 +628,10 @@
                 row1Title: "1. Remaining Staff Count (people)",
                 row2Title: "2. Sessions handled by staff / month",
                 row3Title: "3. Sessions handled by CloryAI / month",
-                row4Title: "4. Staff Cost (VND / year)",
-                row5Title: "5. CloryAI Service Cost (VND / year)",
-                row6Title: "6. TOTAL OPERATING COST (VND)",
-                row7Title: "7. BUDGET SAVINGS (VND & %)",
+                row4Title: "4. Staff Cost",
+                row5Title: "5. CloryAI Service Cost",
+                row6Title: "6. TOTAL OPERATING COST",
+                row7Title: "7. BUDGET SAVINGS",
                 downloadPdfBtn: "Download Report (PDF)",
                 modalFooterNote: "Results are estimates and may vary based on actual operations. Contact us for detailed consulting."
             }
@@ -647,6 +654,28 @@
                     el.innerText = translations[lang][key];
                 }
             });
+            calculateRoi();
+        }
+
+        function setCurrency(curr) {
+            currentCurr = curr;
+            const vndBtn = document.getElementById('curr-vnd-btn');
+            const usdBtn = document.getElementById('curr-usd-btn');
+            const salaryInput = document.getElementById('input-salary');
+            let currentSalaryVal = parseFormattedNumber(salaryInput.value);
+
+            if (curr === 'USD' && vndBtn.classList.contains('bg-clory-accent')) {
+                currentSalaryVal = Math.round(currentSalaryVal / usdRate);
+                vndBtn.className = "px-2.5 py-1 rounded-lg text-slate-600 hover:text-slate-900 transition-all";
+                usdBtn.className = "px-2.5 py-1 rounded-lg bg-clory-accent text-white transition-all";
+                salaryInput.value = formatNumber(currentSalaryVal);
+            } else if (curr === 'VND' && usdBtn.classList.contains('bg-clory-accent')) {
+                currentSalaryVal = Math.round(currentSalaryVal * usdRate);
+                usdBtn.className = "px-2.5 py-1 rounded-lg text-slate-600 hover:text-slate-900 transition-all";
+                vndBtn.className = "px-2.5 py-1 rounded-lg bg-clory-accent text-white transition-all";
+                salaryInput.value = formatNumber(currentSalaryVal);
+            }
+            calculateRoi();
         }
 
         document.addEventListener("DOMContentLoaded", function() {
@@ -687,26 +716,38 @@
             return parseFloat(val.toString().replace(/\./g, '').replace(/,/g, '')) || 0;
         }
 
-        function formatVndNumber(num) {
-            return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        function formatNumber(num) {
+            return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, currentCurr === 'VND' ? "." : ",");
+        }
+
+        function formatCurrencyDisplay(amount) {
+            const formattedNum = formatNumber(amount);
+            if (currentCurr === 'USD') {
+                return "$" + formattedNum;
+            } else {
+                return formattedNum + " VNĐ";
+            }
         }
 
         function formatAndCalculateSalary(input) {
             let val = parseFormattedNumber(input.value);
-            input.value = formatVndNumber(val);
+            input.value = formatNumber(val);
             calculateRoi();
         }
 
         function formatAndCalculateSessions(input) {
             let val = parseFormattedNumber(input.value);
-            input.value = formatVndNumber(val);
+            input.value = formatNumber(val);
             calculateRoi();
         }
 
-        /* ROI CALCULATION WITH 500% (5x) AI PRODUCTIVITY */
+        /* ACCURATE ROI CALCULATION WITH 500% (5x) AI PRODUCTIVITY & VND/USD */
         function calculateRoi() {
             const staffCount = parseInt(document.getElementById('input-staff').value) || 1;
-            const baseSalary = parseFormattedNumber(document.getElementById('input-salary').value);
+            let baseSalary = parseFormattedNumber(document.getElementById('input-salary').value);
+            if (currentCurr === 'USD') {
+                baseSalary = baseSalary * usdRate; // normalize internal calculation to VND
+            }
             const overheadPct = parseInt(document.getElementById('input-overhead').value) || 0;
             const totalMonthlySessions = parseFormattedNumber(document.getElementById('input-sessions').value);
             const aiSharePct = parseInt(document.getElementById('input-ai-rate').value) || 0;
@@ -722,22 +763,25 @@
             const aiMonthlySessions = totalMonthlySessions * aiShareRatio;
             const staffMonthlySessions = totalMonthlySessions - aiMonthlySessions;
 
-            // 500% productivity (5x capacity per staff member, baseline 1300 sessions/month per agent becomes 6500 sessions/month)
+            // 500% productivity (5x capacity per staff member)
             const effectiveMonthlyCapacityPerStaff = 1300 * 5;
             let requiredStaff = Math.ceil(staffMonthlySessions / effectiveMonthlyCapacityPerStaff);
             if (staffMonthlySessions <= 0) requiredStaff = 0;
 
             const yearlyStaffCost = requiredStaff * fullStaffCostPerMonth * 12;
-            const yearlyAiCost = aiMonthlySessions * 2500 * 12;
+            const aiCostPerSessionVND = 2500;
+            const yearlyAiCost = aiMonthlySessions * aiCostPerSessionVND * 12;
+
+            const displayDivisor = currentCurr === 'USD' ? usdRate : 1;
 
             // Row 0 (Current Baseline)
             document.getElementById('row-staff-0').innerText = staffCount;
-            document.getElementById('row-sess-staff-0').innerText = formatVndNumber(totalMonthlySessions);
+            document.getElementById('row-sess-staff-0').innerText = formatNumber(totalMonthlySessions);
             document.getElementById('row-sess-ai-0').innerText = "0";
-            document.getElementById('row-cost-staff-0').innerText = formatVndNumber(currentStaffCostYearly);
-            document.getElementById('row-cost-ai-0').innerText = "0";
-            document.getElementById('row-cost-total-0').innerText = formatVndNumber(currentStaffCostYearly);
-            document.getElementById('row-save-0').innerText = currentLang === 'vi' ? "0 VNĐ (0%)" : "0 VND (0%)";
+            document.getElementById('row-cost-staff-0').innerText = formatCurrencyDisplay(currentStaffCostYearly / displayDivisor);
+            document.getElementById('row-cost-ai-0').innerText = formatCurrencyDisplay(0);
+            document.getElementById('row-cost-total-0').innerText = formatCurrencyDisplay(currentStaffCostYearly / displayDivisor);
+            document.getElementById('row-save-0').innerText = formatCurrencyDisplay(0) + " (0%)";
 
             let total3YearSavings = 0;
             let total3YearStaffCost = 0;
@@ -746,20 +790,20 @@
 
             for (let year = 1; year <= 3; year++) {
                 const yearMultiplier = Math.pow(1.03, year - 1);
-                const yearStaffCost = yearlyStaffCost * yearMultiplier;
-                const yearAiCost = yearlyAiCost;
+                const yearStaffCost = (yearlyStaffCost * yearMultiplier) / displayDivisor;
+                const yearAiCost = yearlyAiCost / displayDivisor;
                 const yearTotalCost = yearStaffCost + yearAiCost;
-                const yearBaselineCost = currentStaffCostYearly * yearMultiplier;
+                const yearBaselineCost = (currentStaffCostYearly * yearMultiplier) / displayDivisor;
                 const yearSave = yearBaselineCost - yearTotalCost;
                 const savePct = Math.round((yearSave / yearBaselineCost) * 100);
 
                 document.getElementById(`row-staff-${year}`).innerText = requiredStaff;
-                document.getElementById(`row-sess-staff-${year}`).innerText = formatVndNumber(staffMonthlySessions);
-                document.getElementById(`row-sess-ai-${year}`).innerText = formatVndNumber(aiMonthlySessions);
-                document.getElementById(`row-cost-staff-${year}`).innerText = formatVndNumber(yearStaffCost);
-                document.getElementById(`row-cost-ai-${year}`).innerText = formatVndNumber(yearAiCost);
-                document.getElementById(`row-cost-total-${year}`).innerText = formatVndNumber(yearTotalCost);
-                document.getElementById(`row-save-${year}`).innerText = `${formatVndNumber(yearSave)} (${savePct}%)`;
+                document.getElementById(`row-sess-staff-${year}`).innerText = formatNumber(staffMonthlySessions);
+                document.getElementById(`row-sess-ai-${year}`).innerText = formatNumber(aiMonthlySessions);
+                document.getElementById(`row-cost-staff-${year}`).innerText = formatCurrencyDisplay(yearStaffCost);
+                document.getElementById(`row-cost-ai-${year}`).innerText = formatCurrencyDisplay(yearAiCost);
+                document.getElementById(`row-cost-total-${year}`).innerText = formatCurrencyDisplay(yearTotalCost);
+                document.getElementById(`row-save-${year}`).innerText = `${formatCurrencyDisplay(yearSave)} (${savePct}%)`;
 
                 total3YearSavings += yearSave;
                 total3YearStaffCost += yearStaffCost;
@@ -768,16 +812,16 @@
             }
 
             document.getElementById('row-staff-tot').innerText = requiredStaff;
-            document.getElementById('row-sess-staff-tot').innerText = formatVndNumber(staffMonthlySessions * 36);
-            document.getElementById('row-sess-ai-tot').innerText = formatVndNumber(aiMonthlySessions * 36);
-            document.getElementById('row-cost-staff-tot').innerText = formatVndNumber(total3YearStaffCost);
-            document.getElementById('row-cost-ai-tot').innerText = formatVndNumber(total3YearAiCost);
-            document.getElementById('row-cost-total-tot').innerText = formatVndNumber(total3YearNewCost);
-            document.getElementById('row-save-tot').innerText = formatVndNumber(total3YearSavings) + (currentLang === 'vi' ? " VNĐ" : " VND");
+            document.getElementById('row-sess-staff-tot').innerText = formatNumber(staffMonthlySessions * 36);
+            document.getElementById('row-sess-ai-tot').innerText = formatNumber(aiMonthlySessions * 36);
+            document.getElementById('row-cost-staff-tot').innerText = formatCurrencyDisplay(total3YearStaffCost);
+            document.getElementById('row-cost-ai-tot').innerText = formatCurrencyDisplay(total3YearAiCost);
+            document.getElementById('row-cost-total-tot').innerText = formatCurrencyDisplay(total3YearNewCost);
+            document.getElementById('row-save-tot').innerText = formatCurrencyDisplay(total3YearSavings);
 
             const roiPct = total3YearAiCost > 0 ? Math.round((total3YearSavings / total3YearAiCost) * 100) : 0;
             document.getElementById('res-roi').innerText = roiPct + "%";
-            document.getElementById('res-savings').innerText = formatVndNumber(total3YearSavings) + (currentLang === 'vi' ? " VNĐ" : " VND");
+            document.getElementById('res-savings').innerText = formatCurrencyDisplay(total3YearSavings);
         }
     </script>
 </body>
