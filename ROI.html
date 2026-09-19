@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloryAI Agents - AI-Driven CX Management Platform</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        clory: {
+                            bg: '#0b0c10',
+                            card: '#12141a',
+                            border: '#232733',
+                            accent: '#ff4d2d',
+                            accentHover: '#e03e20',
+                            textMuted: '#94a3b8'
+                        }
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    },
+                    animation: {
+                        marquee: 'marquee 25s linear infinite',
+                        float: 'float 6s ease-in-out infinite',
+                        'fade-up': 'fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- html2canvas for Screen Capture -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0c10;
+            color: #ffffff;
+        }
+        .bg-grid-glow {
+            background-image: radial-gradient(circle at 50% 20%, rgba(255, 77, 45, 0.15) 0%, transparent 60%);
+        }
+        .card-border-glow {
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .card-border-glow:hover {
+            box-shadow: 0 0 0 1px rgba(255, 77, 45, 0.4), 0 10px 30px -10px rgba(255, 77, 45, 0.2);
+        }
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.97);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* PRINT OPTIMIZATION FOR PDF EXPORT - LANDSCAPE 1 PAGE FIT (CUSTOM SCALE 70%) */
+        @media print {
+            @page {
+                size: landscape;
+                margin: 0;
+            }
+            html, body {
+                width: 100% !important;
+                height: 100% !important;
+                overflow: hidden !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #ffffff !important;
+            }
+            body * {
+                visibility: hidden !important;
+            }
+            #roi-modal, #roi-modal * {
+                visibility: visible !important;
+            }
+            #roi-modal {
+                position: fixed !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                background: #ffffff !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                overflow: hidden !important;
+                display: flex !important;
+                align-items: flex-start !important;
+                justify-content: center !important;
+            }
+            #roi-modal-content {
+                position: relative !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 142.85% !important; /* bù đắp scale 0.7 (100 / 0.7 ≈ 142.85%) */
+                max-width: none !important;
+                height: 100% !important;
+                max-height: 100% !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                background-color: #ffffff !important;
+                color: #0f172a !important;
+                padding: 12px 16px !important;
+                transform: scale(0.7) !important; /* Scale Custom 70% */
+                transform-origin: top left !important;
+                box-sizing: border-box !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-clory-bg text-slate-100 antialiased selection:bg-clory-accent selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-clory-bg/95 backdrop-blur-md border-b border-clory-border">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-clory-accent flex items-center justify-center font-black text-xl text-white">
+                    C
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-white">Clory<span class="text-clory-accent">AI</span></span>
+            </a>
+
+            <!-- Menu Links -->
+            <nav class="hidden xl:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                <!-- Mega Dropdown: Sản phẩm -->
+                <div class="relative group py-6" id="products">
+                    <button class="flex items-center gap-1.5 hover:text-clory-accent transition-colors focus:outline-none">
+                        <span>Sản phẩm</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180 text-slate-400"></i>
+                    </button>
+
+                    <div class="dropdown-menu absolute top-full left-0 w-[1020px] bg-clory-card border border-clory-border rounded-2xl p-6 shadow-2xl grid grid-cols-12 gap-6 z-50">
+                        <div class="col-span-5 border-r border-clory-border/60 pr-6">
+                            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-clory-accent mb-4">
+                                <i data-lucide="bot" class="w-4 h-4"></i>
+                                <span>Trợ lý AI</span>
+                            </div>
+                            <ul class="space-y-1">
+                                <li>
+                                    <a href="#agents-portfolio" class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-clory-bg transition-colors group/item">
+                                        <i data-lucide="shopping-cart" class="w-4 h-4 text-amber-400 mt-0.5"></i>
+                                        <div>
+                                            <div class="text-sm font-semibold text-white group-hover/item:text-clory-accent">AI Sales Agent</div>
+                                            <div class="text-[11px] text-clory-textMuted">Tự động tư vấn và chốt đơn 24/7</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#agents-portfolio" class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-clory-bg transition-colors group/item">
+                                        <i data-lucide="trending-up" class="w-4 h-4 text-amber-400 mt-0.5"></i>
+                                        <div>
+                                            <div class="text-sm font-semibold text-white group-hover/item:text-clory-accent">AI Sales Insights Agent</div>
+                                            <div class="text-[11px] text-clory-textMuted">Phân tích hành vi & dữ liệu bán hàng</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#agents-portfolio" class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-clory-bg transition-colors group/item">
+                                        <i data-lucide="headphones" class="w-4 h-4 text-emerald-400 mt-0.5"></i>
+                                        <div>
+                                            <div class="text-sm font-semibold text-white group-hover/item:text-clory-accent">AI Service Agent</div>
+                                            <div class="text-[11px] text-clory-textMuted">Hỗ trợ & giải quyết yêu cầu đa kênh</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#agents-portfolio" class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-clory-bg transition-colors group/item">
+                                        <i data-lucide="heart-handshake" class="w-4 h-4 text-emerald-400 mt-0.5"></i>
+                                        <div>
+                                            <div class="text-sm font-semibold text-white group-hover/item:text-clory-accent">AI CX Agent</div>
+                                            <div class="text-[11px] text-clory-textMuted">Tối ưu hóa hành trình trải nghiệm khách hàng</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#agents-portfolio" class="flex items-start gap-2.5 p-2 rounded-lg hover:bg-clory-bg transition-colors group/item">
+                                        <i data-lucide="check-check" class="w-4 h-4 text-sky-400 mt-0.5"></i>
+                                        <div>
+                                            <div class="text-sm font-semibold text-white group-hover/item:text-clory-accent">AI Quality Assurance (QA) Agent</div>
+                                            <div class="text-[11px] text-clory-textMuted">Đánh giá & kiểm soát chất lượng hội thoại</div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-span-7 pl-2 space-y-3.5">
+                            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-clory-accent mb-1">
+                                <i data-lucide="users-2" class="w-4 h-4"></i>
+                                <span>Phòng ban AI</span>
+                            </div>
+
+                            <div class="bg-clory-bg/60 p-2.5 rounded-xl border border-clory-border/50">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i data-lucide="line-chart" class="w-3.5 h-3.5 text-amber-400"></i>
+                                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wide">Đội ngũ tư vấn kinh doanh</span>
+                                </div>
+                                <p class="text-[10px] text-clory-textMuted mb-2">Tăng tỷ lệ chuyển đổi, tự động hóa phễu tư vấn và chốt đơn</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <a href="#agents-portfolio" class="text-[11px] px-2 py-0.5 rounded bg-clory-card text-slate-200 border border-clory-border hover:border-clory-accent hover:text-white transition-colors flex items-center gap-1">
+                                        <i data-lucide="shopping-bag" class="w-3 h-3 text-amber-400"></i> AI Sales Agent
+                                    </a>
+                                    <a href="#agents-portfolio" class="text-[11px] px-2 py-0.5 rounded bg-clory-card text-slate-200 border border-clory-border hover:border-clory-accent hover:text-white transition-colors flex items-center gap-1">
+                                        <i data-lucide="bar-chart" class="w-3 h-3 text-amber-400"></i> AI Sales Insights
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="bg-clory-bg/60 p-2.5 rounded-xl border border-clory-border/50">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i data-lucide="headphones" class="w-3.5 h-3.5 text-emerald-400"></i>
+                                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">Đội ngũ dịch vụ khách hàng</span>
+                                </div>
+                                <p class="text-[10px] text-clory-textMuted mb-2">Hỗ trợ đa kênh 24/7, xử lý sự cố khép kín và cá nhân hóa trải nghiệm</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <a href="#agents-portfolio" class="text-[11px] px-2 py-0.5 rounded bg-clory-card text-slate-200 border border-clory-border hover:border-clory-accent hover:text-white transition-colors flex items-center gap-1"><i data-lucide="message-square" class="w-3 h-3 text-emerald-400"></i> AI Service Agent</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#pricing" class="hover:text-clory-accent transition-colors">Bảng giá</a>
+                <a href="#roicalculator" class="hover:text-clory-accent transition-colors">ROI Calculator</a>
+                <a href="#contact" class="hover:text-clory-accent transition-colors">Liên hệ</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-clory-accent hover:bg-clory-accentHover text-white font-semibold text-sm transition-all shadow-lg shadow-clory-accent/20 flex items-center gap-1.5">
+                    <i data-lucide="calendar" class="w-4 h-4"></i> Book a Demo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative pt-36 pb-16 md:pt-48 md:pb-20 bg-grid-glow overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            
+            <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-clory-card border border-clory-border text-xs font-medium text-slate-300 mb-8 animate-fade-up">
+                <span class="px-2 py-0.5 rounded-full bg-clory-accent text-white font-bold text-[10px] uppercase">New Release</span>
+                <span>CloryAI Agents v1.0 - Lực lượng lao động số thế hệ mới</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-clory-accent"></i>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight max-w-5xl mx-auto mb-6 text-white animate-fade-up [animation-delay:200ms]">
+                CloryAI Agents <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-clory-accent via-orange-400 to-amber-200">
+                    AI-Driven CX Management Platform
+                </span>
+            </h1>
+
+            <p class="text-base md:text-xl text-clory-textMuted max-w-3xl mx-auto font-normal leading-relaxed mb-10 animate-fade-up [animation-delay:400ms]">
+                CloryAI Agents - Lực lượng lao động số thế hệ mới – Chuẩn xác, Tức thì, Hoạt động 24/7
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up [animation-delay:600ms]">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-semibold transition-all flex items-center justify-center gap-2 shadow-xl shadow-clory-accent/25">
+                    Book a Demo
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <button onclick="openRoiModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-clory-card border border-clory-border hover:bg-slate-800 text-slate-200 font-semibold transition-all flex items-center justify-center gap-2.5">
+                    <i data-lucide="calculator" class="w-5 h-5 text-clory-accent"></i>
+                    <span>Tính ROI Ngay</span>
+                </button>
+            </div>
+
+            <!-- 4 TÍNH NĂNG ƯU VIỆT -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-left scroll-reveal">
+                <div class="p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow">
+                    <div class="w-10 h-10 rounded-xl bg-clory-accent/10 text-clory-accent flex items-center justify-center mb-4">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-2xl font-black text-white mb-1">&lt; 0,8s</div>
+                    <h4 class="text-sm font-bold text-slate-200 mb-2">Tốc độ phản hồi trung bình</h4>
+                    <p class="text-xs text-clory-textMuted leading-relaxed">
+                        Phản hồi siêu tốc tức thì &lt; 0,8s (con người tầm 2-5s và đôi khi cao hơn lúc ngoài giờ làm việc).
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-2xl font-black text-emerald-400 mb-1">≥ 5x</div>
+                    <h4 class="text-sm font-bold text-slate-200 mb-2">Năng suất làm việc vượt trội</h4>
+                    <p class="text-xs text-clory-textMuted leading-relaxed">
+                        Chỉ số hiệu suất làm việc tăng đột phá: AI đạt 300 phiên/ngày so với 50 phiên/ngày của nhân sự.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-2xl font-black text-amber-400 mb-1">24 x 7</div>
+                    <h4 class="text-sm font-bold text-slate-200 mb-2">Khả năng hoạt động liên tục</h4>
+                    <p class="text-xs text-clory-textMuted leading-relaxed">
+                        Sẵn sàng phục vụ và xử lý yêu cầu 24x7 không gián đoạn (so với khung giờ chuẩn của con người là 8h x 26 ngày).
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-clory-card border border-clory-border card-border-glow">
+                    <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
+                        <i data-lucide="piggy-bank" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-2xl font-black text-sky-400 mb-1">≥ 65%</div>
+                    <h4 class="text-sm font-bold text-slate-200 mb-2">Giảm chi phí vận hành</h4>
+                    <p class="text-xs text-clory-textMuted leading-relaxed">
+                        Tối ưu hóa ngân sách vận hành cho bộ phận CSKH/Sales tối thiểu từ 65% hàng năm.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-clory-bg border-t border-clory-border">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs uppercase tracking-widest text-clory-accent font-extrabold mb-3">Flexible Plans</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Các Gói Dịch Vụ CloudXCS Contact Center</h3>
+                <p class="text-clory-textMuted text-sm">Lựa chọn gói giải pháp tối ưu theo nhu cầu PBX Only & Contact Center từ nhóm SOHO đến Tập đoàn Enterprise.</p>
+            </div>
+
+            <!-- CARDS GRID VIEW FOR 5 PLANS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-10">
+                <!-- Gói CX1 -->
+                <div class="p-5 rounded-2xl bg-clory-card border border-sky-500/30 card-border-glow flex flex-col justify-between relative">
+                    <div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-400 font-extrabold text-[10px] uppercase mb-3 border border-sky-500/30">PBX Only</span>
+                        <h4 class="text-xl font-black text-white">CX1</h4>
+                        <p class="text-[11px] text-clory-textMuted mb-3 font-semibold">(PBX Only)</p>
+                        <div class="text-xl font-extrabold text-sky-400 mb-1">From 29k <span class="text-xs font-normal text-clory-textMuted">/User/Tháng</span></div>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#contact" class="w-full block py-2.5 rounded-xl bg-clory-bg border border-clory-border hover:border-sky-400 text-white font-semibold text-center text-xs transition-all">Đăng ký CX1</a>
+                    </div>
+                </div>
+
+                <!-- Gói CX2 -->
+                <div class="p-5 rounded-2xl bg-clory-card border border-amber-500/30 card-border-glow flex flex-col justify-between relative">
+                    <div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 font-extrabold text-[10px] uppercase mb-3 border border-amber-500/30">Contact Center</span>
+                        <h4 class="text-xl font-black text-white">CX2</h4>
+                        <p class="text-[11px] text-clory-textMuted mb-3 font-semibold">(SOHO)</p>
+                        <div class="text-xl font-extrabold text-amber-400 mb-1">From 259k <span class="text-xs font-normal text-clory-textMuted">/User/Tháng</span></div>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#contact" class="w-full block py-2.5 rounded-xl bg-clory-bg border border-clory-border hover:border-amber-400 text-white font-semibold text-center text-xs transition-all">Đăng ký CX2</a>
+                    </div>
+                </div>
+
+                <!-- Gói CX3 -->
+                <div class="p-5 rounded-2xl bg-clory-card border-2 border-clory-accent card-border-glow relative flex flex-col justify-between shadow-2xl">
+                    <div class="absolute -top-3 right-3 px-2 py-0.5 rounded-full bg-clory-accent text-white text-[9px] font-black uppercase tracking-wider">Phổ biến</div>
+                    <div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-clory-accent/20 text-clory-accent font-extrabold text-[10px] uppercase mb-3 border border-clory-accent/30">Contact Center</span>
+                        <h4 class="text-xl font-black text-white">CX3</h4>
+                        <p class="text-[11px] text-clory-textMuted mb-3 font-semibold">(Small–Mid)</p>
+                        <div class="text-xl font-extrabold text-clory-accent mb-1">From 359k <span class="text-xs font-normal text-clory-textMuted">/User/Tháng</span></div>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#contact" class="w-full block py-2.5 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-semibold text-center text-xs transition-all shadow-lg shadow-clory-accent/25">Lựa chọn CX3</a>
+                    </div>
+                </div>
+
+                <!-- Gói CX4 -->
+                <div class="p-5 rounded-2xl bg-clory-card border border-emerald-500/30 card-border-glow flex flex-col justify-between relative">
+                    <div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-extrabold text-[10px] uppercase mb-3 border border-emerald-500/30">Contact Center</span>
+                        <h4 class="text-xl font-black text-white">CX4</h4>
+                        <p class="text-[11px] text-clory-textMuted mb-3 font-semibold">(Mid–Large)</p>
+                        <div class="text-xl font-extrabold text-emerald-400 mb-1">From 659k <span class="text-xs font-normal text-clory-textMuted">/User/Tháng</span></div>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#contact" class="w-full block py-2.5 rounded-xl bg-clory-bg border border-clory-border hover:border-emerald-400 text-white font-semibold text-center text-xs transition-all">Đăng ký CX4</a>
+                    </div>
+                </div>
+
+                <!-- Gói CX5 -->
+                <div class="p-5 rounded-2xl bg-clory-card border border-purple-500/40 card-border-glow flex flex-col justify-between relative">
+                    <div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-400 font-extrabold text-[10px] uppercase mb-3 border border-purple-500/30">Contact Center</span>
+                        <h4 class="text-xl font-black text-white">CX5</h4>
+                        <p class="text-[11px] text-clory-textMuted mb-3 font-semibold">(Enterprise)</p>
+                        <div class="text-xl font-extrabold text-purple-400 mb-1">From 1,559k <span class="text-xs font-normal text-clory-textMuted">/User/Tháng</span></div>
+                    </div>
+                    <div class="pt-5">
+                        <a href="#contact" class="w-full block py-2.5 rounded-xl bg-clory-bg border border-clory-border hover:border-purple-400 text-white font-semibold text-center text-xs transition-all">Tư vấn CX5</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roicalculator" class="py-20 bg-gradient-to-b from-clory-bg via-clory-card to-clory-bg border-t border-clory-border relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <div class="w-16 h-16 rounded-2xl bg-clory-accent/10 border border-clory-accent/30 text-clory-accent flex items-center justify-center mx-auto mb-6 shadow-xl shadow-clory-accent/10">
+                <i data-lucide="calculator" class="w-8 h-8"></i>
+            </div>
+            
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+                CloudXCS & CloryAI có thực sự hiệu quả cho bạn?
+            </h2>
+            
+            <p class="text-clory-textMuted text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                Công cụ ROI đo lường hiệu quả đầu tư và vận hành Contact Center của bạn
+            </p>
+
+            <button onclick="openRoiModal()" class="px-9 py-4 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-bold text-base transition-all shadow-xl shadow-clory-accent/30 inline-flex items-center gap-3 group">
+                <i data-lucide="calculator" class="w-5 h-5"></i>
+                <span>ROI Calculator</span>
+                <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- POP-UP MODAL ROI CALCULATOR WITH DYNAMIC PER-YEAR SLIDERS AND REALTIME RE-CALCULATIONS -->
+    <div id="roi-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-3 md:p-6 transition-all duration-300">
+        <div id="roi-modal-content" class="bg-slate-100 border border-slate-300 rounded-3xl max-w-7xl w-full max-h-[95vh] overflow-y-auto shadow-2xl relative flex flex-col my-auto text-slate-800 print-exact-fit">
+            
+            <!-- Modal Header with Language Toggles -->
+            <div class="p-5 md:p-6 border-b border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-white/95 sticky top-0 z-20 backdrop-blur-md">
+                <div>
+                    <h3 id="t-roi-title" class="text-xl md:text-2xl font-extrabold text-slate-900 flex items-center gap-2.5">
+                        <i data-lucide="calculator" class="w-6 h-6 text-clory-accent no-print"></i>
+                        <span>Công cụ ROI đo lường hiệu quả đầu tư và vận hành cùng CloryAI</span>
+                    </h3>
+                    <p id="t-roi-sub" class="text-xs md:text-sm text-slate-600 mt-1">
+                        Hãy tìm hiểu xem cách CloryAI giúp bạn tối ưu hoá chi phí và nâng cao hiệu quả vận hành như thế nào
+                    </p>
+                    <p id="t-roi-capacity-info" class="text-[11px] text-red-600 font-semibold mt-1">
+                        (Năng lực con người: tối đa 50 phiên/ngày ~1,300 phiên/tháng, 8h x 26ngày | Năng lực AI: 300 phiên/ngày ~7,800 phiên/tháng, 24x7)
+                    </p>
+                </div>
+
+                <div class="flex items-center gap-3 self-end md:self-auto no-print">
+                    <!-- Language Switcher (Integrated Language & Currency) -->
+                    <div class="flex items-center bg-slate-200 p-1 rounded-xl border border-slate-300">
+                        <button id="btn-lang-vi" onclick="setLanguage('VI')" class="px-3 py-1 text-xs font-bold rounded-lg transition-all bg-slate-900 text-white shadow-sm">VI (₫)</button>
+                        <button id="btn-lang-en" onclick="setLanguage('EN')" class="px-3 py-1 text-xs font-bold rounded-lg transition-all text-slate-700 hover:text-slate-900">EN ($)</button>
+                    </div>
+
+                    <button onclick="closeRoiModal()" class="p-2 rounded-xl bg-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-300 transition-colors">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="p-5 md:p-8 grid grid-cols-1 lg:grid-cols-10 gap-8">
+                <!-- Left Input Controls -->
+                <div class="lg:col-span-3 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <h4 id="t-input-header" class="text-xs font-extrabold uppercase tracking-wider text-clory-accent flex items-center gap-2 border-b border-slate-100 pb-2">
+                        <i data-lucide="sliders" class="w-4 h-4"></i> THÔNG SỐ ĐẦU VÀO
+                    </h4>
+                    
+                    <!-- 1. Number of Staff -->
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1 text-slate-700">
+                            <span id="t-lbl-staff">1. Số nhân viên Sales/CSKH:</span>
+                            <span id="val-staff" class="text-red-600 font-bold">10 người</span>
+                        </div>
+                        <input type="range" id="input-staff" min="1" max="200" value="10" oninput="onStaffInputChange()" class="w-full accent-clory-accent bg-slate-200 h-1.5 rounded-lg">
+                    </div>
+
+                    <!-- 2. Salary -->
+                    <div>
+                        <label id="t-lbl-salary" class="block text-xs font-semibold mb-1 text-slate-700">2. Lương TB mỗi nhân viên/tháng:</label>
+                        <div class="relative">
+                            <input type="text" id="input-salary" value="8.000.000" oninput="formatAndCalculateSalary(this)" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs font-mono font-bold focus:outline-none focus:border-clory-accent">
+                            <span id="lbl-salary-unit" class="absolute right-3 top-2 text-xs font-semibold text-slate-400">VND</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Overhead -->
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1 text-slate-700">
+                            <span id="t-lbl-overhead">3. Quản lý & Phúc lợi (% Lương):</span>
+                            <span id="val-overhead" class="text-amber-600 font-bold">20%</span>
+                        </div>
+                        <input type="range" id="input-overhead" min="0" max="100" value="20" oninput="calculateRoi()" class="w-full accent-amber-500 bg-slate-200 h-1.5 rounded-lg">
+                        <span id="t-note-insurance" class="text-[10px] text-slate-400 block mt-1">*Đã bao gồm trích BHXH bắt buộc 21.5% Lương CB</span>
+                    </div>
+
+                    <!-- 4. Total Sessions -->
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <label id="t-lbl-sessions" class="block text-xs font-semibold text-slate-700">4. Tổng phiên (Gọi/Chat) / tháng:</label>
+                            <span id="t-sess-auto-badge" class="text-[9px] px-1.5 py-0.5 rounded bg-blue-100 text-blue-700 font-bold">Staff * 1300</span>
+                        </div>
+                        <input type="text" id="input-sessions" value="13.000" oninput="formatAndCalculateSessions(this)" class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs font-mono font-bold focus:outline-none focus:border-clory-accent">
+                    </div>
+
+                    <!-- 5. AI Share Rate per Year (NĂM 1, NĂM 2, NĂM 3 SLIDERS) -->
+                    <div class="space-y-3 bg-slate-50 p-3 rounded-xl border border-slate-200">
+                        <div class="text-xs font-bold text-slate-800 border-b border-slate-200 pb-1 flex items-center justify-between">
+                            <span id="t-lbl-ai-rate-title" class="flex items-center gap-1.5 text-emerald-700">
+                                <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-600"></i>
+                                5. Tỷ lệ CloryAI đảm nhận từng năm:
+                            </span>
+                        </div>
+                        
+                        <!-- Year 1 Slider -->
+                        <div>
+                            <div class="flex justify-between text-[11px] font-semibold mb-1 text-slate-700">
+                                <span id="t-lbl-ai-rate-y1">Năm 1 (%):</span>
+                                <span id="val-ai-rate-y1" class="text-emerald-600 font-bold">30%</span>
+                            </div>
+                            <input type="range" id="input-ai-rate-y1" min="0" max="100" value="30" oninput="calculateRoi()" class="w-full accent-emerald-500 bg-slate-200 h-1.5 rounded-lg">
+                        </div>
+
+                        <!-- Year 2 Slider -->
+                        <div>
+                            <div class="flex justify-between text-[11px] font-semibold mb-1 text-slate-700">
+                                <span id="t-lbl-ai-rate-y2">Năm 2 (%):</span>
+                                <span id="val-ai-rate-y2" class="text-emerald-600 font-bold">50%</span>
+                            </div>
+                            <input type="range" id="input-ai-rate-y2" min="0" max="100" value="50" oninput="calculateRoi()" class="w-full accent-emerald-500 bg-slate-200 h-1.5 rounded-lg">
+                        </div>
+
+                        <!-- Year 3 Slider -->
+                        <div>
+                            <div class="flex justify-between text-[11px] font-semibold mb-1 text-slate-700">
+                                <span id="t-lbl-ai-rate-y3">Năm 3 (%):</span>
+                                <span id="val-ai-rate-y3" class="text-emerald-600 font-bold">70%</span>
+                            </div>
+                            <input type="range" id="input-ai-rate-y3" min="0" max="100" value="70" oninput="calculateRoi()" class="w-full accent-emerald-500 bg-slate-200 h-1.5 rounded-lg">
+                        </div>
+                    </div>
+
+                    <!-- 6. Roadmap -->
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1 text-slate-700">
+                            <span id="t-lbl-roadmap">6. Lộ trình chuyển đổi:</span>
+                            <span class="px-2.5 py-0.5 rounded bg-orange-100 text-clory-accent font-bold text-xs" id="t-val-roadmap">3 Năm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Results & Financial Table -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Top Summary Metric Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
+                            <span id="t-card-roi" class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1">TỶ SUẤT HOÀN VỐN (ROI)</span>
+                            <div id="res-roi" class="text-3xl font-black text-emerald-600">167%</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
+                            <span id="t-card-savings" class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1">SỐ TIỀN TIẾT KIỆM (3 NĂM)</span>
+                            <div id="res-savings" class="text-2xl font-extrabold text-emerald-600">0</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm text-center">
+                            <span id="t-card-productivity" class="text-[11px] text-slate-500 uppercase font-bold tracking-wider block mb-1">NĂNG SUẤT CLORYAI VS CON NGƯỜI</span>
+                            <div id="res-productivity" class="text-2xl font-extrabold text-emerald-600">≥ 5x</div>
+                        </div>
+                    </div>
+
+                    <!-- FINANCIAL BREAKDOWN TABLE -->
+                    <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="bg-slate-50 border-b border-slate-200 text-slate-800">
+                                    <th id="th-col-metric" class="p-3 font-bold">Chỉ số tài chính & Vận hành</th>
+                                    <th id="th-col-current" class="p-3 font-bold text-center">Hiện tại</th>
+                                    <th id="th-col-y1" class="p-3 font-bold text-center text-emerald-700">Năm 1</th>
+                                    <th id="th-col-y2" class="p-3 font-bold text-center text-emerald-700">Năm 2</th>
+                                    <th id="th-col-y3" class="p-3 font-bold text-center text-emerald-700">Năm 3</th>
+                                    <th id="th-col-tot" class="p-3 font-bold text-right text-clory-accent bg-orange-50">TỔNG (3 NĂM)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-slate-800">
+                                <!-- Row 1: Remaining Staff (HUMAN = RED) -->
+                                <tr>
+                                    <td id="tr-lbl-staff" class="p-3 font-medium">1. Số lượng nhân viên con người còn lại (người)</td>
+                                    <td id="row-staff-0" class="p-3 text-center font-mono text-red-600 font-bold">10</td>
+                                    <td id="row-staff-1" class="p-3 text-center font-mono text-red-600 font-bold">7</td>
+                                    <td id="row-staff-2" class="p-3 text-center font-mono text-red-600 font-bold">5</td>
+                                    <td id="row-staff-3" class="p-3 text-center font-mono text-red-600 font-bold">3</td>
+                                    <td id="row-staff-tot" class="p-3 text-right font-mono font-bold bg-orange-50 text-red-600">3</td>
+                                </tr>
+                                <!-- Row 2: Human Sessions (HUMAN = RED) -->
+                                <tr>
+                                    <td id="tr-lbl-sess-staff" class="p-3 font-medium">2. Phiên hỗ trợ bởi nhân viên con người / tháng</td>
+                                    <td id="row-sess-staff-0" class="p-3 text-center font-mono text-red-600">13.000</td>
+                                    <td id="row-sess-staff-1" class="p-3 text-center font-mono text-red-600">9.100</td>
+                                    <td id="row-sess-staff-2" class="p-3 text-center font-mono text-red-600">6.500</td>
+                                    <td id="row-sess-staff-3" class="p-3 text-center font-mono text-red-600">3.900</td>
+                                    <td id="row-sess-staff-tot" class="p-3 text-right font-mono font-bold bg-orange-50 text-red-600">234.000</td>
+                                </tr>
+                                <!-- Row 3: AI Sessions (AI = GREEN BOLD) -->
+                                <tr class="bg-emerald-50/30">
+                                    <td id="tr-lbl-sess-ai" class="p-3 font-medium text-emerald-900 font-bold">3. Phiên hỗ trợ bởi CloryAI / tháng</td>
+                                    <td id="row-sess-ai-0" class="p-3 text-center font-mono text-slate-400">0</td>
+                                    <td id="row-sess-ai-1" class="p-3 text-center font-mono text-emerald-600 font-bold">3.900</td>
+                                    <td id="row-sess-ai-2" class="p-3 text-center font-mono text-emerald-600 font-bold">6.500</td>
+                                    <td id="row-sess-ai-3" class="p-3 text-center font-mono text-emerald-600 font-bold">9.100</td>
+                                    <td id="row-sess-ai-tot" class="p-3 text-right font-mono font-bold bg-orange-50 text-emerald-600">234.000</td>
+                                </tr>
+                                <!-- Row 4: Staff Cost (HUMAN = RED) -->
+                                <tr>
+                                    <td id="tr-lbl-cost-staff" class="p-3 font-medium">4. Chi phí Nhân viên (ngân sách / năm)</td>
+                                    <td id="row-cost-staff-0" class="p-3 text-center font-mono text-red-600">1.358.400.000</td>
+                                    <td id="row-cost-staff-1" class="p-3 text-center font-mono text-red-600">950.880.000</td>
+                                    <td id="row-cost-staff-2" class="p-3 text-center font-mono text-red-600">699.576.000</td>
+                                    <td id="row-cost-staff-3" class="p-3 text-center font-mono text-red-600">432.337.968</td>
+                                    <td id="row-cost-staff-tot" class="p-3 text-right font-mono font-bold bg-orange-50 text-red-600">2.082.793.968</td>
+                                </tr>
+                                <!-- Row 5: AI Cost (AI = GREEN BOLD) -->
+                                <tr class="bg-emerald-50/30">
+                                    <td id="tr-lbl-cost-ai" class="p-3 font-medium text-emerald-900 font-bold">5. Chi phí CloryAI (ngân sách / năm)</td>
+                                    <td id="row-cost-ai-0" class="p-3 text-center font-mono text-slate-400">0</td>
+                                    <td id="row-cost-ai-1" class="p-3 text-center font-mono text-emerald-600 font-bold">140.400.000</td>
+                                    <td id="row-cost-ai-2" class="p-3 text-center font-mono text-emerald-600 font-bold">234.000.000</td>
+                                    <td id="row-cost-ai-3" class="p-3 text-center font-mono text-emerald-600 font-bold">327.600.000</td>
+                                    <td id="row-cost-ai-tot" class="p-3 text-right font-mono font-bold bg-orange-50 text-emerald-600">702.000.000</td>
+                                </tr>
+                                <!-- Row 6: Total Operational Cost -->
+                                <tr class="bg-slate-100 font-bold">
+                                    <td id="tr-lbl-cost-total" class="p-3">6. TỔNG CHI PHÍ VẬN HÀNH / NĂM</td>
+                                    <td id="row-cost-total-0" class="p-3 text-center font-mono text-red-600">1.358.400.000</td>
+                                    <td id="row-cost-total-1" class="p-3 text-center font-mono">1.091.280.000</td>
+                                    <td id="row-cost-total-2" class="p-3 text-center font-mono">933.576.000</td>
+                                    <td id="row-cost-total-3" class="p-3 text-center font-mono">759.937.968</td>
+                                    <td id="row-cost-total-tot" class="p-3 text-right font-mono font-bold bg-orange-50">2.784.793.968</td>
+                                </tr>
+                                <!-- Row 7: Budget Savings (AI SAVINGS = BOLD GREEN) -->
+                                <tr class="bg-emerald-100/80 border-t-2 border-emerald-500 font-black text-emerald-900">
+                                    <td id="tr-lbl-save" class="p-3 text-emerald-800">7. TIẾT KIỆM NGÂN SÁCH TRỰC TIẾP</td>
+                                    <td id="row-save-0" class="p-3 text-center font-mono text-slate-500">0 (0%)</td>
+                                    <td id="row-save-1" class="p-3 text-center font-mono text-emerald-700 font-bold">267.120.000 (20%)</td>
+                                    <td id="row-save-2" class="p-3 text-center font-mono text-emerald-700 font-bold">466.576.000 (33%)</td>
+                                    <td id="row-save-3" class="p-3 text-center font-mono text-emerald-700 font-bold">681.188.592 (47%)</td>
+                                    <td id="row-save-tot" class="p-3 text-right font-mono text-emerald-700 font-black bg-emerald-200">1.414.884.592 (34%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- PDF & Screen Capture Action Buttons -->
+                    <div class="flex items-center justify-end gap-3 pt-2 no-print">
+                        <!-- Screen Capture Button -->
+                        <button onclick="captureScreen()" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center gap-2 shadow-md transition-all hover:shadow-lg">
+                            <i data-lucide="camera" class="w-4 h-4"></i> <span id="t-btn-capture">Chụp kết quả (Screen Capture)</span>
+                        </button>
+                        <!-- PDF Export Button -->
+                        <button onclick="exportPdfReport()" class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold flex items-center gap-2 shadow-md transition-all hover:shadow-lg">
+                            <i data-lucide="download" class="w-4 h-4"></i> <span id="t-btn-export">Tải báo cáo (PDF)</span>
+                        </button>
+                    </div>
+
+                    <p id="t-disclaimer" class="text-[11px] text-slate-500 text-center italic pt-1">
+                        * Kết quả mang tính chất dự báo dựa trên đơn giá 3.000 VNĐ (~$0.12) / phiên AI. Vui lòng liên hệ chuyên gia CloryAI để có phương án may đo thực tế.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="py-20 border-t border-clory-border bg-gradient-to-b from-clory-bg to-clory-card">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+                    Transform Your CX with CloryAI
+                </h2>
+                <p class="text-clory-textMuted text-base max-w-2xl mx-auto">
+                    Bắt đầu xây dựng lực lượng lao động số thông minh cho doanh nghiệp của bạn. Đăng ký trải nghiệm Demo ngay hôm nay!
+                </p>
+            </div>
+
+            <form class="scroll-reveal bg-clory-bg border border-clory-border p-8 rounded-2xl shadow-2xl space-y-4" onsubmit="event.preventDefault(); showMessageModal('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ lại sớm nhất.');">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-2">Họ và tên *</label>
+                        <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl bg-clory-card border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-2">Email công việc *</label>
+                        <input type="email" required placeholder="a.nguyen@company.com" class="w-full px-4 py-3 rounded-xl bg-clory-card border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent transition-colors">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-2">Số điện thoại *</label>
+                    <input type="tel" required placeholder="0901234567" class="w-full px-4 py-3 rounded-xl bg-clory-card border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent transition-colors">
+                </div>
+                <button type="submit" class="w-full py-4 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-semibold text-sm transition-all shadow-lg shadow-clory-accent/25">
+                    Gửi Yêu Cầu Demo
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Navigation Footer -->
+    <footer class="border-t border-clory-border bg-clory-bg pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="pt-8 border-t border-clory-border/60 text-center text-slate-500 text-xs">
+                © 2026 CloryAI Agents. Powered by CLOUDPBX. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast Modal -->
+    <div id="message-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-clory-card border border-clory-border rounded-2xl p-6 max-w-sm w-full text-center space-y-4 shadow-2xl">
+            <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+                <i data-lucide="check-circle" class="w-6 h-6"></i>
+            </div>
+            <p id="message-modal-text" class="text-sm font-semibold text-white"></p>
+            <button onclick="closeMessageModal()" class="w-full py-2.5 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-semibold text-xs transition-colors">
+                Đóng
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Global State variables
+        let currentCurrency = 'VND'; // 'VND' | 'USD'
+        let currentLang = 'VI';       // 'VI' | 'EN'
+        const EXCHANGE_RATE = 25400; // 1 USD = 25,400 VND
+        const AI_PRICE_PER_SESSION_VND = 3000; // 3,000 VND / session
+        const HUMAN_MONTHLY_CAPACITY = 1300;   // 50 calls/day * 26 days
+
+        // Translation Dictionary
+        const i18n = {
+            VI: {
+                title: "Công cụ ROI đo lường hiệu quả đầu tư và vận hành cùng CloryAI",
+                sub: "Hãy tìm hiểu xem cách CloryAI giúp bạn tối ưu hoá chi phí và nâng cao hiệu quả vận hành như thế nào",
+                capacityInfo: "(Năng lực con người: tối đa 50 phiên/ngày ~1,300 phiên/tháng, 8h x 26ngày | Năng lực AI: 300 phiên/ngày ~7,800 phiên/tháng, 24x7)",
+                inputHeader: "THÔNG SỐ ĐẦU VÀO",
+                lblStaff: "1. Số nhân viên Sales/CSKH:",
+                unitStaff: "người",
+                lblSalary: "2. Lương TB mỗi nhân viên/tháng:",
+                lblOverhead: "3. Quản lý & Phúc lợi (% Lương):",
+                noteInsurance: "*Đã bao gồm trích BHXH bắt buộc 21.5% Lương CB",
+                lblSessions: "4. Tổng phiên (Gọi/Chat) / tháng:",
+                lblAiRateTitle: "5. Tỷ lệ CloryAI đảm nhận từng năm:",
+                lblAiRateY1: "Năm 1 (%):",
+                lblAiRateY2: "Năm 2 (%):",
+                lblAiRateY3: "Năm 3 (%):",
+                lblRoadmap: "6. Lộ trình chuyển đổi:",
+                valRoadmap: "3 Năm",
+                cardRoi: "TỶ SUẤT HOÀN VỐN (ROI)",
+                cardSavings: "SỐ TIỀN TIẾT KIỆM (3 NĂM)",
+                cardProductivity: "NĂNG SUẤT CLORYAI VS CON NGƯỜI",
+                colMetric: "Chỉ số tài chính & Vận hành",
+                colCurrent: "Hiện tại",
+                colY1: "Năm 1",
+                colY2: "Năm 2",
+                colY3: "Năm 3",
+                colTot: "TỔNG (3 NĂM)",
+                trStaff: "1. Số lượng nhân viên con người còn lại (người)",
+                trSessStaff: "2. Phiên hỗ trợ bởi nhân viên con người / tháng",
+                trSessAi: "3. Phiên hỗ trợ bởi CloryAI / tháng",
+                trCostStaff: "4. Chi phí Nhân viên (ngân sách / năm)",
+                trCostAi: "5. Chi phí CloryAI (ngân sách / năm)",
+                trCostTotal: "6. TỔNG CHI PHÍ VẬN HÀNH / NĂM",
+                trSave: "7. TIẾT KIỆM NGÂN SÁCH TRỰC TIẾP",
+                btnCapture: "Chụp kết quả (Screen Capture)",
+                btnExport: "Tải báo cáo (PDF)",
+                disclaimer: "* Kết quả mang tính chất dự báo dựa trên đơn giá 3.000 VNĐ (~$0.12) / phiên AI. Vui lòng liên hệ chuyên gia CloryAI để có phương án may đo thực tế."
+            },
+            EN: {
+                title: "CloryAI ROI Calculator - Financial & Efficiency Impact",
+                sub: "Discover how CloryAI drastically reduces costs and amplifies operational workforce productivity",
+                capacityInfo: "(Human Capacity: max 50 sessions/day ~1,300/mo, 8h x 26 days | AI Capacity: 300 sessions/day ~7,800/mo, 24x7)",
+                inputHeader: "INPUT PARAMETERS",
+                lblStaff: "1. Current Sales/CSKH Staff:",
+                unitStaff: "staff",
+                lblSalary: "2. Avg Salary / Staff / Month:",
+                lblOverhead: "3. Overhead & Benefits (% Salary):",
+                noteInsurance: "*Includes mandatory social insurance (21.5% of base salary)",
+                lblSessions: "4. Total Monthly Sessions (Call/Chat):",
+                lblAiRateTitle: "5. Workload Handled by CloryAI / Year:",
+                lblAiRateY1: "Year 1 (%):",
+                lblAiRateY2: "Year 2 (%):",
+                lblAiRateY3: "Year 3 (%):",
+                lblRoadmap: "6. Digital Transformation Roadmap:",
+                valRoadmap: "3 Years",
+                cardRoi: "RETURN ON INVESTMENT (ROI)",
+                cardSavings: "NET SAVINGS (3 YEARS)",
+                cardProductivity: "CLORYAI PRODUCTIVITY VS HUMAN",
+                colMetric: "Financial & Operational Metrics",
+                colCurrent: "Baseline",
+                colY1: "Year 1",
+                colY2: "Year 2",
+                colY3: "Year 3",
+                colTot: "TOTAL (3 YEARS)",
+                trStaff: "1. Remaining Human Staff Count",
+                trSessStaff: "2. Monthly Sessions Handled by Humans",
+                trSessAi: "3. Monthly Sessions Handled by CloryAI",
+                trCostStaff: "4. Total Human Staff Cost (Budget/Year)",
+                trCostAi: "5. Total CloryAI Cost (Budget/Year)",
+                trCostTotal: "6. TOTAL OPERATIONAL COST / YEAR",
+                trSave: "7. DIRECT BUDGET SAVINGS",
+                btnCapture: "Screen Capture",
+                btnExport: "Download Report (PDF)",
+                disclaimer: "* Estimates based on unit price of ~3,000 VND ($0.12) per AI session. Contact CloryAI experts for custom enterprise quotes."
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", function() {
+            if (window.lucide) lucide.createIcons();
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+            calculateRoi();
+        });
+
+        function showMessageModal(msg) {
+            document.getElementById('message-modal-text').innerText = msg;
+            document.getElementById('message-modal').classList.remove('hidden');
+        }
+
+        function closeMessageModal() {
+            document.getElementById('message-modal').classList.add('hidden');
+        }
+
+        function openRoiModal() {
+            document.getElementById('roi-modal').classList.remove('hidden');
+            calculateRoi();
+        }
+
+        function closeRoiModal() {
+            document.getElementById('roi-modal').classList.add('hidden');
+        }
+
+        // Language & Integrated Currency Toggle Logic
+        function setLanguage(lang) {
+            const targetCurrency = lang === 'VI' ? 'VND' : 'USD';
+            
+            // Handle currency conversion if changed
+            if (currentCurrency !== targetCurrency) {
+                const salaryInput = document.getElementById('input-salary');
+                let currentSalaryVal = parseFormattedNumber(salaryInput.value);
+
+                if (targetCurrency === 'USD') {
+                    currentSalaryVal = Math.round(currentSalaryVal / EXCHANGE_RATE);
+                } else {
+                    currentSalaryVal = Math.round(currentSalaryVal * EXCHANGE_RATE);
+                }
+
+                currentCurrency = targetCurrency;
+                document.getElementById('lbl-salary-unit').innerText = targetCurrency;
+                salaryInput.value = formatCurrencyValue(currentSalaryVal);
+            }
+
+            currentLang = lang;
+            const t = i18n[lang];
+
+            if (lang === 'VI') {
+                document.getElementById('btn-lang-vi').className = "px-3 py-1 text-xs font-bold rounded-lg transition-all bg-slate-900 text-white shadow-sm";
+                document.getElementById('btn-lang-en').className = "px-3 py-1 text-xs font-bold rounded-lg transition-all text-slate-700 hover:text-slate-900";
+            } else {
+                document.getElementById('btn-lang-en').className = "px-3 py-1 text-xs font-bold rounded-lg transition-all bg-slate-900 text-white shadow-sm";
+                document.getElementById('btn-lang-vi').className = "px-3 py-1 text-xs font-bold rounded-lg transition-all text-slate-700 hover:text-slate-900";
+            }
+
+            document.getElementById('t-roi-title').querySelector('span').innerText = t.title;
+            document.getElementById('t-roi-sub').innerText = t.sub;
+            document.getElementById('t-roi-capacity-info').innerText = t.capacityInfo;
+            document.getElementById('t-input-header').innerText = t.inputHeader;
+            document.getElementById('t-lbl-staff').innerText = t.lblStaff;
+            document.getElementById('t-lbl-salary').innerText = t.lblSalary;
+            document.getElementById('t-lbl-overhead').innerText = t.lblOverhead;
+            document.getElementById('t-note-insurance').innerText = t.noteInsurance;
+            document.getElementById('t-lbl-sessions').innerText = t.lblSessions;
+            document.getElementById('t-lbl-ai-rate-title').innerText = t.lblAiRateTitle;
+            document.getElementById('t-lbl-ai-rate-y1').innerText = t.lblAiRateY1;
+            document.getElementById('t-lbl-ai-rate-y2').innerText = t.lblAiRateY2;
+            document.getElementById('t-lbl-ai-rate-y3').innerText = t.lblAiRateY3;
+            document.getElementById('t-lbl-roadmap').innerText = t.lblRoadmap;
+            document.getElementById('t-val-roadmap').innerText = t.valRoadmap;
+            
+            document.getElementById('t-card-roi').innerText = t.cardRoi;
+            document.getElementById('t-card-savings').innerText = t.cardSavings;
+            document.getElementById('t-card-productivity').innerText = t.cardProductivity;
+
+            document.getElementById('th-col-metric').innerText = t.colMetric;
+            document.getElementById('th-col-current').innerText = t.colCurrent;
+            document.getElementById('th-col-y1').innerText = t.colY1;
+            document.getElementById('th-col-y2').innerText = t.colY2;
+            document.getElementById('th-col-y3').innerText = t.colY3;
+            document.getElementById('th-col-tot').innerText = t.colTot;
+
+            document.getElementById('tr-lbl-staff').innerText = t.trStaff;
+            document.getElementById('tr-lbl-sess-staff').innerText = t.trSessStaff;
+            document.getElementById('tr-lbl-sess-ai').innerText = t.trSessAi;
+            document.getElementById('tr-lbl-cost-staff').innerText = t.trCostStaff;
+            document.getElementById('tr-lbl-cost-ai').innerText = t.trCostAi;
+            document.getElementById('tr-lbl-cost-total').innerText = t.trCostTotal;
+            document.getElementById('tr-lbl-save').innerText = t.trSave;
+
+            if (document.getElementById('t-btn-capture')) document.getElementById('t-btn-capture').innerText = t.btnCapture;
+            document.getElementById('t-btn-export').innerText = t.btnExport;
+            document.getElementById('t-disclaimer').innerText = t.disclaimer;
+
+            calculateRoi();
+        }
+
+        function parseFormattedNumber(val) {
+            if (!val) return 0;
+            return parseFloat(val.toString().replace(/\./g, '').replace(/,/g, '').replace(/\$/g, '')) || 0;
+        }
+
+        function formatCurrencyValue(num) {
+            const rounded = Math.round(num);
+            if (currentCurrency === 'VND') {
+                return rounded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            } else {
+                return rounded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+        }
+
+        function formatDisplayWithSymbol(num) {
+            const formatted = formatCurrencyValue(num);
+            return currentCurrency === 'VND' ? `${formatted} ₫` : `$${formatted}`;
+        }
+
+        function onStaffInputChange() {
+            const staffCount = parseInt(document.getElementById('input-staff').value) || 1;
+            // Rule: Total Sessions default = Staff * 1300
+            const defaultSessions = staffCount * HUMAN_MONTHLY_CAPACITY;
+            document.getElementById('input-sessions').value = formatCurrencyValue(defaultSessions);
+            calculateRoi();
+        }
+
+        function formatAndCalculateSalary(input) {
+            let val = parseFormattedNumber(input.value);
+            input.value = formatCurrencyValue(val);
+            calculateRoi();
+        }
+
+        function formatAndCalculateSessions(input) {
+            let val = parseFormattedNumber(input.value);
+            input.value = formatCurrencyValue(val);
+            calculateRoi();
+        }
+
+        function calculateRoi() {
+            try {
+                const staffCount = parseInt(document.getElementById('input-staff').value) || 1;
+                let displaySalary = parseFormattedNumber(document.getElementById('input-salary').value);
+                
+                // Base salary normalized to VND
+                let salaryVnd = currentCurrency === 'VND' ? displaySalary : displaySalary * EXCHANGE_RATE;
+                
+                const overheadPct = parseInt(document.getElementById('input-overhead').value) || 0;
+                const totalMonthlySessions = parseFormattedNumber(document.getElementById('input-sessions').value);
+                
+                // Read 3 individual Year Sliders
+                const aiShareY1 = parseInt(document.getElementById('input-ai-rate-y1').value) || 0;
+                const aiShareY2 = parseInt(document.getElementById('input-ai-rate-y2').value) || 0;
+                const aiShareY3 = parseInt(document.getElementById('input-ai-rate-y3').value) || 0;
+
+                const unitStaffLabel = i18n[currentLang].unitStaff;
+                if (document.getElementById('val-staff')) document.getElementById('val-staff').innerText = `${staffCount} ${unitStaffLabel}`;
+                if (document.getElementById('val-overhead')) document.getElementById('val-overhead').innerText = `${overheadPct}%`;
+                if (document.getElementById('val-ai-rate-y1')) document.getElementById('val-ai-rate-y1').innerText = `${aiShareY1}%`;
+                if (document.getElementById('val-ai-rate-y2')) document.getElementById('val-ai-rate-y2').innerText = `${aiShareY2}%`;
+                if (document.getElementById('val-ai-rate-y3')) document.getElementById('val-ai-rate-y3').innerText = `${aiShareY3}%`;
+
+                // Monthly Full Cost per Human (Base salary + Overhead + Social Insurance 21.5%)
+                const fullHumanCostPerMonthVnd = salaryVnd * (1 + (overheadPct + 21.5) / 100);
+                const baselineStaffYearlyCostVnd = staffCount * fullHumanCostPerMonthVnd * 12;
+
+                const conversionFactor = currentCurrency === 'VND' ? 1 : (1 / EXCHANGE_RATE);
+
+                // Row 0 Baseline (CURRENT)
+                document.getElementById('row-staff-0').innerText = staffCount;
+                document.getElementById('row-sess-staff-0').innerText = formatCurrencyValue(totalMonthlySessions);
+                document.getElementById('row-sess-ai-0').innerText = "0";
+                document.getElementById('row-cost-staff-0').innerText = formatCurrencyValue(baselineStaffYearlyCostVnd * conversionFactor);
+                document.getElementById('row-cost-ai-0').innerText = "0";
+                document.getElementById('row-cost-total-0').innerText = formatCurrencyValue(baselineStaffYearlyCostVnd * conversionFactor);
+                document.getElementById('row-save-0').innerText = "0 (0%)";
+
+                const aiRates = [aiShareY1, aiShareY2, aiShareY3];
+                let total3YearSavingsVnd = 0;
+                let total3YearStaffCostVnd = 0;
+                let total3YearAiCostVnd = 0;
+                let total3YearNewCostVnd = 0;
+                
+                let total3YearStaffSessions = 0;
+                let total3YearAiSessions = 0;
+                let lastYearRemainingStaff = 0;
+
+                for (let idx = 0; idx < 3; idx++) {
+                    const year = idx + 1;
+                    const aiRatePct = aiRates[idx];
+                    const aiShareRatio = aiRatePct / 100;
+                    
+                    // Workload distribution
+                    const aiMonthlySessions = totalMonthlySessions * aiShareRatio;
+                    const staffMonthlySessions = totalMonthlySessions - aiMonthlySessions;
+                    
+                    total3YearStaffSessions += (staffMonthlySessions * 12);
+                    total3YearAiSessions += (aiMonthlySessions * 12);
+
+                    // Human Staff required for this specific year: ceil(human_sessions / 1300)
+                    let remainingStaff = 0;
+                    if (staffMonthlySessions > 0) {
+                        remainingStaff = Math.ceil(staffMonthlySessions / HUMAN_MONTHLY_CAPACITY);
+                    }
+                    lastYearRemainingStaff = remainingStaff;
+
+                    // 3% Annual salary adjustment
+                    const salaryInflationMultiplier = Math.pow(1.03, idx);
+                    const yearStaffCostVnd = remainingStaff * fullHumanCostPerMonthVnd * 12 * salaryInflationMultiplier;
+                    const yearAiCostVnd = aiMonthlySessions * AI_PRICE_PER_SESSION_VND * 12;
+                    const yearTotalCostVnd = yearStaffCostVnd + yearAiCostVnd;
+                    
+                    const yearBaselineCostVnd = baselineStaffYearlyCostVnd * salaryInflationMultiplier;
+                    const yearSaveVnd = yearBaselineCostVnd - yearTotalCostVnd;
+                    const savePct = yearBaselineCostVnd > 0 ? Math.round((yearSaveVnd / yearBaselineCostVnd) * 100) : 0;
+
+                    document.getElementById(`row-staff-${year}`).innerText = remainingStaff;
+                    document.getElementById(`row-sess-staff-${year}`).innerText = formatCurrencyValue(staffMonthlySessions);
+                    document.getElementById(`row-sess-ai-${year}`).innerText = formatCurrencyValue(aiMonthlySessions);
+                    
+                    document.getElementById(`row-cost-staff-${year}`).innerText = formatCurrencyValue(yearStaffCostVnd * conversionFactor);
+                    document.getElementById(`row-cost-ai-${year}`).innerText = formatCurrencyValue(yearAiCostVnd * conversionFactor);
+                    document.getElementById(`row-cost-total-${year}`).innerText = formatCurrencyValue(yearTotalCostVnd * conversionFactor);
+                    document.getElementById(`row-save-${year}`).innerText = `${formatCurrencyValue(yearSaveVnd * conversionFactor)} (${savePct}%)`;
+
+                    total3YearSavingsVnd += yearSaveVnd;
+                    total3YearStaffCostVnd += yearStaffCostVnd;
+                    total3YearAiCostVnd += yearAiCostVnd;
+                    total3YearNewCostVnd += yearTotalCostVnd;
+                }
+
+                // Cumulative Totals (3-Year Sums)
+                document.getElementById('row-staff-tot').innerText = lastYearRemainingStaff;
+                document.getElementById('row-sess-staff-tot').innerText = formatCurrencyValue(total3YearStaffSessions);
+                document.getElementById('row-sess-ai-tot').innerText = formatCurrencyValue(total3YearAiSessions);
+                
+                document.getElementById('row-cost-staff-tot').innerText = formatCurrencyValue(total3YearStaffCostVnd * conversionFactor);
+                document.getElementById('row-cost-ai-tot').innerText = formatCurrencyValue(total3YearAiCostVnd * conversionFactor);
+                document.getElementById('row-cost-total-tot').innerText = formatCurrencyValue(total3YearNewCostVnd * conversionFactor);
+                
+                const totalBaselineCostVnd = baselineStaffYearlyCostVnd * (1 + 1.03 + 1.03 * 1.03);
+                const totalSavePct = totalBaselineCostVnd > 0 ? Math.round((total3YearSavingsVnd / totalBaselineCostVnd) * 100) : 0;
+                document.getElementById('row-save-tot').innerText = `${formatCurrencyValue(total3YearSavingsVnd * conversionFactor)} (${totalSavePct}%)`;
+
+                // Top Metric Summary Cards
+                const roiPct = total3YearAiCostVnd > 0 ? Math.round((total3YearSavingsVnd / total3YearAiCostVnd) * 100) : 0;
+                document.getElementById('res-roi').innerText = `${roiPct}%`;
+                
+                // Display savings amount with corresponding percentage
+                const formattedSavingsVal = formatDisplayWithSymbol(total3YearSavingsVnd * conversionFactor);
+                document.getElementById('res-savings').innerText = `${formattedSavingsVal} (${totalSavePct}%)`;
+            } catch (err) {
+                console.error("ROI calculation error:", err);
+            }
+        }
+
+        async function captureScreen() {
+            const modalContent = document.getElementById('roi-modal-content');
+            if (!modalContent) return;
+
+            // Temporarily hide no-print controls during capture
+            const noPrintElems = modalContent.querySelectorAll('.no-print');
+            noPrintElems.forEach(el => el.style.visibility = 'hidden');
+
+            try {
+                const canvas = await html2canvas(modalContent, {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: '#f8fafc'
+                });
+
+                // Restore visibility
+                noPrintElems.forEach(el => el.style.visibility = 'visible');
+
+                const today = new Date().toISOString().slice(0, 10);
+                const defaultFilename = `CloryAI_ROI_Report_${today}.png`;
+
+                // Use File System Access API if supported (opens native Save As dialog to choose directory)
+                if ('showSaveFilePicker' in window) {
+                    try {
+                        const fileHandle = await window.showSaveFilePicker({
+                            suggestedName: defaultFilename,
+                            types: [{
+                                description: 'PNG Image',
+                                accept: { 'image/png': ['.png'] }
+                            }]
+                        });
+                        const writableStream = await fileHandle.createWritable();
+                        canvas.toBlob(async (blob) => {
+                            await writableStream.write(blob);
+                            await writableStream.close();
+                        }, 'image/png');
+                        return;
+                    } catch (err) {
+                        if (err.name === 'AbortError') return; // User cancelled save dialog
+                    }
+                }
+
+                // Fallback for browsers without showSaveFilePicker support
+                canvas.toBlob((blob) => {
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = defaultFilename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                }, 'image/png');
+
+            } catch (err) {
+                console.error("Screen capture error:", err);
+                noPrintElems.forEach(el => el.style.visibility = 'visible');
+            }
+        }
+
+        // Print PDF Export Handler
+        function exportPdfReport() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
