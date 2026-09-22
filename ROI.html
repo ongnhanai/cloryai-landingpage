@@ -155,12 +155,6 @@
                         <span>English</span>
                     </button>
                 </div>
-
-                <!-- ROI Calculator Header Button -->
-                <button onclick="openRoiModal()" class="px-5 py-2 rounded-xl bg-clory-accent hover:bg-clory-accentHover text-white font-semibold text-sm transition-all shadow-lg shadow-clory-accent/25 flex items-center gap-2">
-                    <i data-lucide="calculator" class="w-4 h-4"></i>
-                    <span id="t-header-btn-text">ROI Calculator</span>
-                </button>
             </div>
         </div>
     </header>
@@ -188,17 +182,64 @@
                 CloryAI Agents - Lực lượng lao động số thế hệ mới – Chuẩn xác, Tức thì, Hoạt động 24/7
             </p>
 
-            <!-- 4. Exact Image-Matched ROI Calculator Button -->
-            <div class="animate-fade-up [animation-delay:600ms]">
-                <button onclick="openRoiModal()" class="inline-flex items-center justify-center gap-4 px-9 py-4 rounded-[22px] bg-[#ff4d2d] hover:bg-[#e03e20] text-white font-bold text-lg md:text-xl transition-all shadow-2xl shadow-[#ff4d2d]/30 hover:scale-105 active:scale-95 transform cursor-pointer border border-white/10">
-                    <i data-lucide="calculator" class="w-7 h-7 stroke-[2.2]"></i>
+            <!-- 4. Restored Accent CTA Buttons: 1. ROI Calculator, 2. Meet CloryAI now -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5 animate-fade-up [animation-delay:600ms]">
+                <!-- 1. ROI Calculator Button (First) -->
+                <button onclick="openRoiModal()" class="inline-flex items-center justify-center gap-3.5 px-8 py-4 rounded-[22px] bg-clory-accent hover:bg-clory-accentHover text-white font-bold text-lg md:text-xl transition-all hover:scale-105 active:scale-95 transform cursor-pointer shadow-xl shadow-clory-accent/30 border border-white/10">
+                    <i data-lucide="calculator" class="w-6 h-6 stroke-[2.2]"></i>
                     <span id="t-hero-btn-text" class="tracking-wide">ROI Calculator</span>
                     <i data-lucide="arrow-right" class="w-6 h-6 stroke-[2.5]"></i>
                 </button>
+
+                <!-- 2. Meet CloryAI now Button (Second - Direct External Registration Link) -->
+                <a href="https://try-cloryai.cloudpbx.vn/register" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3.5 px-8 py-4 rounded-[22px] bg-clory-card border border-clory-border hover:bg-slate-800 text-slate-100 font-bold text-lg md:text-xl transition-all hover:scale-105 active:scale-95 transform cursor-pointer shadow-xl">
+                    <i data-lucide="sparkles" class="w-6 h-6 text-amber-300 stroke-[2.2]"></i>
+                    <span id="t-hero-btn-meet" class="tracking-wide">Meet CloryAI now</span>
+                    <i data-lucide="arrow-right" class="w-6 h-6 stroke-[2.5]"></i>
+                </a>
             </div>
 
         </div>
     </main>
+
+    <!-- MEET CLORYAI NOW CONTACT MODAL -->
+    <div id="contact-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300">
+        <div class="bg-clory-card border border-clory-border rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-2xl relative text-white animate-fade-up">
+            <div class="flex items-center justify-between border-b border-clory-border pb-4 mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-clory-accent/20 text-clory-accent flex items-center justify-center font-bold">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 id="t-contact-title" class="text-xl font-bold text-white">Gặp gỡ CloryAI ngay hôm nay</h3>
+                        <p id="t-contact-sub" class="text-xs text-clory-textMuted">Trải nghiệm lực lượng lao động số thế hệ mới</p>
+                    </div>
+                </div>
+                <button onclick="closeContactModal()" class="p-2 rounded-xl bg-clory-bg text-slate-400 hover:text-white border border-clory-border transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Chuyên gia CloryAI sẽ liên hệ trong thời gian sớm nhất.'); closeContactModal();" class="space-y-4">
+                <div>
+                    <label id="t-lbl-name" class="block text-xs font-semibold text-slate-300 mb-1.5">Họ và tên *</label>
+                    <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl bg-clory-bg border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent">
+                </div>
+                <div>
+                    <label id="t-lbl-email" class="block text-xs font-semibold text-slate-300 mb-1.5">Email công việc *</label>
+                    <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl bg-clory-bg border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent">
+                </div>
+                <div>
+                    <label id="t-lbl-phone" class="block text-xs font-semibold text-slate-300 mb-1.5">Số điện thoại *</label>
+                    <input type="tel" required placeholder="090 123 4567" class="w-full px-4 py-3 rounded-xl bg-clory-bg border border-clory-border text-white text-sm focus:outline-none focus:border-clory-accent">
+                </div>
+                <button type="submit" id="t-btn-submit" class="w-full py-4 rounded-xl btn-gradient-4color text-white font-bold text-sm transition-all shadow-lg mt-2 flex items-center justify-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Đặt Lịch Demo Ngay</span>
+                </button>
+            </form>
+        </div>
+    </div>
 
     <div id="roi-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-md flex items-center justify-center p-3 md:p-6 transition-all duration-300">
         <div id="roi-modal-content" class="bg-slate-100 border border-slate-300 rounded-3xl max-w-7xl w-full max-h-[95vh] overflow-y-auto shadow-2xl relative flex flex-col my-auto text-slate-800 print-exact-fit">
@@ -521,10 +562,19 @@
                 badgeText: "CloryAI Agents v1.0 - Lực lượng lao động số thế hệ mới",
                 heroTitleSub: "AI-Driven CX Management Platform",
                 heroSub: "CloryAI Agents - Lực lượng lao động số thế hệ mới – Chuẩn xác, Tức thì, Hoạt động 24/7",
+                heroBtnMeet: "Gặp CloryAI ngay",
                 heroBtn: "ROI Calculator",
                 headerBtn: "ROI Calculator",
                 footerCopy: "© 2026 CloryAI Agents. Powered by CLOUDPBX. All rights reserved.",
                 footerDisclaimer: "CloryAI® là AI, kết quả đã được tối ưu hóa, vui lòng xác minh trước khi triển khai",
+
+                // Contact Modal
+                contactTitle: "Gặp gỡ CloryAI ngay hôm nay",
+                contactSub: "Trải nghiệm lực lượng lao động số thế hệ mới",
+                lblName: "Họ và tên *",
+                lblEmail: "Email công việc *",
+                lblPhone: "Số điện thoại *",
+                btnSubmit: "Đặt Lịch Demo Ngay",
 
                 // Modal Calculator Text
                 title: "Công cụ ROI đo lường hiệu quả đầu tư và vận hành cùng CloryAI",
@@ -570,10 +620,19 @@
                 badgeText: "CloryAI Agents v1.0 - Next-Gen Digital Workforce",
                 heroTitleSub: "AI-Driven CX Management Platform",
                 heroSub: "CloryAI Agents - Next-Generation Digital Workforce – Precise, Instant, 24/7 Operation",
+                heroBtnMeet: "Meet CloryAI now",
                 heroBtn: "ROI Calculator",
                 headerBtn: "ROI Calculator",
                 footerCopy: "© 2026 CloryAI Agents. Powered by CLOUDPBX. All rights reserved.",
                 footerDisclaimer: "CloryAI® is AI, results are optimized, please verify before implementation",
+
+                // Contact Modal
+                contactTitle: "Meet CloryAI Today",
+                contactSub: "Experience next-generation AI digital workforce",
+                lblName: "Full Name *",
+                lblEmail: "Work Email *",
+                lblPhone: "Phone Number *",
+                btnSubmit: "Schedule a Demo Now",
 
                 // Modal Calculator Text
                 title: "CloryAI ROI Calculator - Financial & Efficiency Impact",
@@ -619,6 +678,14 @@
             if (window.lucide) lucide.createIcons();
             calculateRoi();
         });
+
+        function openContactModal() {
+            document.getElementById('contact-modal').classList.remove('hidden');
+        }
+
+        function closeContactModal() {
+            document.getElementById('contact-modal').classList.add('hidden');
+        }
 
         function openRoiModal() {
             document.getElementById('roi-modal').classList.remove('hidden');
@@ -675,10 +742,19 @@
             document.getElementById('t-badge-text').innerText = t.badgeText;
             document.getElementById('t-hero-title-sub').innerText = t.heroTitleSub;
             document.getElementById('t-hero-sub').innerText = t.heroSub;
+            if (document.getElementById('t-hero-btn-meet')) document.getElementById('t-hero-btn-meet').innerText = t.heroBtnMeet;
             document.getElementById('t-hero-btn-text').innerText = t.heroBtn;
-            document.getElementById('t-header-btn-text').innerText = t.headerBtn;
+            if (document.getElementById('t-header-btn-text')) document.getElementById('t-header-btn-text').innerText = t.headerBtn;
             document.getElementById('t-footer-copy').innerText = t.footerCopy;
             document.getElementById('t-footer-disclaimer').innerText = t.footerDisclaimer;
+
+            // Contact modal
+            if (document.getElementById('t-contact-title')) document.getElementById('t-contact-title').innerText = t.contactTitle;
+            if (document.getElementById('t-contact-sub')) document.getElementById('t-contact-sub').innerText = t.contactSub;
+            if (document.getElementById('t-lbl-name')) document.getElementById('t-lbl-name').innerText = t.lblName;
+            if (document.getElementById('t-lbl-email')) document.getElementById('t-lbl-email').innerText = t.lblEmail;
+            if (document.getElementById('t-lbl-phone')) document.getElementById('t-lbl-phone').innerText = t.lblPhone;
+            if (document.getElementById('t-btn-submit')) document.getElementById('t-btn-submit').querySelector('span').innerText = t.btnSubmit;
 
             // 3. Update Modal ROI Calculator Texts
             document.getElementById('t-roi-title').querySelector('span').innerText = t.title;
